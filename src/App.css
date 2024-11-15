@@ -1,0 +1,28 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    transition: background-color 0.4s cubic-bezier(0.41, 0.1, 0.13, 1), color 0.4s cubic-bezier(0.41, 0.1, 0.13, 1);
+}
+
+body {
+    --background: 0, 0%, 100%;
+    --foreground: 0, 0%, 0%;
+    /* --footer: 205, 87%, 94%; */
+    --stave: 0;
+    --primary: 149.82, 100%, 31.96%;
+    --footer: 161.25, 9.76%, 32.16%;
+}
+
+html.dark body {
+    --background: 0, 0%, 7%;
+    --design-course-bg: 0, 0%, 11.76%;
+    --foreground: 0, 0%, 88%;
+    --footer: 0, 0%, 4%;
+    --footer-green: 154.29, 95.45%, 8.63%;
+    --stave: ;
+    --primary: 149.82, 100%, 31.96%;
+}
