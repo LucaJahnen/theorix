@@ -6,7 +6,7 @@ import { FaInstagram } from "react-icons/fa"
 const Footer = () => {
     const shareMessage = encodeURIComponent("Try out musictutor on https://musictutor.com")
     return (
-        <footer className="px-4 py-[10%] bg-footer mt-14 lg:grid lg:grid-cols-2 lg:py-[3%] lg:px-[10%] lg:m-auto lg:mt-14 text-[#f0f0f0]">
+        <footer className="px-4 py-[10%] bg-footer mt-14 lg:grid lg:grid-cols-2 lg:py-[3%] lg:px-[10%] lg:m-auto lg:mt-14 text-[#f0f0f0] text-foreground">
             <Link to="/" className="text-lg lg:row-start-1 font-serif"><span className="text-primary font-sans">music</span>tutor</Link>
             <section className="lg:row-start-2">
                 <h3 className="mt-5 mb-1 font-semibold text-lg">Tools</h3>

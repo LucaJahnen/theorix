@@ -146,7 +146,7 @@ const ChordQuiz = () => {
                   <span><span className="font-semibold">Determine the chord type:</span> If the interval between the note is a major third between root and third and a minor third between third and fifth it is called a major chord. If it's a minor third first and then a major third it is a minor chord. An augmented chord is built using two major thirds and a diminished chord uses two minor thirds.</span>
                 </li>
             </ol>
-            <p>If you need more info on chords you can check out this <Link to="/building-intervals" className="underline">dedicated article</Link>.</p>
+            <p>If you need more info on chords you can check out this <Link to="/building-chords" className="underline">dedicated article</Link>.</p>
         </div>
         <Footer />
     </>

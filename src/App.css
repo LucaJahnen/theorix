@@ -11,18 +11,18 @@
 body {
     --background: 0, 0%, 100%;
     --foreground: 0, 0%, 0%;
-    /* --footer: 205, 87%, 94%; */
     --stave: 0;
-    --primary: 149.82, 100%, 31.96%;
-    --footer: 161.25, 9.76%, 32.16%;
+    --primary: 	225, 73%, 57%;
+    --footer: 210, 17%, 91%;
 }
 
 html.dark body {
     --background: 0, 0%, 7%;
     --design-course-bg: 0, 0%, 11.76%;
     --foreground: 0, 0%, 88%;
+    --primary-foreground: 0, 0%, 88%;
     --footer: 0, 0%, 4%;
     --footer-green: 154.29, 95.45%, 8.63%;
     --stave: ;
-    --primary: 149.82, 100%, 31.96%;
+    --primary: 	225, 73%, 57%;
 }

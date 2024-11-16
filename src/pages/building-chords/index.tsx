@@ -112,7 +112,7 @@ const BuildingChords: React.FC = () => {
                 </section>
                 <section className="mb-5">
                     <h3 className="text-2xl font-semibold mb-2">Diminished chords</h3>
-                    <p className="leading-relaxed">Diminished chords consist of two minor thirds so B Diminished consisting of B, D and F is a perfect example. Like augmented chords diminished chords create a kind of tension which can be resolved by playing the root chord from the corresponding scale. B Diminished is part of the C Major scale so this is the chord to reolve this tension.</p>
+                    <p className="leading-relaxed">Diminished chords consist of two minor thirds so B Diminished consisting of B, D and F is a perfect example. Like augmented chords diminished chords create a kind of tension which can be resolved by playing the root chord from the corresponding scale. B Diminished is part of the C Major scale so this is the chord to resolve this tension.</p>
                     <div ref={diminishedRef} className="invert-stave"></div>
                 </section>
                 <section>
