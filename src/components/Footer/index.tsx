@@ -33,7 +33,7 @@ const Footer = () => {
                     <Link to={`https://api.whatsapp.com/send?text=${shareMessage}`} aria-label="recommend our website using whatsapp">
                         <FaWhatsapp className="h-8 w-8" />
                     </Link>
-                    <Link to="https://www.reddit.com/submit?url=https%3A%2F%2Ftheorix.netlify.app%2F&title=theorix&type=LINK">
+                    <Link to="https://www.reddit.com/submit?url=https%3A%2F%2Ftheorix.netlify.app%2F&title=theorix&type=LINK" aria-label="recommend our website using reddit">
                         <LiaReddit className="h-8 w-8" />
                     </Link>
                 </div>
