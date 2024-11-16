@@ -13,8 +13,9 @@ import { Link } from "react-router-dom"
 import Modal from "../../components/Modal"
 import { useState, useEffect, useRef } from "react"
 import Footer from "../../components/Footer"
-import Vex from "vexflow"
+import { Input } from "@/components/ui/input"
 import useCreateChord from "@/hooks/useCreateChord"
+import Vex from "vexflow"
 const { Renderer, Stave, StaveNote, Voice, Formatter, Accidental } = Vex.Flow;
 
 
@@ -27,7 +28,7 @@ const ChordQuiz = () => {
     e.preventDefault()
     setVisible(true)
     const formData = new FormData(e.currentTarget)
-    const rootInput = formData.get("root")
+    const rootInput = String(formData.get("root")).toUpperCase()
     const typeInput = formData.get("type")
     setCorrect(rootInput + " " + typeInput === chord[3])
   }
@@ -94,37 +95,14 @@ const ChordQuiz = () => {
             <p>Which interval is shown below? Enter the quality and the interval number</p>
             <div className="filter invert-stave" ref={scoreRef} />
           <form action="#" className="flex flex-col gap-4 lg:flex-row lg:flex-row lg:items-end lg:gap-7 lg:gap-7" onSubmit={e => handleSubmit(e)}>
-            <Label htmlFor="" className="flex flex-col gap-1.5 relative z-10">
+            <Label htmlFor="root-number" className="flex flex-col gap-1.5 relative z-10">
               <span>Root Note</span>
-              <Select name="root">
-                <SelectTrigger className="w-full relative -z-10">
-                  <SelectValue placeholder="e. g. C, Gb" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="C">C</SelectItem>
-                  <SelectItem value="C#">C#</SelectItem>
-                  <SelectItem value="Db">Db</SelectItem>
-                  <SelectItem value="D">D</SelectItem>
-                  <SelectItem value="D#">D#</SelectItem>
-                  <SelectItem value="Eb">Eb</SelectItem>
-                  <SelectItem value="E">E</SelectItem>
-                  <SelectItem value="F">F</SelectItem>
-                  <SelectItem value="F#">F#</SelectItem>
-                  <SelectItem value="Gb">Gb</SelectItem>
-                  <SelectItem value="G">G</SelectItem>
-                  <SelectItem value="G#">G#</SelectItem>
-                  <SelectItem value="Ab">Ab</SelectItem>
-                  <SelectItem value="A">A</SelectItem>
-                  <SelectItem value="A#">A#</SelectItem>
-                  <SelectItem value="Bb">Bb</SelectItem>
-                  <SelectItem value="B">B</SelectItem>
-                </SelectContent>
-              </Select>
+              <Input type="text" pattern="^[a-g](#|b)?$" id="root-number" name="root" placeholder="e. g. C, Eb, G, A#" />
             </Label>
             <Label htmlFor="number" className="relative z-10 flex flex-col gap-1.5">
               <span className="flex flex-col gap-1.5">Chord Type</span>
               <Select name="type" required>
-              <SelectTrigger className="w-full relative -z-10">
+              <SelectTrigger className="w-full relative -z-10" id="number">
                 <SelectValue placeholder="e. g. Major, Diminished" />
               </SelectTrigger>
               <SelectContent>

@@ -55,7 +55,7 @@ const Navbar = () => {
     <>
     <nav className="grid place-items-center sticky top-0 left-0 z-[1001] bg-background" id="navbar">
     <div className="flex items-center justify-between w-full px-4 py-6 lg:w-[80%] lg:pb-8 lg:pt-12">
-      <Link to="/" className="text-lg lg:row-start-1 font-serif"><span className="text-primary font-sans">music</span>tutor</Link>
+      <Link to="/" className="text-lg lg:row-start-1 font-serif"><span className="text-primary font-sans">theo</span>rix</Link>
       <div className="flex flex-row gap-2">
         <Button size="icon" className="bg-transparent text-foreground shadow-none hover:bg-transparent" onClick={toggleTheme} aria-label="toggle colour theme">
             {theme === "dark" ? <FaRegMoon className="h-8 w-8" /> : <MdOutlineWbSunny className="h-8 w-8" />}
