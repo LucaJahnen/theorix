@@ -1,7 +1,7 @@
 import { Suspense, lazy } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
-const App = lazy(() => import('./App'))
+import App from './App'
 const Error = lazy(() => import('./pages/error'))
 const IntervalQuiz = lazy(() => import('./pages/interval-quiz'))
 const Metronome = lazy(() => import('./pages/metronome'))

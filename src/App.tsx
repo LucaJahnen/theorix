@@ -1,6 +1,5 @@
 import Navbar from "./components//Navbar"
 import Footer from "./components/Footer"
-// import useScrollToTop from "./hooks/useScrollToTop"
 import "./App.css"
 import { Button } from "./components/ui/button"
 import { Link } from "react-router-dom"
