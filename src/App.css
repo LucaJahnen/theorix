@@ -12,7 +12,8 @@ body {
     --background: 0, 0%, 100%;
     --foreground: 0, 0%, 0%;
     --stave: 0;
-    --primary: 	225, 73%, 57%;
+    --primary: 225, 73%, 57%;
+    --secondary: 225, 73%, 47%;
     --footer: 210, 17%, 91%;
 }
 
@@ -24,5 +25,6 @@ html.dark body {
     --footer: 0, 0%, 4%;
     --footer-green: 154.29, 95.45%, 8.63%;
     --stave: ;
-    --primary: 	225, 73%, 57%;
+    --primary: 225, 73%, 57%;
+    --secondary: 225, 73%, 47%;
 }
