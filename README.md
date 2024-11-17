@@ -31,11 +31,6 @@ const router = createBrowserRouter([
 ])
 ```
 
-By implementing lazy loading I was able to achieve a perfect score on [PageSpeed Insights](https://pagespeed.web.dev/):
-
-![image](https://github.com/user-attachments/assets/a4185b77-7369-44e8-adab-17314f5e53da)
-
-
 ## Assets
 - [ShadcnUi](https://ui.shadcn.com/): ShadcnUi allowed me to spend more time on developing tools and writing articles instead of messing with buttons or FAQ sections
 - [Vexflow](https://www.vexflow.com/): Vexflow makes creating clefs and writing sheet music on the web
