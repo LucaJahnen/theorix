@@ -103,20 +103,20 @@ const IntervalQuiz = () => {
                       <span className="font-semibold">Determine the Quality:</span> 
                       After finding the number, determine the interval's quality (perfect, major, minor, diminished, or augmented):
                     <ul className="list-disc list-inside">
-                      <li className="mb-4 mt-4 flex baseline before:inline-flex before:content-['\25CF'] before:pr-3">
+                      <li className="mb-4 mt-4 flex baseline before:inline-flex before:content-['\25CF'] before:pr-3 before:font-sans">
                         <span>Perfect intervals (unison, fourth, fifth, octave) sound stable.</span>
                       </li>
-                      <li className="mb-4 flex baseline before:inline-flex before:content-['\25CF'] before:pr-3">
+                      <li className="mb-4 flex baseline before:inline-flex before:content-['\25CF'] before:pr-3 before:font-sans">
                         <span>Major intervals (2nd, 3rd, 6th, 7th) are slightly larger and brighter.</span>
                       </li>
-                      <li className="flex baseline before:inline-flex before:content-['\25CF'] before:pr-3">
+                      <li className="flex baseline before:inline-flex before:content-['\25CF'] before:pr-3 before:font-sans">
                         <span>Minor intervals are one half-step smaller than major intervals and sound slightly darker.</span>
                       </li>
                     </ul>
                     </span>
                   </li>
             </ol>
-            <p>By counting the steps and identifying the quality, you’ll quickly recognize each interval! For more details, check out our <Link to="/building-intervals" className="underline">dedicated article</Link> on intervals in music theory.</p>
+            <p>By counting the steps and identifying the quality, you'll quickly recognize each interval! For more details, check out our <Link to="/building-intervals" className="underline">dedicated article</Link> on intervals in music theory.</p>
         </div>
         <Footer />
     </>

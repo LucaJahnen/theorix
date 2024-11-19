@@ -66,7 +66,7 @@ function App() {
             </AccordionItem>
             <AccordionItem value="item-3">
               <AccordionTrigger className="text-base font-normal leading-relaxed">Is it free to use?</AccordionTrigger>
-              <AccordionContent className="text-base font-normal leading-relaxed">Yes. theorix is free to use. But if you want to say thank you, feel free to <Link to="https://google.com" className="underline">donate</Link>.</AccordionContent>
+              <AccordionContent className="text-base font-normal leading-relaxed">Yes. theorix is free to use. But if you want to say thank you, feel free to <Link to="https://ko-fi.com/theorix" className="underline">donate</Link>.</AccordionContent>
             </AccordionItem>
           </Accordion>
         </section>

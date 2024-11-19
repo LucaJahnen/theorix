@@ -12,9 +12,9 @@ const PrivacyPolicy: React.FC = () => {
                 <h3 className="font-semibold text-lg mb-2">1. Controller and Data Protection Officer</h3>
                 <p>The entity responsible for this website is:</p>
                 <p>Luca Jahnen</p>
-                <a href="mailto:support@musictutor.com" className="underline">support@musictutor.com</a>
+                <a href="mailto:support@theorix.com" className="underline">support@theorix.com</a>
                 <p>You can reach the Data Protection Officer by email at:</p>
-                <a href="mailto:support@musictutor.com" className="underline">support@musictutor.com</a>
+                <a href="mailto:support@theorix.com" className="underline">support@theorix.com</a>
                 <h3 className="font-semibold text-lg mb-2 mt-5">2. Data Processed for Providing the Website and Creating Log Files</h3>
                 <h4 className="font-semibold">a. What data is processed for what purpose?</h4>
                 <p>Each time content on the website is accessed, data that may allow for identification is temporarily stored. The following data is collected:</p>
@@ -36,8 +36,8 @@ const PrivacyPolicy: React.FC = () => {
                 <h4 className="font-semibold mt-3">c. Are there any other recipients of the personal data besides the Controller?</h4>
                 <p>The website is hosted by <strong>[Name, Postal Address, Email Address of the Hosting Provider]</strong>. The hosting provider receives the aforementioned data as a processor.</p>
                 <h4 className="font-semibold mt-3">d. How long are the data stored?</h4>
-                <p>The data are deleted as soon as they are no longer necessary for the purpose for which they were collected. For the provision of the website, this is the case when the respective session ends. The log files are kept directly accessible exclusively to administrators for <strong>[…, a maximum of 24 hours]</strong>. Afterwards, they are only indirectly available via the reconstruction of backup tapes and are permanently deleted after <strong>[…, a maximum of four weeks]</strong>.</p>
-                <h3>3. Data Subject Rights</h3>
+                <p>The data are deleted as soon as they are no longer necessary for the purpose for which they were collected. For the provision of the website, this is the case when the respective session ends..</p>
+                <h3 className="font-semibold text-lg mb-2 mt-5">3. Data Subject Rights</h3>
                 <h4 className="font-semibold mt-3">a. Right of Access</h4>
                 <p>You have the right to request information about your personal data that we process according to Article 15 GDPR.</p>
                 <h4 className="font-semibold mt-3">b. Right to Object</h4>

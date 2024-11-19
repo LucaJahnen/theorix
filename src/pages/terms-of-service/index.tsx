@@ -22,7 +22,7 @@ const TermsOfService: React.FC = () => {
                     <p className="leading-relaxed"><strong>Country</strong> refers to: Rheinland-Pfalz,  Germany</p>
                 </li>
                 <li className="mb-4 mt-4 flex baseline before:inline-flex before:content-['\25CF'] before:pr-3">
-                    <p className="leading-relaxed"><strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to musictutor.</p>
+                    <p className="leading-relaxed"><strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to theorix.</p>
                 </li>
                 <li className="mb-4 mt-4 flex baseline before:inline-flex before:content-['\25CF'] before:pr-3">
                     <p className="leading-relaxed"><strong>Device</strong> means any device that can access the Service such as a computer, a cellphone or a digital tablet.</p>
@@ -37,7 +37,7 @@ const TermsOfService: React.FC = () => {
                     <p className="leading-relaxed"><strong>Third-party Social Media Service</strong> means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.</p>
                 </li>
                 <li className="mb-4 mt-4 flex baseline before:inline-flex before:content-['\25CF'] before:pr-3">
-                    <p className="leading-relaxed"><strong>Website</strong> refers to musictutor, accessible from <a href="https://musictutor.com" rel="external nofollow noopener" target="_blank">https://musictutor.com</a></p>
+                    <p className="leading-relaxed"><strong>Website</strong> refers to theorix, accessible from <a href="https://theorix.netlify.app" rel="external nofollow noopener" target="_blank">https://theorix.netlify.app</a></p>
                 </li>
                 <li className="mb-4 mt-4 flex baseline before:inline-flex before:content-['\25CF'] before:pr-3">
                     <p className="leading-relaxed"><strong>You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</p>
@@ -85,7 +85,7 @@ const TermsOfService: React.FC = () => {
             <p className="leading-relaxed">By continuing to access or use Our Service after those revisions become effective, You agree to be bound by the revised terms. If You do not agree to the new terms, in whole or in part, please stop using the website and the Service.</p>
             <h2 className="font-semibold text-xl mb-2 mt-4">Contact Us</h2>
             <p className="leading-relaxed">If you have any questions about these Terms and Conditions, You can contact us:</p>
-            <p className="leading-relaxed">By email: <a href="mailto:support@musictutor.com" className="underline">support@musictutor.com</a></p>
+            <p className="leading-relaxed">By email: <a href="mailto:support@theorix.com" className="underline">support@theorix.com</a></p>
             </div>
             <Footer />
         </>

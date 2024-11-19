@@ -1,5 +1,7 @@
-import { Suspense, lazy } from 'react'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { lazy } from 'react'
+import { useLocation } from 'react-router-dom'
+import { AnimatePresence } from 'framer-motion'
+import { Routes, Route } from "react-router-dom"
 
 import App from './App'
 const Error = lazy(() => import('./pages/error'))
@@ -12,53 +14,24 @@ const BuildingChords = lazy(() => import('./pages/building-chords'))
 const PrivacyPolicy = lazy(() => import('./pages/privacy-policy'))
 const TermsOfService = lazy(() => import('./pages/terms-of-service'))
 
-const router = createBrowserRouter([
-    {
-      path: "/",
-      element: (
-        <Suspense fallback={<p>Loading...</p>}>
-            <App />
-        </Suspense>
-      ),
-      errorElement: (
-        <Suspense fallback={<p>Loading...</p>}>
-          <Error />
-        </Suspense>
-      )
-    },
-    {
-      path: "/interval-quiz",
-      element: <IntervalQuiz />,
-    },
-    {
-      path: "/metronome",
-      element: <Metronome />,
-    },
-    {
-      path: "/dictionary",
-      element: <Dictionary />,
-    },
-    {
-      path: "/building-intervals",
-      element: <BuildingIntervals />,
-    },
-    {
-      path: "/chord-quiz",
-      element: <ChordQuiz />,
-    },
-    {
-      path: "/building-chords",
-      element: <BuildingChords />,
-    },
-    {
-      path: "/privacy-policy",
-      element: <PrivacyPolicy />,
-    },
-    {
-      path: "/terms-of-service",
-      element: <TermsOfService />,
-    },
-])
+function Root() {
+  const location = useLocation()
+  return (
+    <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo(0, 0)}>
+    <Routes location={location} key={location.pathname}>
+      <Route path="/"element={<App />}/>
+      <Route path="*" element={<Error />} />
+      <Route path="/interval-quiz" element={<IntervalQuiz />} />
+      <Route path="/metronome" element={<Metronome />} />
+      <Route path="/dictionary" element={<Dictionary />} />
+      <Route path="/building-intervals" element={<BuildingIntervals />} />
+      <Route path="/chord-quiz" element={<ChordQuiz />} />
+      <Route path="/building-chords" element={<BuildingChords />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="/terms-of-service" element={<TermsOfService />} />
+    </Routes>
+    </AnimatePresence>
+  )
+}
 
-const Root = () => <RouterProvider router={router} />
 export default Root

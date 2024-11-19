@@ -107,10 +107,10 @@ const Metronome: React.FC = () => {
                     <p className="leading-relaxed">First, enter your desired tempo and hit start. By default, the metronome will play a 4/4 Time Signature but if you like to you can change it by selecting a different one from the dropdown. Hit Save Changes to apply your tempo and time signature. The metronome covers a BPM range from 40 BPM to 220 BPM.</p>
                     <p className="leading-relaxed mt-6">You can use the metronome to:</p>
                     <ul className="list-disc list-inside">
-                      <li className="mb-2 mt-2 flex baseline before:inline-flex before:content-['\25CF'] before:pr-3">
+                      <li className="mb-2 mt-2 flex baseline before:inline-flex before:content-['\25CF'] before:pr-3 before:font-sans">
                         <span>Learn to play in time. It's really important for a musician not only to know how to play his instrument but to be able to keep a tempo and play in time as well.</span>
                       </li>
-                      <li className="flex baseline before:inline-flex before:content-['\25CF'] before:pr-3">
+                      <li className="flex baseline before:inline-flex before:content-['\25CF'] before:pr-3 before:font-sans">
                         <span>Improve your technique. Start at a slow pace and gradually increase the tempo until you match the song's tempo. While doing this you should remember to avoid mistakes and only increase the tempo when you're comfortable with it.</span>
                       </li>
                     </ul>

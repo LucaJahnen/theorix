@@ -12,33 +12,26 @@ import {
 import { FaRegMoon } from "react-icons/fa"
 import { MdOutlineWbSunny } from "react-icons/md"
 import { useTheme } from "@/hooks/useTheme"
-import { useNavigate } from "react-router-dom"
-// import { easeInOut, motion } from 'framer-motion'
+import { AnimatePresence, motion, usePresence } from 'framer-motion'
+import { useEffect } from 'react'
 
 const Navbar = () => {
     const [visible, setVisible] = useState<boolean>(false)
     const { theme, toggleTheme } = useTheme()
 
-    // const menuVariants = {
-    //   open: { x: 0, transition: { duration: 0.3, ease: easeInOut } },
-    //   closed: { x: '100%', transition: { duration: 0.3, ease: easeInOut } },
-    // };
+    const [isPresent, safeToRemove] = usePresence()
 
-    // variants={menuVariants}
-    // initial="closed"
-    // animate={visible ? 'open' : 'closed'}
-    // exit="closed"
-
-    //const [isAnimating, setIsAnimating] = useState(false)
-    const navigate = useNavigate()
-
-    const handleLinkClick = (path: string) => {
-      //setIsAnimating(true); // Setze den Animations-Status auf "wird animiert"
-      setVisible(false)
-      setTimeout(() => {
-        navigate(path) // Wechsle die Seite nach der Verzögerung
-      }, 300) // Wartezeit in ms, abhängig von der Dauer deiner CSS-Animation
+    const menuVariants = {
+      open: { x: 0, transition: { duration: 0.5, ease: "easeInOut" } },
+      closed: { x: "100%", transition: { duration: 0.5, ease: "easeInOut" } },
+      exit: { x: "100%", transition: { duration: 0.5, ease: "easeInOut" } },
     }
+
+    useEffect(() => {
+      if(!isPresent) {
+        setTimeout(safeToRemove, 500)
+      }
+    }, [isPresent, safeToRemove])
 
     const handleKeyDown = (event: React.KeyboardEvent<HTMLElement>)=> {
       if (event.key === 'Enter' || event.key === ' ') {
@@ -101,37 +94,60 @@ const Navbar = () => {
       </div>
       </div>
       </nav>
-      <div className={`gap-6 lg:flex w-full h-full fixed z-[1000] top-0 left-0 px-4 pt-[10%] bg-background ${visible ? "translate-x-0" : "translate-x-full"} transition-transform ease-in-out duration-700 transition-background-color duration-300 transition-color duration-300 lg:translate-x-0 lg:relative lg:bg-white lg:p-0 lg:w-fit lg:h-fit`}>
-        <div className="pt-14 lg:hidden">
-          <h2 className="font-semibold text-xl">Intervals</h2>
-          <ul className="pb-4">
-            <li className="text-lg">
-              <Link to="/building-intervals" onClick={(e) => { e.preventDefault(); handleLinkClick("/building-intervals") }}>Building Intervals</Link>
-            </li>
-            <li className="text-lg">
-              <Link to="/interval-quiz" onClick={(e) => { e.preventDefault(); handleLinkClick("/interval-quiz") }}>Interval Quiz</Link>
-            </li>
-          </ul>
-          <h2 className="font-semibold text-xl">Chords</h2>
-          <ul className="pb-4">
-            <li className="text-lg">
-              <Link to="/building-chords">Building Chords</Link>
-            </li>
-            <li className="text-lg">
-              <Link to="/chord-quiz">Chord Quiz</Link>
-            </li>
-          </ul>
-          <h2 className="font-semibold text-xl">Tools</h2>
-          <ul>
-            <li className="text-lg">
-              <Link to="/metronome">Metronome</Link>
-            </li>
-            <li className="text-lg">
-              <Link to="/dictionary">Dictionary</Link>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <AnimatePresence mode="wait">
+        {visible ? (
+          <motion.div
+            className={`gap-6 lg:flex w-full h-full fixed z-[1000] top-0 left-0 px-4 pt-[10%] bg-background lg:translate-x-0 lg:relative lg:bg-white lg:p-0 lg:w-fit lg:h-fit`}
+            initial="closed"
+            animate="open"
+            exit="exit"
+            variants={menuVariants}
+            key="menu"
+          >
+            <div className="pt-14 lg:hidden">
+              <h2 className="font-semibold text-xl">Intervals</h2>
+              <ul className="pb-4">
+                <li className="text-lg">
+                  <Link to="/building-intervals" onClick={() => setVisible(false)}>
+                    Building Intervals
+                  </Link>
+                </li>
+                <li className="text-lg">
+                  <Link to="/interval-quiz" onClick={() => setVisible(false)}>
+                    Interval Quiz
+                  </Link>
+                </li>
+              </ul>
+              <h2 className="font-semibold text-xl">Chords</h2>
+              <ul className="pb-4">
+                <li className="text-lg">
+                  <Link to="/building-chords" onClick={() => setVisible(false)}>
+                    Building Chords
+                  </Link>
+                </li>
+                <li className="text-lg">
+                  <Link to="/chord-quiz" onClick={() => setVisible(false)}>
+                    Chord Quiz
+                  </Link>
+                </li>
+              </ul>
+              <h2 className="font-semibold text-xl">Tools</h2>
+              <ul>
+                <li className="text-lg">
+                  <Link to="/metronome" onClick={() => setVisible(false)}>
+                    Metronome
+                  </Link>
+                </li>
+                <li className="text-lg">
+                  <Link to="/dictionary" onClick={() => setVisible(false)}>
+                    Dictionary
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
     </>
   )
 }

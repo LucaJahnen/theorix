@@ -1,10 +1,13 @@
 import { createRoot } from 'react-dom/client'
 import { Suspense } from "react"
 import './index.css'
-import Root from './root.tsx'
+import AppRoutes from './root'
+import { BrowserRouter } from 'react-router-dom'
 
 createRoot(document.getElementById('root')!).render(
-  <Suspense fallback={<p>Loading...</p>}>
-    <Root />
-  </Suspense>
+  <BrowserRouter>
+    <Suspense fallback={<p>Loading...</p>}>
+      <AppRoutes />
+    </Suspense>
+  </BrowserRouter>
 )
