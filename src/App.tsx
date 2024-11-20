@@ -22,17 +22,17 @@ function App() {
               <Button className="py-5 text-base lg:px-6 lg:py-[1.375rem]">Start learning</Button>
             </Link>
         </section>
-        <div className="lg:flex lg:justify-between">
-        <div>
+        <div className="lg:flex lg:justify-between lg:align-center">
+        <div className="lg:mr-[20%]">
           <h2 className="mt-20 text-2xl font-semibold lg:mt-12">Our tools</h2>
           <section className="mt-4">
             <h3 className="text-lg font-semibold">Metronome</h3>
-            <p className="pb-2 lg:max-w-[40ch]">Set your own tempo, practice rhythm and timing at your own pace.</p>
+            <p className="pb-2">Set your own tempo, practice rhythm and timing at your own pace.</p>
             <Link to="/metronome" className="font-semibold">Check it out</Link>
           </section>
           <section className="mt-8">
             <h3 className="text-lg font-semibold">Dictionary</h3>
-            <p className="pb-2 lg:max-w-[40ch]">Look up andy musical term, symbol or abbreviation.</p>
+            <p className="pb-2">Look up andy musical term, symbol or abbreviation.</p>
             <Link to="/dictionary" className="font-semibold">Check it out</Link>
           </section>
         </div>
@@ -40,12 +40,12 @@ function App() {
           <h2 className="mt-12 text-2xl font-semibold">Latest tutorials</h2>
           <section className="mt-4">
             <h3 className="text-lg font-semibold">Building Intervals</h3>
-            <p className="pb-2 lg:max-w-[40ch]">Learn how to measure intervals, one of the most important concepts of music theory.</p>
+            <p className="pb-2">Learn how to measure intervals, one of the most important concepts of music theory.</p>
             <Link to="/building-intervals" className="font-semibold">Check it out</Link>
           </section>
           <section className="mt-8">
             <h3 className="text-lg font-semibold">Building Chords</h3>
-            <p className="pb-2 lg:max-w-[40ch]">Learn how to create and determine chords by reading this article.</p>
+            <p className="pb-2">Learn how to create and determine chords by reading this article.</p>
             <Link to="/building-chords" className="font-semibold">Check it out</Link>
           </section>
         </div>

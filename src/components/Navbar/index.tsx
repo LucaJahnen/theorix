@@ -15,7 +15,7 @@ import { useTheme } from "@/hooks/useTheme"
 import { AnimatePresence, motion, usePresence } from 'framer-motion'
 import { useEffect } from 'react'
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
     const [visible, setVisible] = useState<boolean>(false)
     const { theme, toggleTheme } = useTheme()
 

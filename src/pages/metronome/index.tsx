@@ -13,9 +13,10 @@ import { Input } from "@/components/ui/input"
 import { Link } from "react-router-dom"
 import React, { useState } from "react"
 import click from "../../assets/click.wav"
+// credit: https://samplefocus.com/samples/drum-percussion-click-stick
 import { useMetronome } from "@/hooks/useMetronome"
 import { useTapTempo } from "@/hooks/useTapTempo"
-// credit: https://samplefocus.com/samples/drum-percussion-click-stick
+import { Helmet } from "react-helmet"
 
 const Metronome: React.FC = () => {
     const [tempo, setTempo] = useState<number>(120)
@@ -53,6 +54,10 @@ const Metronome: React.FC = () => {
 
     return (
         <>
+            <Helmet>
+                <title>Metronome</title>
+                <meta name="description" content="Practice keeping a tempo using this metronome." />
+            </Helmet>
             <Navbar />
             <div className="px-4 pt-4 lg:w-[60%] lg:block lg:m-auto">
                 <h1 className="text-2xl font-semibold pb-1 lg:text-3xl">Metronome</h1>

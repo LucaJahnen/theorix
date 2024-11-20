@@ -2,10 +2,15 @@ import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import Card from "@/components/Card"
 import { Link } from "react-router-dom"
+import { Helmet } from "react-helmet"
 
 const BuildingIntervals = () => {
   return (
     <>
+        <Helmet>
+            <title>Building Intervals</title>
+            <meta name="description" content="This article helps you understand intervals and offers an excercise you can try." />
+        </Helmet>
         <Navbar />
         <div className="px-4 pt-6 lg:w-[60%] lg:block lg:m-auto">
             <h1 className="text-2xl font-semibold pb-6 lg:text-3xl">Building Intervals</h1>

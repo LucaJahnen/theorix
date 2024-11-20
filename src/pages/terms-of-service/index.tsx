@@ -1,9 +1,14 @@
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
+import { Helmet } from "react-helmet"
 
 const TermsOfService: React.FC = () => {
     return (
         <>
+            <Helmet>
+                <title>Terms and Conditions</title>
+                <meta name="description" content="This page states the terms and conditions for using this website." />
+            </Helmet>
             <Navbar />
             <div className="px-4 pt-4 lg:w-[60%] lg:block lg:m-auto">
             <h1 className="text-2xl font-semibold pb-3 lg:text-3xl">Terms and Conditions</h1>
@@ -15,31 +20,31 @@ const TermsOfService: React.FC = () => {
             <h3>Definitions</h3>
             <p className="leading-relaxed">For the purposes of these Terms and Conditions:</p>
             <ul className="list-disc list-inside">
-                <li className="mb-4 mt-4 flex baseline before:inline-flex before:content-['\25CF'] before:pr-3">
+                <li className="mb-4 mt-4 flex baseline before:inline-flex before:content-['\25CF'] before:pr-3 before:font-sans">
                     <p className="leading-relaxed"><strong>Affiliate</strong> means an entity that controls, is controlled by or is under common control with a party, where &quot;control&quot; means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.</p>
                 </li>
-                <li className="mb-4 mt-4 flex baseline before:inline-flex before:content-['\25CF'] before:pr-3">
+                <li className="mb-4 mt-4 flex baseline before:inline-flex before:content-['\25CF'] before:pr-3 before:font-sans">
                     <p className="leading-relaxed"><strong>Country</strong> refers to: Rheinland-Pfalz,  Germany</p>
                 </li>
-                <li className="mb-4 mt-4 flex baseline before:inline-flex before:content-['\25CF'] before:pr-3">
+                <li className="mb-4 mt-4 flex baseline before:inline-flex before:content-['\25CF'] before:pr-3 before:font-sans">
                     <p className="leading-relaxed"><strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to theorix.</p>
                 </li>
-                <li className="mb-4 mt-4 flex baseline before:inline-flex before:content-['\25CF'] before:pr-3">
+                <li className="mb-4 mt-4 flex baseline before:inline-flex before:content-['\25CF'] before:pr-3 before:font-sans">
                     <p className="leading-relaxed"><strong>Device</strong> means any device that can access the Service such as a computer, a cellphone or a digital tablet.</p>
                 </li>
-                <li className="mb-4 mt-4 flex baseline before:inline-flex before:content-['\25CF'] before:pr-3">
+                <li className="mb-4 mt-4 flex baseline before:inline-flex before:content-['\25CF'] before:pr-3 before:font-sans">
                     <p className="leading-relaxed"><strong>Service</strong> refers to the Website.</p>
                 </li>
-                <li className="mb-4 mt-4 flex baseline before:inline-flex before:content-['\25CF'] before:pr-3">
+                <li className="mb-4 mt-4 flex baseline before:inline-flex before:content-['\25CF'] before:pr-3 before:font-sans">
                     <p className="leading-relaxed"><strong>Terms and Conditions</strong> (also referred as &quot;Terms&quot;) mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service. This Terms and Conditions agreement has been created with the help of the <a href="https://www.termsfeed.com/terms-conditions-generator/" target="_blank">Terms and Conditions Generator</a>.</p>
                 </li>
-                <li className="mb-4 mt-4 flex baseline before:inline-flex before:content-['\25CF'] before:pr-3">
+                <li className="mb-4 mt-4 flex baseline before:inline-flex before:content-['\25CF'] before:pr-3 before:font-sans">
                     <p className="leading-relaxed"><strong>Third-party Social Media Service</strong> means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.</p>
                 </li>
-                <li className="mb-4 mt-4 flex baseline before:inline-flex before:content-['\25CF'] before:pr-3">
+                <li className="mb-4 mt-4 flex baseline before:inline-flex before:content-['\25CF'] before:pr-3 before:font-sans">
                     <p className="leading-relaxed"><strong>Website</strong> refers to theorix, accessible from <a href="https://theorix.netlify.app" rel="external nofollow noopener" target="_blank">https://theorix.netlify.app</a></p>
                 </li>
-                <li className="mb-4 mt-4 flex baseline before:inline-flex before:content-['\25CF'] before:pr-3">
+                <li className="mb-4 mt-4 flex baseline before:inline-flex before:content-['\25CF'] before:pr-3 before:font-sans">
                     <p className="leading-relaxed"><strong>You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</p>
                 </li>
             </ul>

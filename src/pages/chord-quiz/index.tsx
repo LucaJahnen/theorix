@@ -16,10 +16,10 @@ import Footer from "../../components/Footer"
 import { Input } from "@/components/ui/input"
 import useCreateChord from "@/hooks/useCreateChord"
 import Vex from "vexflow"
-const { Renderer, Stave, StaveNote, Voice, Formatter, Accidental } = Vex.Flow;
+const { Renderer, Stave, StaveNote, Voice, Formatter, Accidental } = Vex.Flow
+import { Helmet } from "react-helmet"
 
-
-const ChordQuiz = () => {
+const ChordQuiz: React.FC = () => {
   const [correct, setCorrect] = useState<boolean>(false)
   const [visible, setVisible] = useState<boolean>(false)
   const [chord, setChord] = useState<string[]>([])
@@ -89,6 +89,10 @@ const ChordQuiz = () => {
 
   return (
     <>
+        <Helmet>
+            <title>Chord Quiz</title>
+            <meta name="description" content="This tool tests your knowledge on chords." />
+        </Helmet>
         <Navbar />
         <div className="px-4 pt-4 lg:w-[60%] lg:block lg:m-auto">
             <h1 className="text-2xl font-semibold pb-1 lg:text-3xl">Chord Quiz</h1>

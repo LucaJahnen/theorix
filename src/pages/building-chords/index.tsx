@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import { Link } from "react-router-dom"
 import { useEffect, useRef } from "react"
+import { Helmet } from "react-helmet"
 import Vex from "vexflow"
 const { Renderer, Stave, StaveNote, Voice, Formatter, Accidental } = Vex.Flow
 
@@ -85,6 +86,10 @@ const BuildingChords: React.FC = () => {
 
     return (
         <>
+            <Helmet>
+                <title>Building Chords</title>
+                <meta name="description" content="This article helps you understand chords and offers an excercise you can try." />
+            </Helmet>
             <Navbar />
             <div className="px-4 pt-8 lg:w-[60%] lg:block lg:m-auto">
                 <h1 className="text-2xl font-semibold pb-6 lg:text-3xl">Building Chords</h1>

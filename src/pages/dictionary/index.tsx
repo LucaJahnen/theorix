@@ -14,6 +14,7 @@ import {
 import data from './data'
 import renderResults from './renderResults'
 import { useState } from 'react'
+import { Helmet } from 'react-helmet'
 
 export interface FilteredItem {
     tempo?: string;
@@ -65,29 +66,12 @@ const Dictionary: React.FC = () => {
         setSubmitted(false)
     }
 
-    // const scrollToElement = (id: string) => {
-    //     const element = document.getElementById(id)
-    //     const navbar = document.querySelector('.navbar') as HTMLElement
-    //     // console.log(element?.getBoundingClientRect().top)
-      
-    //     if (element && navbar) {
-    //       const navbarHeight = navbar.offsetHeight
-    //       const elementPosition = element.getBoundingClientRect().top + window.scrollY
-    //       const offsetPosition = elementPosition - navbarHeight
-      
-    //       console.log(`Scrolling to: ${id}, Position: ${offsetPosition}`) // Debugging-Ausgabe
-      
-    //       window.scrollTo({
-    //         top: offsetPosition,
-    //         behavior: 'smooth',
-    //       })
-    //     } else {
-    //       console.error(`Element with id ${id} not found`) // Fehlerausgabe, falls das Element nicht gefunden wird
-    //     }
-    //   }
-
   return (
     <>
+        <Helmet>
+            <title>Dictionary</title>
+            <meta name="description" content="Found a term you don't know? Look it up here." />
+        </Helmet>
         <Navbar />
         <div className="px-4 pt-4 lg:w-[60%] lg:block lg:m-auto">
             <h1 className="text-2xl font-semibold pb-1 lg:text-3xl">Dictionary of Italian musical terms</h1>

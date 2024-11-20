@@ -1,10 +1,15 @@
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
+import { Helmet } from "react-helmet"
 
 
 const PrivacyPolicy: React.FC = () => {
     return (
         <>
+            <Helmet>
+                <title>Privacy Policy</title>
+                <meta name="description" content="This privacy policy helps you understand which information we collect and why we collect it." />
+            </Helmet>
             <Navbar />
             <div className="px-4 pt-8 lg:w-[60%] lg:block lg:m-auto">
                 <h1 className="text-2xl font-semibold pb-6 lg:text-3xl">Privacy Policy</h1>
