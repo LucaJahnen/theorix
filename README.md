@@ -2,6 +2,7 @@
 Theorix helps you understand music theory in no time. Check out our articles and interactive tools to test your knowledge.
 
 If you want to support this project, feel free to donate:
+
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/E1E2168I60)
 
 ## My Process
