@@ -1,6 +1,9 @@
 # Theorix - music theory
 Theorix helps you understand music theory in no time. Check out our articles and interactive tools to test your knowledge.
 
+If you want to support this project, feel free to donate:
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/E1E2168I60)
+
 ## My Process
 I wanted to create a real web application so I combined my two hobbies: Music and programming. After figuring out which tools I would need I started developing. First, I found a tool called [react-vexflow](https://github.com/markacola/react-vexflow) but due to it's limited functionality, I had to rely on vexflow itself. I also wanted to use ShadcnUi so I used tailwind as well even though I never used it before. ShadcnUi offers great components but I don't like the tailwind approach because now html elements and styling is in done in the same file again.
 
@@ -35,5 +38,6 @@ const router = createBrowserRouter([
 - [ShadcnUi](https://ui.shadcn.com/): ShadcnUi allowed me to spend more time on developing tools and writing articles instead of messing with buttons or FAQ sections
 - [Vexflow](https://www.vexflow.com/): Vexflow makes creating clefs and writing sheet music on the web
 effortless
+- [React Helmet](https://www.npmjs.com/package/react-helmet): React Helmet allows to to easily add title and meta descriptions for every page
 
 **Note:** These are only some dependencies I wanted to mention
