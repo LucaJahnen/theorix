@@ -10,8 +10,8 @@ const TermsOfService: React.FC = () => {
                 <meta name="description" content="This page states the terms and conditions for using this website." />
             </Helmet>
             <Navbar />
-            <div className="px-4 pt-4 lg:w-[60%] lg:block lg:m-auto">
-            <h1 className="text-2xl font-semibold pb-3 lg:text-3xl">Terms and Conditions</h1>
+            <div className="px-4 pt-6 lg:w-[60%] lg:block lg:m-auto">
+            <h1 className="text-3xl font-semibold pb-4">Terms and Conditions</h1>
             <p className="leading-relaxed">Last updated: November 15, 2024</p>
             <p className="leading-relaxed">Please read these terms and conditions carefully before using Our Service.</p>
             <h2 className="font-semibold text-xl mt-2 mb-1">Interpretation and Definitions</h2>
@@ -90,7 +90,7 @@ const TermsOfService: React.FC = () => {
             <p className="leading-relaxed">By continuing to access or use Our Service after those revisions become effective, You agree to be bound by the revised terms. If You do not agree to the new terms, in whole or in part, please stop using the website and the Service.</p>
             <h2 className="font-semibold text-xl mb-2 mt-4">Contact Us</h2>
             <p className="leading-relaxed">If you have any questions about these Terms and Conditions, You can contact us:</p>
-            <p className="leading-relaxed">By email: <a href="mailto:support@theorix.com" className="underline">support@theorix.com</a></p>
+            <p className="leading-relaxed">By email: <a href="mailto:help.theorix@gmail.com" className="underline">help.theorix@gmail.com</a></p>
             </div>
             <Footer />
         </>

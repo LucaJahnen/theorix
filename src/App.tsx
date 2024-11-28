@@ -24,7 +24,7 @@ function App() {
         </section>
         <div className="lg:flex lg:justify-between lg:align-center">
         <div className="lg:mr-[20%]">
-          <h2 className="mt-20 text-2xl font-semibold lg:mt-12">Our tools</h2>
+          <h2 className="pt-7 text-2xl font-semibold lg:mt-12">Our tools</h2>
           <section className="mt-4">
             <h3 className="text-lg font-semibold">Metronome</h3>
             <p className="pb-2">Set your own tempo, practice rhythm and timing at your own pace.</p>
@@ -50,7 +50,7 @@ function App() {
           </section>
         </div>
         </div>
-        <section className="mt-20 pt-10">
+        <section className="pt-10 mt-4 lg:mt-20">
           <section>
             <h4 className="text-2xl font-semibold mb-2 lg:text-center">What is different about theorix?</h4>
             <p className="leading-relaxed lg:text-center lg:max-w-[45ch] lg:m-auto">theorix provides detailed and easy to understand tutorials about music theory like chords and intervals and tools like a metronome.</p>

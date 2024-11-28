@@ -94,14 +94,14 @@ const ChordQuiz: React.FC = () => {
             <meta name="description" content="This tool tests your knowledge on chords." />
         </Helmet>
         <Navbar />
-        <div className="px-4 pt-4 lg:w-[60%] lg:block lg:m-auto">
-            <h1 className="text-2xl font-semibold pb-1 lg:text-3xl">Chord Quiz</h1>
+        <div className="px-4 pt-6 lg:w-[60%] lg:block lg:m-auto">
+            <h1 className="text-3xl font-semibold pb-4">Chord Quiz</h1>
             <p>Which interval is shown below? Enter the quality and the interval number</p>
             <div className="filter invert-stave" ref={scoreRef} />
           <form action="#" className="flex flex-col gap-4 lg:flex-row lg:flex-row lg:items-end lg:gap-7 lg:gap-7" onSubmit={e => handleSubmit(e)}>
             <Label htmlFor="root-number" className="flex flex-col gap-1.5 relative z-10">
               <span>Root Note</span>
-              <Input type="text" pattern="^[a-g](#|b)?$" id="root-number" name="root" placeholder="e. g. C, Eb, G, A#" />
+              <Input type="text" pattern="^[a-gA-G](#|b)?$" id="root-number" name="root" placeholder="e. g. C, Eb, G, A#" />
             </Label>
             <Label htmlFor="number" className="relative z-10 flex flex-col gap-1.5">
               <span className="flex flex-col gap-1.5">Chord Type</span>
@@ -120,7 +120,9 @@ const ChordQuiz: React.FC = () => {
             <Button className="mt-1 w-full lg:w-auto">Submit Answer</Button>
           </form>
           <Modal correct={correct} visible={visible} setVisible={setVisible} type="chord" solution={chord[3]} />
-          <h2 className="text-2xl font-semibold pb-1 pt-10">How to identify chords</h2>
+          <h2 className="text-2xl font-semibold pb-1 pt-10">How to use</h2>
+          <p className="mb-4">This tool shows every chord in its four different types: major, minor, augmented and diminished. Every chord is shown in its root position so determining the root note should not be too diffucult because it is the lowest note. Next you need to determine the chord type by figuring out the intervals between the three notes. If you are not sure how to determine these intervals you can check out <Link to="/building-intervals" className="underline">this article</Link>.</p>
+          <h2 className="text-2xl font-semibold pb-1">How to identify chords</h2>
           <p className="mb-4">To identify an interval between two notes, follow these steps:</p>
           <ol className="">
                 <li className="before:content-['1.'] before:inline-flex before:pr-3 before:font-medium before:text-primary mb-4 flex baseline"><span><span className="font-semibold">Determine the root note:</span> In this example the root note is always the lowest note but in some excercises you might need to change the chord inversion to root position.</span></li>

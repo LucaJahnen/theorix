@@ -13,7 +13,7 @@ const BuildingIntervals = () => {
         </Helmet>
         <Navbar />
         <div className="px-4 pt-6 lg:w-[60%] lg:block lg:m-auto">
-            <h1 className="text-2xl font-semibold pb-6 lg:text-3xl">Building Intervals</h1>
+            <h1 className="text-3xl font-semibold pb-4">Building Intervals</h1>
             <p className="mb-7 leading-relaxed">When learning music theory, intervals are one of the most fundamental concepts. Intervals are the building blocks of melodies and chords, and understanding them will greatly improve your ability to read, play, and compose music. In this article, I'll explain what intervals are and how they are measured.</p>
             <h2 className="text-2xl font-semibold pb-1">What are Intervals in Music?</h2>
             <p className="mb-5 leading-relaxed">An interval is the distance between two notes. It tells you how far apart the notes are in pitch. Intervals are named according to two main factors: quality and number. These determine how the interval sounds and how far apart the notes are.</p>

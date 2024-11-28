@@ -11,15 +11,15 @@ const PrivacyPolicy: React.FC = () => {
                 <meta name="description" content="This privacy policy helps you understand which information we collect and why we collect it." />
             </Helmet>
             <Navbar />
-            <div className="px-4 pt-8 lg:w-[60%] lg:block lg:m-auto">
-                <h1 className="text-2xl font-semibold pb-6 lg:text-3xl">Privacy Policy</h1>
+            <div className="px-4 pt-6 lg:w-[60%] lg:block lg:m-auto">
+                <h1 className="text-3xl font-semibold pb-4">Privacy Policy</h1>
                 <h2 className="font-semibold text-xl mb-3">I. Information on the Processing of Your Data in Accordance with Article 13 of the General Data Protection Regulation (GDPR)</h2>
                 <h3 className="font-semibold text-lg mb-2">1. Controller and Data Protection Officer</h3>
                 <p>The entity responsible for this website is:</p>
                 <p>Luca Jahnen</p>
-                <a href="mailto:support@theorix.com" className="underline">support@theorix.com</a>
+                <a href="mailto:help.theorix@gmail.com" className="underline">help.theorix@gmail.com</a>
                 <p>You can reach the Data Protection Officer by email at:</p>
-                <a href="mailto:support@theorix.com" className="underline">support@theorix.com</a>
+                <a href="mailto:help.theorix@gmail.com" className="underline">help.theorix@gmail.com</a>
                 <h3 className="font-semibold text-lg mb-2 mt-5">2. Data Processed for Providing the Website and Creating Log Files</h3>
                 <h4 className="font-semibold">a. What data is processed for what purpose?</h4>
                 <p>Each time content on the website is accessed, data that may allow for identification is temporarily stored. The following data is collected:</p>

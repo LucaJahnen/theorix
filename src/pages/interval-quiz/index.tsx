@@ -74,8 +74,8 @@ const IntervalQuiz = () => {
             <meta name="description" content="This tool test your knowledge on intervals." />
         </Helmet>
         <Navbar />
-        <div className="px-4 pt-4 lg:w-[60%] lg:block lg:m-auto">
-            <h1 className="text-2xl font-semibold pb-1 lg:text-3xl">Interval Quiz</h1>
+        <div className="px-4 pt-6 lg:w-[60%] lg:block lg:m-auto">
+            <h1 className="text-3xl font-semibold pb-4">Interval Quiz</h1>
             <p>Which interval is shown below? Enter the quality and the interval number</p>
             <div className="filter invert-stave" ref={scoreRef} />
           <form action="#" className="flex flex-col gap-4 lg:flex-row lg:flex-row lg:items-end lg:gap-7 lg:gap-7" onSubmit={e => handleSubmit(e)}>
@@ -99,11 +99,13 @@ const IntervalQuiz = () => {
             <Button className="mt-1 w-full lg:w-auto">Submit Answer</Button>
           </form>
           <Modal correct={correct} visible={visible} setVisible={setVisible} type="interval" solution={intervalNames[intervalIndex - 1]} />
-          <h2 className="text-2xl font-semibold pb-1 pt-10">How to identify Intervals</h2>
-          <p className="mb-4">To identify an interval between two notes, follow these steps:</p>
+          <h2 className="text-2xl font-semibold pb-1 pt-10">How to use</h2>
+          <p className="mb-4">This tool is meant for beginners so you only need to determine the interval number. But in order to add a bit of challenge, the intervals from unison to seventh may appear upwards or downwards from the first note so pay attention.</p>
+          <h2 className="text-2xl font-semibold pb-1">How to identify Intervals</h2>
+          <p className="mb-4">To identify an interval between two notes, follow this step:</p>
           <ol className="">
                 <li className="before:content-['1.'] before:inline-flex before:pr-3 before:font-medium before:text-primary mb-4 flex baseline"><span><span className="font-semibold">Count the Letter Names:</span> Start with the lower note and count up through the musical alphabet to the higher note. For example, from C to E, count C (1), D (2), E (3), giving you a "third."</span></li>
-                <li className="before:content-['2.'] before:inline-flex before:pr-3 before:font-medium before:text-primary mb-4 flex baseline">
+                {/* <li className="before:content-['2.'] before:inline-flex before:pr-3 before:font-medium before:text-primary mb-4 flex baseline">
                   <span>
                       <span className="font-semibold">Determine the Quality:</span> 
                       After finding the number, determine the interval's quality (perfect, major, minor, diminished, or augmented):
@@ -119,7 +121,7 @@ const IntervalQuiz = () => {
                       </li>
                     </ul>
                     </span>
-                  </li>
+                  </li> */}
             </ol>
             <p>By counting the steps and identifying the quality, you'll quickly recognize each interval! For more details, check out our <Link to="/building-intervals" className="underline">dedicated article</Link> on intervals in music theory.</p>
         </div>

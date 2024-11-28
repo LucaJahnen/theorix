@@ -73,8 +73,8 @@ const Dictionary: React.FC = () => {
             <meta name="description" content="Found a term you don't know? Look it up here." />
         </Helmet>
         <Navbar />
-        <div className="px-4 pt-4 lg:w-[60%] lg:block lg:m-auto">
-            <h1 className="text-2xl font-semibold pb-1 lg:text-3xl">Dictionary of Italian musical terms</h1>
+        <div className="px-4 pt-6 lg:w-[60%] lg:block lg:m-auto">
+            <h1 className="text-3xl font-semibold pb-4">Dictionary of Italian musical terms</h1>
             <p>Found a term you do not know? Look it up here</p>
             <form action="#" className='w-full flex flex-row gap-3 py-6' onSubmit={handleSubmit}>
                 <Input type="text" placeholder='Search for a musical term' name='search' required value={searchTerm} onChange={e => handleChange(e)} className='text-base h-9 max-w-[20rem]' />

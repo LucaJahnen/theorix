@@ -59,8 +59,8 @@ const Metronome: React.FC = () => {
                 <meta name="description" content="Practice keeping a tempo using this metronome." />
             </Helmet>
             <Navbar />
-            <div className="px-4 pt-4 lg:w-[60%] lg:block lg:m-auto">
-                <h1 className="text-2xl font-semibold pb-1 lg:text-3xl">Metronome</h1>
+            <div className="px-4 pt-6 lg:w-[60%] lg:block lg:m-auto">
+                <h1 className="text-3xl font-semibold pb-4">Metronome</h1>
                 <p>A metronome helps you to keep a tempo.</p>
                 <div className="flex items-center flex-col gap-3 mt-10">
                     <p className="text-lg">{activeIndex >= 0 ? activeIndex + 1 : "---"}</p>
