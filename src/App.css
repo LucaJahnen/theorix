@@ -19,7 +19,6 @@ body {
 
 html.dark body {
     --background: 0, 0%, 7%;
-    --design-course-bg: 0, 0%, 11.76%;
     --foreground: 0, 0%, 88%;
     --primary-foreground: 0, 0%, 88%;
     --footer: 0, 0%, 4%;

@@ -10,22 +10,33 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { Helmet } from "react-helmet"
+import Rive from '@rive-app/react-canvas'
+import MusicTransparent from "./assets/music-transparent.riv"
 
 function App() {
   return (
     <>
       <Helmet>
         <title>Theorix - Learn music concepts the easy way</title>
-        <meta name="description" content="Theorix imrpoves your ability to read and write sheet music by offering easy to use tools." />
+        <meta name="description" content="Theorix improves your ability to read and write sheet music by offering easy to use tools." />
       </Helmet>
       <Navbar />
       <div className="px-4 pt-4 lg:w-[60%] lg:block lg:m-auto">
-        <section className="mb-10">
-            <h1 className="text-3xl mt-14 font-semibold lg:text-5xl lg:max-w-[18ch] lg:leading-[1.1]">Learn music theory the easy way.</h1>
-            <p className="mt-3 mb-5 lg:mt-5 lg:mb-6 lg:max-w-[45ch] text-lg">Explore music theory basics with clear explanations and interactive exercises. Perfect for all skill levels — get started now!</p>
-            <Link to="/building-intervals">
-              <Button className="py-5 text-base lg:px-6 lg:py-[1.375rem]">Start learning</Button>
-            </Link>
+        <section className="w-full mb-10 lg:flex justify-between flex-row-reverse lg:mt-14">
+            <div className="flex align-center w-full h-auto aspect-[2/1] lg:w-[40%]">
+              <Rive
+                className={`h-auto w-full invert-stave`}
+                src={MusicTransparent}
+                stateMachines="bumpy"
+              />
+            </div>
+            <div className="lg:mr-[10%]">
+              <h1 className="text-3xl font-semibold lg:text-5xl lg:max-w-[18ch] lg:leading-[1.1]">Learn music theory the easy way.</h1>
+              <p className="mt-3 mb-5 lg:mt-5 lg:mb-6 lg:max-w-[45ch] text-lg">Explore music theory basics with clear explanations and interactive exercises. Perfect for all skill levels — get started now!</p>
+              <Link to="/building-intervals">
+                <Button className="py-5 text-base lg:px-6 lg:py-[1.375rem]">Start learning</Button>
+              </Link>
+            </div>
         </section>
         <div className="lg:flex lg:justify-between lg:align-center">
           <div className="lg:mr-[11%]">

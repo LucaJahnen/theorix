@@ -119,7 +119,7 @@ const Dictionary: React.FC = () => {
                         <TableRow key={obj.description}>
                             <TableCell className="font-medium italic font-serif">{obj.symbol}</TableCell>
                             <TableCell>{obj.description}</TableCell>
-                            <TableCell>{obj.meaning} BPM</TableCell>
+                            <TableCell>{obj.meaning}</TableCell>
                         </TableRow>
                         ))}
                     </TableBody>

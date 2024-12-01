@@ -11,13 +11,21 @@ import {
   } from "@/components/ui/dropdown-menu"
 import { FaRegMoon } from "react-icons/fa"
 import { MdOutlineWbSunny } from "react-icons/md"
-import { useTheme } from "@/hooks/useTheme"
+import { useTheme } from "@/components/theme-provider"
 import { AnimatePresence, motion, usePresence } from 'framer-motion'
 import { useEffect } from 'react'
 
 const Navbar: React.FC = () => {
     const [visible, setVisible] = useState<boolean>(false)
-    const { theme, toggleTheme } = useTheme()
+    const { theme, setTheme } = useTheme()
+
+    const toggleTheme = () => {
+      if(theme === "light") {
+        setTheme("dark")
+      } else {
+        setTheme("light")
+      }
+    }
 
     const [isPresent, safeToRemove] = usePresence()
 
