@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/accordion"
 import { Helmet } from "react-helmet"
 import Rive from '@rive-app/react-canvas'
-import MusicTransparent from "./assets/music-transparent.riv"
+import Illustration from "./assets/hero-illustration.riv"
 
 function App() {
   return (
@@ -25,8 +25,8 @@ function App() {
         <section className="w-full mb-10 lg:flex justify-between flex-row-reverse lg:mt-14">
             <div className="flex align-center w-full h-auto aspect-[2/1] lg:w-[40%]">
               <Rive
-                className={`h-auto w-full invert-stave`}
-                src={MusicTransparent}
+                className="h-auto w-full invert-stave"
+                src={Illustration}
                 stateMachines="bumpy"
               />
             </div>
