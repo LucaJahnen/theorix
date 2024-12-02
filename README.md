@@ -40,5 +40,5 @@ const router = createBrowserRouter([
 - [Vexflow](https://www.vexflow.com/): Vexflow makes creating clefs and writing sheet music on the web
 effortless
 - [React Helmet](https://www.npmjs.com/package/react-helmet): React Helmet allows to to easily add title and meta descriptions for every page
-
+- [Rive](https://rive.app/): I am no designer but by using Rive I was able to create a good-looking hero illustration
 **Note:** These are only some dependencies I wanted to mention
