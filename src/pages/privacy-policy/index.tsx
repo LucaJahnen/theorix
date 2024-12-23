@@ -1,9 +1,16 @@
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import { Helmet } from "react-helmet"
+import { Button } from "@/components/ui/button"
 
 
 const PrivacyPolicy: React.FC = () => {
+    const handleCookieUpdate = () => {
+        localStorage.removeItem("preference")
+        window.scrollTo(0, 0)
+        window.location.reload()
+    }
+
     return (
         <>
             <Helmet>
@@ -39,7 +46,7 @@ const PrivacyPolicy: React.FC = () => {
                 <h4 className="font-semibold mt-3">b. On what legal basis are these data processed?</h4>
                 <p>The data are processed based on Article 6(1)(f) GDPR.</p>
                 <h4 className="font-semibold mt-3">c. Are there any other recipients of the personal data besides the Controller?</h4>
-                <p>The website is hosted by <strong>[Name, Postal Address, Email Address of the Hosting Provider]</strong>. The hosting provider receives the aforementioned data as a processor.</p>
+                <p>The website is hosted by <strong>Netlify, Inc., 512 2nd Street, Suite 200 San Francisco, CA 94107, support@netlify.com</strong>. The hosting provider receives the aforementioned data as a processor.</p>
                 <h4 className="font-semibold mt-3">d. How long are the data stored?</h4>
                 <p>The data are deleted as soon as they are no longer necessary for the purpose for which they were collected. For the provision of the website, this is the case when the respective session ends..</p>
                 <h3 className="font-semibold text-lg mb-2 mt-5">3. Data Subject Rights</h3>
@@ -57,6 +64,17 @@ const PrivacyPolicy: React.FC = () => {
                 <p>If the conditions of Article 20(1) GDPR are met, you have the right to receive data that we process based on your consent or in fulfillment of a contract in an automated manner, either to yourself or to a third party. The collection of data for providing the website and storing log files is essential for the operation of the website. Therefore, it is not based on consent under Article 6(1)(a) GDPR or a contract under Article 6(1)(b) GDPR, but is justified under Article 6(1)(f) GDPR. Thus, the conditions of Article 20(1) GDPR are not met.</p>
                 <h2 className="font-semibold text-xl mb-3 mt-5">II. Right to Object in Accordance with Article 21(1) GDPR</h2>
                 <p>You have the right to object at any time, on grounds relating to your particular situation, to the processing of your personal data, which is based on Article 6(1)(f) GDPR. The Controller will then no longer process the personal data unless they can demonstrate compelling legitimate grounds for the processing which override the interests, rights, and freedoms of the data subject, or the processing is for the establishment, exercise, or defense of legal claims. The collection of data for the provision of the website and the storage of log files is essential for the operation of the website.</p>
+                <h2 className="font-semibold text-xl mb-3 mt-5">Use of Google Analytics in Consent Mode</h2>
+                <p>We use Google Analytics, a web analytics service provided by Google Ireland Limited ("Google"), on our website. Google Analytics enables us to analyze the use of the website and generate reports to improve our services. Data processing occurs only after your explicit consent.</p>
+                <h3 className="font-semibold text-lg mb-2 mt-5">Processed Data</h3>
+                <p>Google Analytics collects data such as anonymized IP addresses, device and browser information, and website interactions. These data may be transferred to servers in the United States. We have enabled IP anonymization to protect your privacy.</p>
+                <h3 className="font-semibold text-lg mb-2 mt-5">Consent Mode</h3>
+                <p>Data is only collected if you give your consent via our cookie settings tool. You can withdraw your consent at any time or deactivate data collection.</p>
+                <Button variant="ghost" className="underline p-0 hover:bg-transparent text-base font-normal" onClick={handleCookieUpdate}>Update Cookie Settings</Button>
+                <h3 className="font-semibold text-lg mb-2 mt-5">Further Information</h3>
+                <p>For more information, please refer to the <a className="underline" href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>. To prevent the collection of your data by Google Analytics, you can use <a className="underline" href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">this opt-out link</a>.</p>
+                <h3 className="font-semibold text-lg mb-2 mt-5">Data Transfer and Safeguards</h3>
+                <p>To ensure an adequate level of data protection, we use standard contractual clauses for data transfers to Google in the United States.</p>
             </div>
             <Footer />
         </>
