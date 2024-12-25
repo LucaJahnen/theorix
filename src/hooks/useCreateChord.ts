@@ -15,7 +15,7 @@ const useCreateChord = () => {
         ["D", "F", "Ab", "D Diminished"],
         ["D", "F#", "A#", "D Augmented"],
         
-        ["D#", "G", "A#", "D# Major"],
+        ["D#", "F##", "A#", "D# Major"],
         ["D#", "F#", "A#", "D# Minor"],
         ["D#", "F#", "A", "D# Diminished"],
         ["D#", "F##", "A##", "D# Augmented"],
