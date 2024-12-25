@@ -23,6 +23,8 @@ const ChordQuiz: React.FC = () => {
   const [correct, setCorrect] = useState<boolean>(false)
   const [visible, setVisible] = useState<boolean>(false)
   const [chord, setChord] = useState<string[]>([])
+  const [difficulty, setDifficulty] = useState<string>("easy")
+  const scoreRef = useRef<HTMLDivElement | null>(null)
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -33,15 +35,14 @@ const ChordQuiz: React.FC = () => {
     setCorrect(rootInput + " " + typeInput === chord[3])
   }
 
-  const scoreRef = useRef<HTMLDivElement | null>(null)
-
-  function addAccidental(note: InstanceType<typeof StaveNote>, accidental: string | undefined, index: number) {
+  const addAccidental = (note: InstanceType<typeof StaveNote>, accidental: string | undefined, index: number) => {
     if (accidental) {
       note.addModifier(new Accidental(accidental), index)
     }
   }
 
-  const [root, third, fifth, chordName] = useCreateChord()
+  const [root, third, fifth, chordName] = useCreateChord(difficulty)
+  console.log(difficulty)
   
   useEffect(() => {
     if (scoreRef.current && !visible) {
@@ -91,14 +92,27 @@ const ChordQuiz: React.FC = () => {
     <>
         <Helmet>
             <title>Chord Quiz</title>
-            <meta name="description" content="This tool tests your knowledge on chords." />
+            <meta name="description" content="This tool tests your knowledge on chords. Choose a difficulty and get started now." />
         </Helmet>
         <Navbar />
         <div className="px-4 pt-6 lg:w-[60%] lg:block lg:m-auto">
             <h1 className="text-3xl font-semibold pb-4">Chord Quiz</h1>
-            <p>Which interval is shown below? Enter the quality and the interval number</p>
+            <p>Which chord is shown below? Enter the root note and the chord type.</p>
+            <Label htmlFor="number" className="relative z-10 flex flex-col gap-1.5 mt-3">
+              <span className="flex flex-col gap-1.5">Select Difficulty</span>
+              <Select defaultValue="easy" onValueChange={value => setDifficulty(value)}>
+                <SelectTrigger className="w-full relative -z-10 lg:w-[50%]" id="number">
+                  <SelectValue placeholder="e. g. Easy, Medium" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="easy">Easy (only major and minor chords)</SelectItem>
+                  <SelectItem value="medium">Medium (augmented and diminished chords as well)</SelectItem>
+                  <SelectItem value="hard">Hard (all chords and inversions)</SelectItem>
+                </SelectContent>
+              </Select>
+            </Label>
             <div className="filter invert-stave" ref={scoreRef} />
-          <form action="#" className="flex flex-col gap-4 lg:flex-row lg:flex-row lg:items-end lg:gap-7 lg:gap-7" onSubmit={e => handleSubmit(e)}>
+          <form action="#" className="flex flex-col gap-4 lg:flex-row lg:flex-row lg:items-end lg:gap-7" onSubmit={e => handleSubmit(e)}>
             <Label htmlFor="root-number" className="flex flex-col gap-1.5 relative z-10">
               <span>Root Note</span>
               <Input type="text" pattern="^[a-gA-G](#|b)?$" id="root-number" name="root" placeholder="e. g. C, Eb, G, A#" />
