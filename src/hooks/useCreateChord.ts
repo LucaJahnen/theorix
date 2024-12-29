@@ -8,7 +8,7 @@ const useCreateChord = (difficulty: string) => {
         ["C#", "E#", "G#", "C# Major"],
         ["C#", "E", "G#", "C# Minor"],
         ["C#", "E", "G", "C# Diminished"],
-        ["C#", "E#", "A", "C# Augmented"],
+        ["C#", "E#", "G##", "C# Augmented"],
         
         ["D", "F#", "A", "D Major"],
         ["D", "F", "A", "D Minor"],
@@ -62,9 +62,8 @@ const useCreateChord = (difficulty: string) => {
     ]
 
     if(difficulty === "easy") {
-        // generate a random major or minor chord, so the index has to be 1,2 or 5,6 or, 9, 10 or 13, 14...
+        // generate a random major or minor chord, so the index has to be 0, 1 or 4, 5 or, 8, 9 or 12, 13...
         const index = (Math.floor(Math.random() * 10) * 4) + Math.floor(Math.random() * 2)
-        console.log(allChords[index], index)
         return allChords[index]
     } else if(difficulty === "medium" || difficulty === "hard") {
         return allChords[Math.floor(Math.random() * allChords.length)]

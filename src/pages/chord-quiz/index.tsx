@@ -19,7 +19,16 @@ import Vex from "vexflow"
 const { Renderer, Stave, StaveNote, Voice, Formatter, Accidental } = Vex.Flow
 import { Helmet } from "react-helmet"
 
+interface Input {
+  root: string,
+  type: string
+}
+
 const ChordQuiz: React.FC = () => {
+  const [input, setInput] = useState<Input>({
+    root: "", 
+    type: ""
+  })
   const [correct, setCorrect] = useState<boolean>(false)
   const [visible, setVisible] = useState<boolean>(false)
   const [chord, setChord] = useState<string[]>([])
@@ -29,10 +38,11 @@ const ChordQuiz: React.FC = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setVisible(true)
-    const formData = new FormData(e.currentTarget)
-    const rootInput = String(formData.get("root")).toUpperCase()
-    const typeInput = formData.get("type")
-    setCorrect(rootInput + " " + typeInput === chord[3])
+    setCorrect(input.root.toUpperCase() + " " + input.type === chord[3])
+    setInput({
+      root: "", 
+      type: "" 
+    })
   }
 
   const addAccidental = (note: InstanceType<typeof StaveNote>, accidental: string | undefined, index: number) => {
@@ -41,16 +51,31 @@ const ChordQuiz: React.FC = () => {
     }
   }
 
+  const chooseInversion = (notes: string[], root: string) => {
+    const currentInversion = Math.round(Math.random())
+    if(currentInversion === 0) {
+      return [5, notes.indexOf(root.toLowerCase()) <= notes.indexOf("g#") ? 4 : 5, notes.indexOf(root.toLowerCase()) <= notes.indexOf("e#") ? 4 : 5]
+    } else {
+      return [5, 5, notes.indexOf(root.toLowerCase()) <= notes.indexOf("e#") ? 4 : 5]
+    }
+  }
+
   const [root, third, fifth, chordName] = useCreateChord(difficulty)
-  console.log(difficulty)
   
   useEffect(() => {
     if (scoreRef.current && !visible) {
       setChord([root, third, fifth, chordName])
       const notes = ["c", "c#", "db", "d", "d#", "eb", "e", "e#", "fb", "f", "f#", "gb", "g", "g#", "ab", "a", "a#", "bb", "b", "b#"]
-      // determine the right octave so chords are always displayed in the right order: root, third, fifth
-      const secondOctave = notes.indexOf(root.toLowerCase()) <= notes.indexOf("g#") ? 4 : 5
-      const thirdOctave = notes.indexOf(root.toLowerCase()) <= notes.indexOf("e#") ? 4 : 5
+
+      let rootOctave, secondOctave, thirdOctave
+      if(difficulty === "hard") {
+        [rootOctave, secondOctave, thirdOctave] = chooseInversion(notes, root)
+      } else {
+        // determine the right octave so chords are always displayed in the right order: root, third, fifth
+        rootOctave = 4
+        secondOctave = notes.indexOf(root.toLowerCase()) <= notes.indexOf("g#") ? 4 : 5
+        thirdOctave = notes.indexOf(root.toLowerCase()) <= notes.indexOf("e#") ? 4 : 5
+      }
 
       // determine stave width
       const mobileWidth = window.innerWidth - 32
@@ -69,7 +94,7 @@ const ChordQuiz: React.FC = () => {
       const fifthAccidental = fifth.length > 2 ? fifth[1] + fifth[2] : fifth[1]
 
       const renderedNotes = [
-        new StaveNote({ keys: [`${root}/4`, `${third}/${secondOctave}`, `${fifth}/${thirdOctave}`], duration: "h" })
+        new StaveNote({ keys: [`${root}/${rootOctave}`, `${third}/${secondOctave}`, `${fifth}/${thirdOctave}`], duration: "h" })
       ]
 
       addAccidental(renderedNotes[0], rootAccidental, 0)
@@ -86,7 +111,7 @@ const ChordQuiz: React.FC = () => {
     }
   // including these dependencies would cause too many rerenders 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [visible]);
+  }, [visible, difficulty]);
 
   return (
     <>
@@ -115,11 +140,11 @@ const ChordQuiz: React.FC = () => {
           <form action="#" className="flex flex-col gap-4 lg:flex-row lg:flex-row lg:items-end lg:gap-7" onSubmit={e => handleSubmit(e)}>
             <Label htmlFor="root-number" className="flex flex-col gap-1.5 relative z-10">
               <span>Root Note</span>
-              <Input type="text" pattern="^[a-gA-G](#|b)?$" id="root-number" name="root" placeholder="e. g. C, Eb, G, A#" />
+              <Input type="text" pattern="^[a-gA-G](#|b)?$" id="root-number" placeholder="e. g. C, Eb, G, A#" value={input.root} onChange={e => setInput({ ...input, root: e.target.value })} />
             </Label>
             <Label htmlFor="number" className="relative z-10 flex flex-col gap-1.5">
               <span className="flex flex-col gap-1.5">Chord Type</span>
-              <Select name="type" required>
+              <Select required value={input.type} onValueChange={value => setInput({ ...input, type: value })}>
               <SelectTrigger className="w-full relative -z-10" id="number">
                 <SelectValue placeholder="e. g. Major, Diminished" />
               </SelectTrigger>
