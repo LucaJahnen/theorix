@@ -18,6 +18,9 @@ import useCreateChord from "@/hooks/useCreateChord"
 import Vex from "vexflow"
 const { Renderer, Stave, StaveNote, Voice, Formatter, Accidental } = Vex.Flow
 import { Helmet } from "react-helmet"
+import { IoSettingsOutline } from "react-icons/io5"
+import { Music, Music2, Music4 } from "lucide-react"
+import Dialog from "@/components/Dialog"
 
 interface Input {
   root: string,
@@ -33,6 +36,9 @@ const ChordQuiz: React.FC = () => {
   const [visible, setVisible] = useState<boolean>(false)
   const [chord, setChord] = useState<string[]>([])
   const [difficulty, setDifficulty] = useState<string>("easy")
+  const difficulties = ["easy", "medium", "hard"]
+  const [settingsVisible, setSettingsVisible] = useState<boolean>(false)
+  const [activeIndex, setActiveIndex] = useState<number>(0)
   const scoreRef = useRef<HTMLDivElement | null>(null)
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -67,14 +73,14 @@ const ChordQuiz: React.FC = () => {
       setChord([root, third, fifth, chordName])
       const notes = ["c", "c#", "db", "d", "d#", "eb", "e", "e#", "fb", "f", "f#", "gb", "g", "g#", "ab", "a", "a#", "bb", "b", "b#"]
 
-      let rootOctave, secondOctave, thirdOctave
+      let rootOctave, thirdOctave, fifthOctave
       if(difficulty === "hard") {
-        [rootOctave, secondOctave, thirdOctave] = chooseInversion(notes, root)
+        [rootOctave, thirdOctave, fifthOctave] = chooseInversion(notes, root)
       } else {
         // determine the right octave so chords are always displayed in the right order: root, third, fifth
         rootOctave = 4
-        secondOctave = notes.indexOf(root.toLowerCase()) <= notes.indexOf("g#") ? 4 : 5
-        thirdOctave = notes.indexOf(root.toLowerCase()) <= notes.indexOf("e#") ? 4 : 5
+        thirdOctave = notes.indexOf(root.toLowerCase()) <= notes.indexOf("g#") ? 4 : 5
+        fifthOctave = notes.indexOf(root.toLowerCase()) <= notes.indexOf("e#") ? 4 : 5
       }
 
       // determine stave width
@@ -89,13 +95,15 @@ const ChordQuiz: React.FC = () => {
       const context = renderer.getContext();
       const stave = new Stave(0, 0, width);
 
-      const rootAccidental = root.length > 2 ? root[1] + root[2] : root[1]
-      const thirdAccidental = third.length > 2 ? third[1] + third[2] : third[1]
-      const fifthAccidental = fifth.length > 2 ? fifth[1] + fifth[2] : fifth[1]
+      const rootAccidental = root.slice(1, 3)
+      const thirdAccidental = third.slice(1, 3)
+      const fifthAccidental = fifth.slice(1, 3)
 
       const renderedNotes = [
-        new StaveNote({ keys: [`${root}/${rootOctave}`, `${third}/${secondOctave}`, `${fifth}/${thirdOctave}`], duration: "h" })
+        new StaveNote({ keys: [`${root}/${rootOctave}`, `${third}/${thirdOctave}`, `${fifth}/${fifthOctave}`], duration: "h" })
       ]
+
+      // renderedNotes[0].setXShift(30)    
 
       addAccidental(renderedNotes[0], rootAccidental, 0)
       addAccidental(renderedNotes[0], thirdAccidental, 1)
@@ -118,24 +126,39 @@ const ChordQuiz: React.FC = () => {
         <Helmet>
             <title>Chord Quiz</title>
             <meta name="description" content="This tool tests your knowledge on chords. Choose a difficulty and get started now." />
+            <meta name="keywords" content="chord identification, chord quiz, chord training" />
         </Helmet>
         <Navbar />
         <div className="px-4 pt-6 lg:w-[60%] lg:block lg:m-auto">
             <h1 className="text-3xl font-semibold pb-4">Chord Quiz</h1>
             <p>Which chord is shown below? Enter the root note and the chord type.</p>
-            <Label htmlFor="number" className="relative z-10 flex flex-col gap-1.5 mt-3">
-              <span className="flex flex-col gap-1.5">Select Difficulty</span>
-              <Select defaultValue="easy" onValueChange={value => setDifficulty(value)}>
-                <SelectTrigger className="w-full relative -z-10 lg:w-[50%]" id="number">
-                  <SelectValue placeholder="e. g. Easy, Medium" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="easy">Easy (only major and minor chords)</SelectItem>
-                  <SelectItem value="medium">Medium (augmented and diminished chords as well)</SelectItem>
-                  <SelectItem value="hard">Hard (all chords and inversions)</SelectItem>
-                </SelectContent>
-              </Select>
-            </Label>
+            <Button variant="secondary" className="mt-4 mb-2" onClick={() => setSettingsVisible(true)}>
+              <IoSettingsOutline />Settings
+            </Button>
+            <Dialog isOpen={settingsVisible} onClose={() => { setSettingsVisible(false); setDifficulty(difficulties[activeIndex]) }}>
+              <h2 className="text-2xl font-semibold pb-1">Choose a difficulty</h2>
+              <Button className={`text-wrap text-left bg-transparent text-foreground mt-2 shadow-none flex flex-row justify-start items-start gap-0 h-auto w-full transition-all focus-visible:outline-primary ${activeIndex === 0 ? "outline outline-1 outline-grey-400" : ""}`} onClick={() => setActiveIndex(0)}>
+                <Music2 className="mt-1 mr-4" />
+                <section>
+                  <h3 className="text-lg font-semibold">Easy</h3>
+                  <p>Minor and major chords only</p>
+                </section>
+              </Button>
+              <Button className={`text-wrap text-left bg-transparent text-foreground mt-3 shadow-none flex flex-rpw justify-start items-start gap-0 h-auto w-full transition-all focus-visible:outline-primary ${activeIndex === 1 ? "outline outline-1 outline-grey-400" : ""}`} onClick={() => setActiveIndex(1)}>
+                <Music className="mt-1 mr-4" />
+                <section>
+                  <h3 className="text-lg font-semibold">Medium</h3>
+                  <p>Augmented and diminished chords as well.</p>
+                </section>
+              </Button>
+              <Button className={`text-wrap text-left bg-transparent text-foreground mt-3 shadow-none flex flex-row justify-start items-start gap-0 h-auto w-full transition-all focus-visible:outline-primary ${activeIndex === 2 ? "outline outline-1 outline-grey-400" : ""}`} onClick={() => setActiveIndex(2)}>
+                <Music4 className="mt-1 mr-4" />
+                <section>
+                  <h3 className="text-lg font-semibold">Hard</h3>
+                  <p>All chords and inversions</p>
+                </section>
+              </Button>
+            </Dialog>
             <div className="filter invert-stave" ref={scoreRef} />
           <form action="#" className="flex flex-col gap-4 lg:flex-row lg:flex-row lg:items-end lg:gap-7" onSubmit={e => handleSubmit(e)}>
             <Label htmlFor="root-number" className="flex flex-col gap-1.5 relative z-10">
