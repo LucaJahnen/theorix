@@ -19,7 +19,7 @@ const Dialog: React.FC<DialogProps> = ({ isOpen, onClose, children }) => {
   }, [isOpen])
 
   return (
-    <dialog ref={dialogRef} onClose={onClose} className='bg-background text-foreground mx-[5%] w-[90%] rounded-xl shadow-md py-4 px-6 flex-col gap-3 absolute top-[24%] left-0 lg:w-auto lg:left-[50%] lg:translate-x-[-50%] lg:mx-0'>
+    <dialog ref={dialogRef} onClose={onClose} className="bg-background text-foreground w-full rounded-xl shadow-md py-4 px-6 absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] lg:w-auto">
       {children}
       <div className='flex justify-end'>
         <Button onClick={onClose} className='mt-5 text-base px-6'>Save</Button>
