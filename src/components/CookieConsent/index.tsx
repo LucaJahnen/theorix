@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { Button } from "../ui/button"
-import React, { useRef } from "react"
+import { useRef, useLayoutEffect } from "react"
 import { trackPageView, setPreference, getPreference } from "../../components/analytics"
 import { useState, useEffect } from "react"
 
@@ -25,7 +25,7 @@ const CookieConsent: React.FC = () => {
         analyticsStorage: false
     })
 
-    React.useLayoutEffect(() => {
+    useLayoutEffect(() => {
         if(dialog.current && getPreference() === null) {
             dialog.current.showModal()
             setModalVisible(true)
@@ -42,10 +42,10 @@ const CookieConsent: React.FC = () => {
     useEffect(() => {
         const handleKeyDown = (event: KeyboardEvent) => {
             if (event.key === 'Escape') {
-            setPreference({
-                adStorage: false,
-                analyticsStorage: false
-            })
+                setPreference({
+                    adStorage: false,
+                    analyticsStorage: false
+                })
             }
         }
 
@@ -58,6 +58,18 @@ const CookieConsent: React.FC = () => {
         }
     }, [modalVisible])
 
+    const updateCookies = (adStorage: boolean, analyticsStorage: boolean) => {
+        window.gtag?.("consent", "update", {
+            ad_storage: adStorage ? "granted" : "denied",
+            analytics_storage: analyticsStorage ? "granted" : "denied"
+        })
+
+        setPreference({
+            adStorage: adStorage,
+            analyticsStorage: analyticsStorage
+        })
+    }
+
     const deleteCookie = (name: string, path = '/', domain?: string): void => {
         document.cookie = `${name}=; Path=${path};${domain ? ` Domain=${domain};` : ''} Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; SameSite=Lax`
     }
@@ -67,54 +79,27 @@ const CookieConsent: React.FC = () => {
     }
 
     const acceptCookies = () => {
-        window.gtag?.("consent", "update", {
-            ad_storage: "granted",
-            analytics_storage: "granted"
-        })
-
         trackPageView(window.location.pathname)
-
-        setPreference({
-            adStorage: true,
-            analyticsStorage: true
-        })
+        updateCookies(true, true)
 
         closeModal()
     }
 
     const declineCookies = () => {
-        window.gtag?.("consent", "update", {
-            ad_storage: "denied",
-            analytics_storage: "denied"
-        })
-
         deleteCookie("_ga")
         deleteCookie("_ga_Y2XQ39G767")
 
-        setPreference({
-            adStorage: false,
-            analyticsStorage: false
-        })
-
+        updateCookies(false, false)
         closeModal()
     }
       
     const savePreferences = () => {
-        window.gtag?.('consent', 'update', {
-            ad_storage: consent.adStorage ? "granted" : "denied",
-            analytics_storage: consent.analyticsStorage ? "granted" : "denied",
-        })
-
         if(!consent.analyticsStorage) {
             deleteCookie("_ga")
             deleteCookie("_ga_Y2XQ39G767")
         }
 
-        setPreference({
-            adStorage: consent.adStorage,
-            analyticsStorage: consent.analyticsStorage
-        })
-
+        updateCookies(consent.adStorage, consent.analyticsStorage)
         closeModal()
     }
 
