@@ -1,4 +1,4 @@
-const useCreateChord = () => {
+const useCreateChord = (difficulty: string) => {
     const allChords: [string, string, string, string][] = [
         ["C", "E", "G", "C Major"],
         ["C", "Eb", "G", "C Minor"],
@@ -8,14 +8,14 @@ const useCreateChord = () => {
         ["C#", "E#", "G#", "C# Major"],
         ["C#", "E", "G#", "C# Minor"],
         ["C#", "E", "G", "C# Diminished"],
-        ["C#", "E#", "A", "C# Augmented"],
+        ["C#", "E#", "G##", "C# Augmented"],
         
         ["D", "F#", "A", "D Major"],
         ["D", "F", "A", "D Minor"],
         ["D", "F", "Ab", "D Diminished"],
         ["D", "F#", "A#", "D Augmented"],
         
-        ["D#", "G", "A#", "D# Major"],
+        ["D#", "F##", "A#", "D# Major"],
         ["D#", "F#", "A#", "D# Minor"],
         ["D#", "F#", "A", "D# Diminished"],
         ["D#", "F##", "A##", "D# Augmented"],
@@ -61,7 +61,15 @@ const useCreateChord = () => {
         ["B", "D#", "F##", "B Augmented"],
     ]
 
-    return allChords[Math.floor(Math.random() * allChords.length)]
+    if(difficulty === "easy") {
+        // generate a random major or minor chord, so the index has to be 0, 1 or 4, 5 or, 8, 9 or 12, 13...
+        const index = (Math.floor(Math.random() * 10) * 4) + Math.floor(Math.random() * 2)
+        return allChords[index]
+    } else if(difficulty === "medium" || difficulty === "hard") {
+        return allChords[Math.floor(Math.random() * allChords.length)]
+    } else {
+        return allChords[Math.floor(Math.random() * allChords.length)]
+    }
 }
 
 export default useCreateChord
