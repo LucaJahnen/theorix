@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom"
 import { Button } from "../ui/button"
-import { useRef, useLayoutEffect } from "react"
-import { trackPageView, setPreference, getPreference } from "../../components/analytics"
+import { setPreference, getPreference } from "../../components/analytics"
 import { useState, useEffect } from "react"
 
 export interface Consent {
@@ -17,7 +16,6 @@ declare global {
   }  
 
 const CookieConsent: React.FC = () => {
-    const dialog = useRef<HTMLDialogElement | null>(null)
     const [visible, setVisible] = useState<boolean>(false)
     const [modalVisible, setModalVisible] = useState<boolean>(false)
     const [consent, setConsent] = useState<Consent>({
@@ -25,17 +23,18 @@ const CookieConsent: React.FC = () => {
         analyticsStorage: false
     })
 
-    useLayoutEffect(() => {
-        if(dialog.current && getPreference() === null) {
-            dialog.current.showModal()
-            setModalVisible(true)
+    useEffect(() => {
+        const dialog = document.getElementById("dialog") as HTMLDialogElement;
+        if (dialog && !dialog.open && getPreference() === null) {
+          dialog.showModal()
+          setModalVisible(true)
         }
-    }, [dialog])
+    }, [])
 
     const closeModal = () => {
-        if(dialog.current) {
-            dialog.current.close()
-            setModalVisible(false)
+        const dialog = document.getElementById("dialog") as HTMLDialogElement;
+        if(dialog) {
+            dialog.close()
         }
     }
 
@@ -79,7 +78,6 @@ const CookieConsent: React.FC = () => {
     }
 
     const acceptCookies = () => {
-        trackPageView(window.location.pathname)
         updateCookies(true, true)
 
         closeModal()
@@ -104,7 +102,7 @@ const CookieConsent: React.FC = () => {
     }
 
     return (
-        <dialog ref={dialog} className="bg-background text-foreground w-[90%] lg:w-auto absolute z-[999] top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] px-6 pt-5 pb-6 rounded-md">
+        <dialog id="dialog" className="bg-background text-foreground w-[90%] lg:w-auto absolute z-[999] top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] px-6 pt-5 pb-6 rounded-md">
             <h1 className="font-semibold text-3xl mb-2">This website uses cookies</h1>
             <p className="mb-5 leading-relaxed">This website uses cookies to enhance your experience. We use analytics cookies to understand how our site is used and advertising cookies to provide tailored ads and measure their effectiveness. You can manage your preferences or read more in our <Link className="underline" to="/privacy-policy">privacy policy</Link>.</p>
             <form action="#" className={`${visible ? "": "hidden"}`}>
@@ -124,8 +122,8 @@ const CookieConsent: React.FC = () => {
                 </section>
             </form>
             <div className="flex flex-col lg:flex-row gap-2 lg:gap-4 justify-between">
-                <Button className="w-full" onClick={acceptCookies}>Accept all</Button>
-                <Button className={`w-full ${visible ? "hidden" : ""}`} onClick={declineCookies}>Decline all</Button>
+                <Button className="w-full bg-primary-altered" onClick={acceptCookies}>Accept all</Button>
+                <Button className={`w-full bg-primary-altered ${visible ? "hidden" : ""}`} onClick={declineCookies}>Decline all</Button>
                 <Button className={`w-full ${visible ? "" : "hidden"}`} onClick={savePreferences}>Save Preferences</Button>
                 <Button className="w-full" onClick={() => setVisible(!visible)} variant="secondary">{visible ? "Hide Settings" : "Settings"}</Button>
             </div>
