@@ -17,9 +17,11 @@ import { Input } from "@/components/ui/input"
 import useCreateChord from "@/hooks/useCreateChord"
 import { Helmet } from "react-helmet"
 import { IoSettingsOutline } from "react-icons/io5"
-import { Music, Music2, Music4 } from "lucide-react"
 import Dialog from "@/components/Dialog"
 import { displayChord, difficulties } from "./helpers"
+import Music from "../../assets/music.svg"
+import Music2 from "../../assets/music-2.svg"
+import Music4 from "../../assets/music-4.svg"
 
 interface Input {
   root: string,
@@ -75,21 +77,21 @@ const ChordQuiz: React.FC = () => {
             <Dialog isOpen={settingsVisible} onClose={() => { setSettingsVisible(false); setDifficulty(difficulties[activeIndex]) }}>
               <h2 className="text-2xl font-semibold pb-1">Choose a difficulty</h2>
               <Button className={`text-wrap text-left bg-transparent text-foreground mt-2 shadow-none flex flex-row justify-start items-start gap-0 h-auto w-full transition-all focus-visible:outline-primary ${activeIndex === 0 ? "outline outline-1 outline-grey-400" : ""}`} onClick={() => setActiveIndex(0)}>
-                <Music2 className="mt-1 mr-4" />
+                <img src={Music2} className="mt-1 mr-4 h-5 w-5 invert-stave" />
                 <section>
                   <h3 className="text-lg font-semibold">Easy</h3>
                   <p>Minor and major chords only</p>
                 </section>
               </Button>
               <Button className={`text-wrap text-left bg-transparent text-foreground mt-3 shadow-none flex flex-rpw justify-start items-start gap-0 h-auto w-full transition-all focus-visible:outline-primary ${activeIndex === 1 ? "outline outline-1 outline-grey-400" : ""}`} onClick={() => setActiveIndex(1)}>
-                <Music className="mt-1 mr-4" />
+                <img src={Music} className="mt-1 mr-4 h-5 w-5 invert-stave" />
                 <section>
                   <h3 className="text-lg font-semibold">Medium</h3>
                   <p>Augmented and diminished chords as well.</p>
                 </section>
               </Button>
               <Button className={`text-wrap text-left bg-transparent text-foreground mt-3 shadow-none flex flex-row justify-start items-start gap-0 h-auto w-full transition-all focus-visible:outline-primary ${activeIndex === 2 ? "outline outline-1 outline-grey-400" : ""}`} onClick={() => setActiveIndex(2)}>
-                <Music4 className="mt-1 mr-4" />
+                <img src={Music4} className="mt-1 mr-4 h-5 w-5 invert-stave" />
                 <section>
                   <h3 className="text-lg font-semibold">Hard</h3>
                   <p>All chords and inversions</p>
