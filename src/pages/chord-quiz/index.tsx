@@ -77,21 +77,21 @@ const ChordQuiz: React.FC = () => {
             <Dialog isOpen={settingsVisible} onClose={() => { setSettingsVisible(false); setDifficulty(difficulties[activeIndex]) }}>
               <h2 className="text-2xl font-semibold pb-1">Choose a difficulty</h2>
               <Button className={`text-wrap text-left bg-transparent text-foreground mt-2 shadow-none flex flex-row justify-start items-start gap-0 h-auto w-full transition-all focus-visible:outline-primary ${activeIndex === 0 ? "outline outline-1 outline-grey-400" : ""}`} onClick={() => setActiveIndex(0)}>
-                <img src={Music2} className="mt-1 mr-4 h-5 w-5" />
+                <img src={Music2} className="mt-1 mr-4 h-5 w-5 invert-stave" />
                 <section>
                   <h3 className="text-lg font-semibold">Easy</h3>
                   <p>Minor and major chords only</p>
                 </section>
               </Button>
               <Button className={`text-wrap text-left bg-transparent text-foreground mt-3 shadow-none flex flex-rpw justify-start items-start gap-0 h-auto w-full transition-all focus-visible:outline-primary ${activeIndex === 1 ? "outline outline-1 outline-grey-400" : ""}`} onClick={() => setActiveIndex(1)}>
-                <img src={Music} className="mt-1 mr-4 h-5 w-5" />
+                <img src={Music} className="mt-1 mr-4 h-5 w-5 invert-stave" />
                 <section>
                   <h3 className="text-lg font-semibold">Medium</h3>
                   <p>Augmented and diminished chords as well.</p>
                 </section>
               </Button>
               <Button className={`text-wrap text-left bg-transparent text-foreground mt-3 shadow-none flex flex-row justify-start items-start gap-0 h-auto w-full transition-all focus-visible:outline-primary ${activeIndex === 2 ? "outline outline-1 outline-grey-400" : ""}`} onClick={() => setActiveIndex(2)}>
-                <img src={Music4} className="mt-1 mr-4 h-5 w-5" />
+                <img src={Music4} className="mt-1 mr-4 h-5 w-5 invert-stave" />
                 <section>
                   <h3 className="text-lg font-semibold">Hard</h3>
                   <p>All chords and inversions</p>
