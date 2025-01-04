@@ -17,11 +17,9 @@ import { Input } from "@/components/ui/input"
 import useCreateChord from "@/hooks/useCreateChord"
 import { Helmet } from "react-helmet"
 import { IoSettingsOutline } from "react-icons/io5"
-import Dialog from "@/components/Dialog"
-import { displayChord, difficulties } from "./helpers"
-import Music from "../../assets/music.svg"
-import Music2 from "../../assets/music-2.svg"
-import Music4 from "../../assets/music-4.svg"
+import { displayChord } from "./helpers"
+import SettingsDialog from "@/components/SettingsDialog"
+import { Difficulty } from "@/components/SettingsDialog"
 
 interface Input {
   root: string,
@@ -29,17 +27,18 @@ interface Input {
 }
 
 const ChordQuiz: React.FC = () => {
+  const [correct, setCorrect] = useState<boolean>(false)
+  const [visible, setVisible] = useState<boolean>(false)
+  const [chord, setChord] = useState<string[]>([])
+  const [difficulty, setDifficulty] = useState<Difficulty>("easy")
+  const [settingsVisible, setSettingsVisible] = useState<boolean>(false)
+  const [activeIndex, setActiveIndex] = useState<number>(0)
+  const scoreRef = useRef<HTMLDivElement | null>(null)
   const [input, setInput] = useState<Input>({
     root: "", 
     type: ""
   })
-  const [correct, setCorrect] = useState<boolean>(false)
-  const [visible, setVisible] = useState<boolean>(false)
-  const [chord, setChord] = useState<string[]>([])
-  const [difficulty, setDifficulty] = useState<string>("easy")
-  const [settingsVisible, setSettingsVisible] = useState<boolean>(false)
-  const [activeIndex, setActiveIndex] = useState<number>(0)
-  const scoreRef = useRef<HTMLDivElement | null>(null)
+  const description = ["Minor and major chords only", "Augmented and diminished chords as well.", "All chords and inversions"]
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -56,9 +55,12 @@ const ChordQuiz: React.FC = () => {
   useEffect(() => {
     displayChord({ root, third, fifth, chordName, scoreRef, visible, setChord, difficulty })
 
+    const svg = document?.getElementById('stave')?.querySelector('.vf-stavenote') as HTMLElement
+    svg.style.transform = 'translateX(30px)'
+
   // including these dependencies would cause too many rerenders 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [visible, difficulty]);
+  }, [visible, difficulty])
 
   return (
     <>
@@ -72,9 +74,17 @@ const ChordQuiz: React.FC = () => {
             <h1 className="text-3xl font-semibold pb-4">Chord Quiz</h1>
             <p>Which chord is shown below? Enter the root note and the chord type.</p>
             <Button variant="secondary" className="mt-4 mb-2" onClick={() => setSettingsVisible(true)}>
-              <IoSettingsOutline />Settings
+              <IoSettingsOutline />{difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}
             </Button>
-            <Dialog isOpen={settingsVisible} onClose={() => { setSettingsVisible(false); setDifficulty(difficulties[activeIndex]) }}>
+            <SettingsDialog 
+              settingsVisible={settingsVisible} 
+              setSettingsVisible={setSettingsVisible}
+              setDifficulty={setDifficulty}
+              activeIndex={activeIndex}
+              setActiveIndex={setActiveIndex}
+              description={description}
+            />
+            {/* <Dialog isOpen={settingsVisible} onClose={() => { setSettingsVisible(false); setDifficulty(difficulties[activeIndex]) }}>
               <h2 className="text-2xl font-semibold pb-1">Choose a difficulty</h2>
               <Button className={`text-wrap text-left bg-transparent text-foreground mt-2 shadow-none flex flex-row justify-start items-start gap-0 h-auto w-full transition-all focus-visible:outline-primary ${activeIndex === 0 ? "outline outline-1 outline-grey-400" : ""}`} onClick={() => setActiveIndex(0)}>
                 <img src={Music2} className="mt-1 mr-4 h-5 w-5 invert-stave" />
@@ -97,17 +107,17 @@ const ChordQuiz: React.FC = () => {
                   <p>All chords and inversions</p>
                 </section>
               </Button>
-            </Dialog>
-            <div className="filter invert-stave" ref={scoreRef} />
+            </Dialog> */}
+            <div className="filter invert-stave" ref={scoreRef} id="stave"/>
           <form action="#" className="flex flex-col gap-4 lg:flex-row lg:flex-row lg:items-end lg:gap-7" onSubmit={e => handleSubmit(e)}>
-            <Label htmlFor="root-number" className="flex flex-col gap-1.5 relative z-10">
+            <Label htmlFor="root-number" className="flex flex-col gap-1.5 relative z-10 lg:w-[27.5%]">
               <span>Root Note</span>
               <Input type="text" pattern="^[a-gA-G](#|b)?$" id="root-number" placeholder="e. g. C, Eb, G, A#" value={input.root} onChange={e => setInput({ ...input, root: e.target.value })} />
             </Label>
-            <Label htmlFor="number" className="relative z-10 flex flex-col gap-1.5">
+            <Label htmlFor="number" className="relative z-10 flex flex-col gap-1.5 lg:w-[27.5%]">
               <span className="flex flex-col gap-1.5">Chord Type</span>
               <Select required value={input.type} onValueChange={value => setInput({ ...input, type: value })}>
-              <SelectTrigger className="w-full relative -z-10" id="number">
+              <SelectTrigger className="relative -z-10" id="number">
                 <SelectValue placeholder="e. g. Major, Diminished" />
               </SelectTrigger>
               <SelectContent>
@@ -122,7 +132,7 @@ const ChordQuiz: React.FC = () => {
           </form>
           <Modal correct={correct} visible={visible} setVisible={setVisible} type="chord" solution={chord[3]} />
           <h2 className="text-2xl font-semibold pb-1 pt-10">How to use</h2>
-          <p className="mb-4">This tool shows every chord in its four different types: major, minor, augmented and diminished. Every chord is shown in its root position so determining the root note should not be too diffucult because it is the lowest note. Next you need to determine the chord type by figuring out the intervals between the three notes. If you are not sure how to determine these intervals you can check out <Link to="/building-intervals" className="underline">this article</Link>.</p>
+          <p className="mb-4">This tool shows every chord in its four different types: major, minor, augmented and diminished. In Easy and Mode Mode every chord is shown in its root position so determining the root note should not be too diffucult because it is the lowest note. But if you decide to pick Hard Mode, chords will only be shown in the first or second inversion, so you determining the root note and chrod type is a bit trickier. Try to mentally convert the note position to fit the root position before determining the chord type by figuring out the intervals between the three notes. If you are not sure how to determine these intervals you can check out <Link to="/building-intervals" className="underline">this article</Link>.</p>
           <h2 className="text-2xl font-semibold pb-1">How to identify chords</h2>
           <p className="mb-4">To identify an interval between two notes, follow these steps:</p>
           <ol className="">
