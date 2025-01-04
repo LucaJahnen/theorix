@@ -77,6 +77,30 @@ const IntervalQuiz = () => {
         <Helmet>
             <title>Interval Quiz</title>
             <meta name="description" content="This tool test your knowledge on intervals." />
+            <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              "headline": "Interval Quiz",
+              "author": {
+                "@type": "Person",
+                "name": "Luca Jahnen"
+              },
+              "applicationCategory": "EducationalApplication",
+              "operatingSystem": "All",
+              "description": "Test your knowledge on intervals with this interactive tool.",
+              "url": "https://theorix.netlify.app/interval-quiz",
+              "datePublished": "2024-11-16",
+              "dateModified": "2025-01-04",
+              "isAccessibleForFree": true,
+              "educationalLevel": "beginner",
+              "offers": {
+                "@type": "Offer",
+                "price": "0.00",
+                "priceCurrency": "EUR"
+              }
+            }
+            </script>
         </Helmet>
         <Navbar />
         <div className="px-4 pt-6 lg:w-[60%] lg:block lg:m-auto">
