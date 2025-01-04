@@ -45,7 +45,7 @@ export const displayChord = ({ root, third, fifth, chordName, scoreRef, visible,
   
         // determine stave width
         const mobileWidth = window.innerWidth - 32
-        const desktopWidth = 0.3 * window.innerWidth
+        const desktopWidth = 0.24 * window.innerWidth
         // 1024 is tailwind's lg breakpoint
         const width = window.innerWidth > 1024 ? desktopWidth : mobileWidth
   
@@ -53,7 +53,7 @@ export const displayChord = ({ root, third, fifth, chordName, scoreRef, visible,
         const renderer = new Renderer(scoreRef.current, Renderer.Backends.SVG);
         renderer.resize(width, 130);
         const context = renderer.getContext();
-        const stave = new Stave(0, 0, width);
+        const stave = new Stave(0, 0, width - 1);
   
         const rootAccidental = root.slice(1, 3)
         const thirdAccidental = third.slice(1, 3)

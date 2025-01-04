@@ -1,4 +1,6 @@
-const useCreateInterval = (difficulty: string) => {
+import { Difficulty } from "@/components/SettingsDialog"
+
+const useCreateInterval = (difficulty: Difficulty) => {
   const notes: string[] = ["c", "d", "e", "f", "g", "a", "b"]
   const intervals: string[] = ["Unison", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Octave"]
 
@@ -62,7 +64,7 @@ const useCreateInterval = (difficulty: string) => {
     case "hard":
       return mediumAndHardMode()
     default:
-      return mediumAndHardMode("c")
+      return easyMode()
   }
 }
 
