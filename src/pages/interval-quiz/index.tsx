@@ -1,5 +1,4 @@
 import Navbar from "../../components/Navbar"
-import "./index.css"
 import {
   Select,
   SelectContent,
@@ -133,7 +132,7 @@ const IntervalQuiz = () => {
             <Button className="mt-1 w-full lg:w-auto">Submit Answer</Button>
           </form>
           <Modal correct={correct} visible={visible} setVisible={setVisible} type="interval" solution={solution[2]} />
-          <h2 className="text-2xl font-semibold pb-1 pt-12">How to use</h2>
+          <h2 className="text-2xl font-semibold pb-1 pt-12">How to use this interval identification tool</h2>
           <p className="mb-4">Test your knowledge on intervals. Start by choosing a difficulty: Easy, Medium or Hard. With Easy Mode you only need to determine the interval number. If you want to move on, you can pick Medium or Hard Mode. You need to determine the interval number and quality in both of them but while Medium Mode always sets the first note to C, Hard Mode chooses any note.</p>
           <h2 className="text-2xl font-semibold pb-1">How to identify Intervals</h2>
           <p className="mb-4">To identify an interval between two notes, follow this step:</p>

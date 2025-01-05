@@ -1,5 +1,4 @@
 import Navbar from "../../components/Navbar"
-import "../interval-quiz/index.css"
 import {
   Select,
   SelectContent,
