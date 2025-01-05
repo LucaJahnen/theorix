@@ -4,7 +4,7 @@ import { AnimatePresence } from 'framer-motion'
 import { Routes, Route } from "react-router-dom"
 import { ThemeProvider } from "@/components/theme-provider"
 
-import App from './App'
+const App = lazy(() => import('./App'))
 const CookieConsent = lazy(() => import('./components/CookieConsent'))
 const Error = lazy(() => import('./pages/error'))
 const IntervalQuiz = lazy(() => import('./pages/interval-quiz'))
