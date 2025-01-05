@@ -9,5 +9,8 @@
     "paths": {
       "@/*": ["./src/*"]
     }
-  }
+  },
+  "resolveModule": true,
+  "esModuleInterop": true,
+  "moduleResolution": "node",
 }

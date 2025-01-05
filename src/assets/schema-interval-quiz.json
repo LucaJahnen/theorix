@@ -1,0 +1,23 @@
+{
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "headline": "Interval Quiz",
+    "name": "Interval Quiz",
+    "author": {
+        "@type": "Person",
+        "name": "Luca Jahnen"
+    },
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "All",
+    "description": "Test your knowledge on intervals with this interactive tool.",
+    "url": "https://theorix.netlify.app/interval-quiz",
+    "datePublished": "2024-11-16",
+    "dateModified": "2025-01-04",
+    "isAccessibleForFree": true,
+    "educationalLevel": "beginner",
+    "offers": {
+        "@type": "Offer",
+        "price": "0.00",
+        "priceCurrency": "EUR"
+    }
+}
