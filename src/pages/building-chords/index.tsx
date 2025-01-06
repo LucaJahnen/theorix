@@ -24,7 +24,7 @@ const BuildingChords: React.FC = () => {
             const renderer = new Renderer(ref.current, Renderer.Backends.SVG);
             renderer.resize(width, 130);
             const context = renderer.getContext();
-            const stave = new Stave(0, 0, width);
+            const stave = new Stave(0, 0, width - 1);
         
             const voice = new Voice({ num_beats: 3, beat_value: 4 });
             voice.addTickables(notes);
@@ -66,10 +66,8 @@ const BuildingChords: React.FC = () => {
             .addModifier(new Accidental("#"), 2),
             new StaveNote({ keys: ["g/4", "b/4", "d#/5"], duration: "q" })
             .addModifier(new Accidental("#"), 2),
-            new StaveNote({ keys: ["f#/4", "a#/4", "c##/5"], duration: "q" })
-            .addModifier(new Accidental("#"), 0)
-            .addModifier(new Accidental("#"), 1)
-            .addModifier(new Accidental("##"), 2),
+            new StaveNote({ keys: ["f/4", "a/4", "c/5"], duration: "q" })
+            .addModifier(new Accidental("#"), 2)
         ]
         displayChord(augmentedRef, augmentedNotes)
 
