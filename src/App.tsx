@@ -17,7 +17,7 @@ function App() {
   return (
     <>
       <Helmet>
-        <title>Theorix - Learn music concepts the easy way</title>
+        <title>Theorix - Learn musical concepts the easy way</title>
         <meta name="description" content="Theorix improves your ability to read and write sheet music by offering easy to use tools." />
       </Helmet>
       <Navbar />

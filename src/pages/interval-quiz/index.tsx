@@ -18,7 +18,7 @@ import { IoSettingsOutline } from "react-icons/io5"
 import { Difficulty } from "@/components/SettingsDialog"
 import SettingsDialog from "@/components/SettingsDialog"
 import displayInterval from "./helpers"
-import schema from "../../assets/schema-interval-quiz.json"
+import schema from "../../assets/schemas/interval-quiz.json"
 
 interface Input {
   quality: string,
@@ -75,8 +75,8 @@ const IntervalQuiz = () => {
   return (
     <>
         <Helmet>
-            <title>Interval Quiz</title>
-            <meta name="description" content="This interactive tool test your knowledge on intervals. Try it out now!" />
+            <title>Interval Identification Quiz</title>
+            <meta name="description" content="Challenge your knowledge on intervals with our fun, interactive tool! Choose from Easy, Medium, or Hard Mode and see how well you can perform. Start now and challenge yourself!" />
             <script type="application/ld+json">{JSON.stringify(schema)}</script>
         </Helmet>
         <Navbar />

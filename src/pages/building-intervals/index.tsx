@@ -3,17 +3,19 @@ import Footer from "@/components/Footer"
 import Card from "@/components/Card"
 import { Link } from "react-router-dom"
 import { Helmet } from "react-helmet"
+import schema from "../../assets/schemas/building-intervals.json"
 
 const BuildingIntervals = () => {
   return (
     <>
         <Helmet>
-            <title>Building Intervals</title>
-            <meta name="description" content="This article helps you understand intervals and offers an excercise you can try." />
+            <title>How to identify Intervals</title>
+            <meta name="description" content="This article helps you understand intervals by telling you about the different types of intervals. Additionally, it offers an interactive excercise you can try." />
+            <script type="application/ld+json">{JSON.stringify(schema)}</script>
         </Helmet>
         <Navbar />
         <div className="px-4 pt-6 lg:w-[60%] lg:block lg:m-auto">
-            <h1 className="text-3xl font-semibold pb-4">Building Intervals</h1>
+            <h1 className="text-3xl font-semibold pb-4">How to identify Intervals</h1>
             <p className="mb-7 leading-relaxed">When learning music theory, intervals are one of the most fundamental concepts. Intervals are the building blocks of melodies and chords, and understanding them will greatly improve your ability to read, play, and compose music. In this article, I'll explain what intervals are and how they are measured.</p>
             <h2 className="text-2xl font-semibold pb-1">What are Intervals in Music?</h2>
             <p className="mb-5 leading-relaxed">An interval is the distance between two notes. It tells you how far apart the notes are in pitch. Intervals are named according to two main factors: quality and number. These determine how the interval sounds and how far apart the notes are.</p>
@@ -53,8 +55,8 @@ const BuildingIntervals = () => {
                 <h2 className="text-xl font-semibold pb-2">How to measure Intervals</h2>
                 <p className="mb-5 leading-relaxed">Intervals are measured by counting both the starting and ending notes, including all the notes in between. Here’s a simple way to count them:</p>
                 <ol className="mb-8">
-                    <li className="before:content-['1.'] before:inline-flex before:pr-3 before:font-medium mb-4 flex baseline"><span>Start with your first note (the root).</span></li>
-                    <li className="before:content-['2.'] before:inline-flex before:pr-3 before:font-medium mb-4 flex baseline"><span>Count up through the musical alphabet until you reach your second note.</span></li>
+                    <li id="step-one" className="before:content-['1.'] before:inline-flex before:pr-3 before:font-medium mb-4 flex baseline"><span>Start with your first note (the root).</span></li>
+                    <li id="step-two" className="before:content-['2.'] before:inline-flex before:pr-3 before:font-medium mb-4 flex baseline"><span>Count up through the musical alphabet until you reach your second note.</span></li>
                 </ol>
                 <p>For example, to find the interval from C to G: Start at C (1), then count D (2), E (3), F (4), and finally G (5). This gives you a "fifth."</p>
             </Card>

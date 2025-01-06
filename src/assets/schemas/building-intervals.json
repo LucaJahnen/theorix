@@ -1,0 +1,25 @@
+{
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to identify interavls",
+    "description": "A simple step-by-step guide on music theory which helps you to identify intervals faster.",
+    "totalTime": "PT5M",
+    "publisher": {
+        "@type": "Person",
+        "name": "Luca Jahnen"
+    },
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Start with the root note",
+        "text": "Start with your first note (the root), e. g. C",
+        "url": "https://theorix.netlify.app/building-intervals#step-one"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Count the number of steps",
+        "text": "Count up using every note from the musical scale until you reach your second note, e.g. start at C (1), then count D (2), E (3), F (4), and finally G (5). This gives you a 'fifth.'",
+        "url": "https://theorix.netlify.app/building-intervals#step-two"
+      }
+    ]
+  }
