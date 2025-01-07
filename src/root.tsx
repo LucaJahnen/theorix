@@ -5,7 +5,6 @@ import { Routes, Route } from "react-router-dom"
 import { ThemeProvider } from "@/components/theme-provider"
 
 const App = lazy(() => import('./App'))
-const CookieConsent = lazy(() => import('./components/CookieConsent'))
 const Error = lazy(() => import('./pages/error'))
 const IntervalQuiz = lazy(() => import('./pages/interval-quiz'))
 const Metronome = lazy(() => import('./pages/metronome'))
@@ -20,7 +19,6 @@ const Root: React.FC = () => {
   const location = useLocation()
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <CookieConsent />
       <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo(0, 0)}>
         <Routes location={location} key={location.pathname}>
           <Route path="/"element={<App />}/>
