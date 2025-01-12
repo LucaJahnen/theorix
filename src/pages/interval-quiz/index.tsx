@@ -75,8 +75,8 @@ const IntervalQuiz = () => {
   return (
     <>
         <Helmet>
-            <title>Interval Identification Quiz</title>
-            <meta name="description" content="Challenge your knowledge on intervals with our fun, interactive tool! Choose from Easy, Medium, or Hard Mode and see how well you can perform. Start now and challenge yourself!" />
+            <title>Interval Quiz</title>
+            <meta name="description" content="Challenge your knowledge on intervals with this interactive tool. Choose from three difficulties and get started now!" />
             <script type="application/ld+json">{JSON.stringify(schema)}</script>
         </Helmet>
         <Navbar />
