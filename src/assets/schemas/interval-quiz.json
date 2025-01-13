@@ -1,8 +1,8 @@
 {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "headline": "Interval Identifcation Quiz",
-    "name": "Interval Identification Quiz",
+    "headline": "Interval Quiz",
+    "name": "Interval Quiz",
     "author": {
         "@type": "Person",
         "name": "Luca Jahnen"

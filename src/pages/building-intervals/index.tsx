@@ -10,7 +10,7 @@ const BuildingIntervals = () => {
     <>
         <Helmet>
             <title>How to identify Intervals</title>
-            <meta name="description" content="This article helps you understand intervals by telling you about the different types of intervals. Additionally, it offers an interactive excercise you can try." />
+            <meta name="description" content="This article helps you understand intervals by teaching you about the different types of intervals and how they sound." />
             <script type="application/ld+json">{JSON.stringify(schema)}</script>
         </Helmet>
         <Navbar />
