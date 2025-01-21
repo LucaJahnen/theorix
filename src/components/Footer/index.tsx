@@ -7,7 +7,7 @@ const Footer = () => {
     const shareMessage = encodeURIComponent("Try out theorix on https://theorix.netlify.app")
     return (
         <footer className="px-4 py-[10%] bg-footer mt-14 lg:grid lg:grid-cols-2 lg:py-[3%] lg:px-[10%] lg:m-auto lg:mt-14 text-foreground">
-            <Link to="/" className="text-lg lg:row-start-1 font-serif"><span className="text-primary-altered font-sans">theo</span>rix</Link>
+            <Link to="/" className="text-lg lg:row-start-1 font-serif"><span className="text-primary-altered font-sans dark:text-primary-lighter">theo</span>rix</Link>
             <section className="lg:row-start-2">
                 <h3 className="mt-6 mb-1 font-semibold text-lg">Tools</h3>
                 <div className="grid grid-rows-2 grid-cols-2">

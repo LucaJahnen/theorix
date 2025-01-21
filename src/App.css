@@ -15,6 +15,7 @@ body {
     --primary: 225, 73%, 57%;
     --primary-altered: 225, 73%, 47%;
     --footer: 210, 17%, 91%;
+    --primary-lighter: 225, 73%, 61%;
 }
 
 html.dark body {
@@ -26,4 +27,5 @@ html.dark body {
     --stave: ;
     --primary: 225, 73%, 57%;
     --primary-altered: 225, 73%, 47%;
+    --primary-lighter: 225, 73%, 61%;
 }

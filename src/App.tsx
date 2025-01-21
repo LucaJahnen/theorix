@@ -1,6 +1,5 @@
 import Navbar from "./components//Navbar"
 import Footer from "./components/Footer"
-import "./App.css"
 import { Button } from "./components/ui/button"
 import { Link } from "react-router-dom"
 import {
@@ -34,7 +33,7 @@ function App() {
               <h1 className="text-3xl font-semibold lg:text-5xl lg:max-w-[18ch] lg:leading-[1.1]">Learn music theory the easy way.</h1>
               <p className="mt-3 mb-5 lg:mt-5 lg:mb-6 lg:max-w-[45ch] text-lg">Explore music theory basics with clear explanations and interactive exercises. Perfect for all skill levels — get started now!</p>
               <Link to="/building-intervals">
-                <Button className="py-5 text-base lg:px-6 lg:py-[1.375rem] bg-primary">Start learning</Button>
+                <Button className="py-5 text-base lg:px-6 lg:py-[1.375rem] bg-primary dark:bg-primary-altered">Start learning</Button>
               </Link>
             </div>
         </section>
