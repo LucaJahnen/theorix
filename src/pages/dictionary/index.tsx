@@ -15,6 +15,7 @@ import data from './data'
 import renderResults from './renderResults'
 import { useState } from 'react'
 import { Helmet } from 'react-helmet'
+import schema from '../../assets/schemas/dictionary.json'
 
 export interface FilteredItem {
     tempo?: string;
@@ -69,8 +70,9 @@ const Dictionary: React.FC = () => {
   return (
     <>
         <Helmet>
-            <title>Dictionary</title>
-            <meta name="description" content="Found a term you don't know? Look it up here." />
+            <title>Italian musical terms</title>
+            <meta name="description" content="Explore key musical terms like allegro, accelerando, molto, and meno in this comprehensive glossary for musicians." />
+            <script type="application/ld+json">{JSON.stringify(schema)}</script>
         </Helmet>
         <Navbar />
         <div className="px-4 pt-6 lg:w-[60%] lg:block lg:m-auto">
@@ -94,7 +96,7 @@ const Dictionary: React.FC = () => {
                     </TableHeader>
                     <TableBody>
                         {data["Tempo"].map((obj) => (
-                        <TableRow key={obj.description}>
+                        <TableRow key={obj.description} {...(obj.tempo === "Allegro" ? { id: "allegro" } : {})}>
                             <TableCell className="font-medium">{obj.tempo}</TableCell>
                             <TableCell>{obj.description}</TableCell>
                             <TableCell>{obj.bpm}</TableCell>
@@ -116,7 +118,7 @@ const Dictionary: React.FC = () => {
                     </TableHeader>
                     <TableBody>
                         {data["Dynamics"].map((obj) => (
-                        <TableRow key={obj.description}>
+                        <TableRow key={obj.description} {...(obj.description === "mezzo-forte" ? { id: "mezzo-forte" } : {})}>
                             <TableCell className="font-medium italic font-serif">{obj.symbol}</TableCell>
                             <TableCell>{obj.description}</TableCell>
                             <TableCell>{obj.meaning}</TableCell>
@@ -137,7 +139,7 @@ const Dictionary: React.FC = () => {
                     </TableHeader>
                     <TableBody>
                         {data["General"].map((obj) => (
-                        <TableRow key={obj.term}>
+                        <TableRow key={obj.term} {...(obj.term === "sforzando" ? { id: "sforzando" } : {})}>
                             <TableCell className="font-medium">{obj.term}</TableCell>
                             <TableCell>{obj.meaning}</TableCell>
                         </TableRow>
