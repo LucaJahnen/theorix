@@ -14,7 +14,7 @@ const Footer = () => {
                     <Link to="/interval-quiz">Interval Quiz</Link>
                     <Link to="/chord-quiz">Chord Quiz</Link>
                     <Link to="/metronome">Metronome</Link>
-                    <Link to="/dictionary">Dictionary</Link>
+                    <Link to="/musical-terms">Musical Terms</Link>
                 </div>
             </section>
             <section className="lg:row-start-3">

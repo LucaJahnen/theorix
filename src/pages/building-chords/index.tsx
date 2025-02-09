@@ -85,12 +85,12 @@ const BuildingChords: React.FC = () => {
     return (
         <>
             <Helmet>
-                <title>Building Chords</title>
-                <meta name="description" content="This article helps you understand chords and offers an excercise you can try." />
+                <title>How to identify chords</title>
+                <meta name="description" content="Learn how to form and recognize chords on piano and guitar. We share useful tips to master chord theory and play with confidence!" />
             </Helmet>
             <Navbar />
             <div className="px-4 pt-6 lg:w-[60%] lg:block lg:m-auto">
-                <h1 className="text-3xl font-semibold pb-4">Building Chords</h1>
+                <h1 className="text-3xl font-semibold pb-4">How to identify chords</h1>
                 <p className="mb-7 leading-relaxed">Chords are a key topic in music theory. Each and every song is built on top of them and this gives them their mood (e. g. happy, sad). But before reading this article I would strongly recommend to read the <Link to="/building-intervals" className="underline">article about intervals</Link> because this will improve your understanding of chords and make this session easier overall.</p>
                 <h2 className="text-2xl font-semibold pb-1">But what are Chords exactly?</h2>
                 <p className="mb-5 leading-relaxed">In music theory chords are a group of at least three notes that are played simultaniously. In this article I cover the most important forms of chords called <span className="font-medium">major, minor, augmented and diminished.</span></p>

@@ -26,7 +26,7 @@ const Modal: React.FC<ModalProps> = ({ correct, visible, setVisible, type, solut
     <>
       <div className={`fixed top-0 left-0 w-full h-full -z-50 bg-black bg-opacity-50 ${visible ? "opacity-100 z-[1200]"  : "opacity-0 -z-[999]"}`}></div>
       <section className={`flex mx-[10%] rounded-xl bg-background shadow-md py-4 px-6 flex-col gap-3 absolute top-[31%] left-0 lg:left-[50%] lg:translate-x-[-50%] lg:mx-0 ${visible ? "opacity-100 z-[1201]" : "opacity-0 -z-[999]"} transition ease-in-out duration-300`}>
-          <h1 className="text-xl font-bold">{correct ? "Correct!" : "Incorrect!"}</h1>
+          <h2 className="text-xl font-bold">{correct ? "Correct!" : "Incorrect!"}</h2>
           <p>Your input was {correct ? "correct" : "incorrect"}. The {type} shown was a {solution}.</p>
           <div className="flex justify-end gap-3 w-full mt-2">
               <Button tabIndex={visible ? 0 : -1} variant="secondary" onClick={() => setVisible(false)}>Close</Button>

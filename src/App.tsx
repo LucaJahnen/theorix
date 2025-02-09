@@ -32,7 +32,7 @@ function App() {
             <div className="lg:mr-[10%]">
               <h1 className="text-3xl font-semibold lg:text-5xl lg:max-w-[18ch] lg:leading-[1.1]">Learn music theory the easy way.</h1>
               <p className="mt-3 mb-5 lg:mt-5 lg:mb-6 lg:max-w-[45ch] text-lg">Explore music theory basics with clear explanations and interactive exercises. Perfect for all skill levels — get started now!</p>
-              <Link to="/building-intervals">
+              <Link to="/interval-identification">
                 <Button className="py-5 text-base lg:px-6 lg:py-[1.375rem] bg-primary dark:bg-primary-altered">Start learning</Button>
               </Link>
             </div>
@@ -46,23 +46,23 @@ function App() {
               <Link to="/metronome" className="font-semibold">Check it out</Link>
             </section>
             <section className="mt-8">
-              <h3 className="text-lg font-semibold">Dictionary</h3>
+              <h3 className="text-lg font-semibold">Musical Terms</h3>
               <p className="pb-2">Look up any musical term, symbol or abbreviation.</p>
-              <Link to="/dictionary" className="font-semibold">Check it out</Link>
+              <Link to="/musical-terms" className="font-semibold">Check it out</Link>
             </section>
           </div>
         <div>
           <div className="lg:mr-[11%]">
             <h2 className="mt-12 text-2xl font-semibold">Latest tutorials</h2>
             <section className="mt-4">
-              <h3 className="text-lg font-semibold">Building Intervals</h3>
+              <h3 className="text-lg font-semibold">Interval Identification</h3>
               <p className="pb-2">Learn how to measure intervals, one of the most important concepts of music theory.</p>
-              <Link to="/building-intervals" className="font-semibold">Check it out</Link>
+              <Link to="/interval-identification" className="font-semibold">Check it out</Link>
             </section>
             <section className="mt-8">
-              <h3 className="text-lg font-semibold">Building Chords</h3>
+              <h3 className="text-lg font-semibold">Chord Identification</h3>
               <p className="pb-2">Learn how to create and determine chords by reading this article.</p>
-              <Link to="/building-chords" className="font-semibold">Check it out</Link>
+              <Link to="/chord-identification" className="font-semibold">Check it out</Link>
             </section>
           </div>
         </div>

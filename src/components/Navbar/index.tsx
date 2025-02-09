@@ -69,7 +69,7 @@ const Navbar: React.FC = () => {
           <DropdownMenuTrigger>Intervals</DropdownMenuTrigger>
           <DropdownMenuContent className="relative z-[2000]">
         <DropdownMenuItem onKeyDown={handleKeyDown}>
-          <Link to="/building-intervals">Building Intervals</Link>
+          <Link to="/interval-identification">Interval Identification</Link>
         </DropdownMenuItem>
         <DropdownMenuItem onKeyDown={handleKeyDown}>
           <Link to="/interval-quiz">Interval Quiz</Link>
@@ -80,7 +80,7 @@ const Navbar: React.FC = () => {
           <DropdownMenuTrigger>Chords</DropdownMenuTrigger>
           <DropdownMenuContent className="relative z-[2000]">
             <DropdownMenuItem onKeyDown={handleKeyDown}>
-              <Link to="/building-chords">Building Chords</Link>
+              <Link to="/chord-identification">Chord Identification</Link>
             </DropdownMenuItem>
             <DropdownMenuItem onKeyDown={handleKeyDown}>
               <Link to="/chord-quiz">Chord Quiz</Link>
@@ -94,7 +94,7 @@ const Navbar: React.FC = () => {
               <Link to="/metronome">Metronome</Link>
             </DropdownMenuItem>
             <DropdownMenuItem onKeyDown={handleKeyDown}>
-              <Link to="/dictionary">Dictionary</Link>
+              <Link to="/musical-terms">Musical Terms</Link>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
@@ -116,8 +116,8 @@ const Navbar: React.FC = () => {
               <h2 className="font-semibold text-xl">Intervals</h2>
               <ul className="pb-4">
                 <li className="text-lg">
-                  <Link to="/building-intervals" onClick={() => setVisible(false)}>
-                    Building Intervals
+                  <Link to="/interval-idetification" onClick={() => setVisible(false)}>
+                    Interval Identification
                   </Link>
                 </li>
                 <li className="text-lg">
@@ -129,8 +129,8 @@ const Navbar: React.FC = () => {
               <h2 className="font-semibold text-xl">Chords</h2>
               <ul className="pb-4">
                 <li className="text-lg">
-                  <Link to="/building-chords" onClick={() => setVisible(false)}>
-                    Building Chords
+                  <Link to="/chord-identification" onClick={() => setVisible(false)}>
+                    Chord Identification
                   </Link>
                 </li>
                 <li className="text-lg">
@@ -147,8 +147,8 @@ const Navbar: React.FC = () => {
                   </Link>
                 </li>
                 <li className="text-lg">
-                  <Link to="/dictionary" onClick={() => setVisible(false)}>
-                    Dictionary
+                  <Link to="/musical-terms" onClick={() => setVisible(false)}>
+                    Musical Terms
                   </Link>
                 </li>
               </ul>

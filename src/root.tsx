@@ -25,10 +25,10 @@ const Root: React.FC = () => {
           <Route path="*" element={<Error />} />
           <Route path="/interval-quiz" element={<IntervalQuiz />} />
           <Route path="/metronome" element={<Metronome />} />
-          <Route path="/dictionary" element={<Dictionary />} />
-          <Route path="/building-intervals" element={<BuildingIntervals />} />
+          <Route path="/musical-terms" element={<Dictionary />} />
+          <Route path="/interval-identification" element={<BuildingIntervals />} />
           <Route path="/chord-quiz" element={<ChordQuiz />} />
-          <Route path="/building-chords" element={<BuildingChords />} />
+          <Route path="/chord-identification" element={<BuildingChords />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
         </Routes>
