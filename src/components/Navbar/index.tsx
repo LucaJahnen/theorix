@@ -116,7 +116,7 @@ const Navbar: React.FC = () => {
               <h2 className="font-semibold text-xl">Intervals</h2>
               <ul className="pb-4">
                 <li className="text-lg">
-                  <Link to="/interval-idetification" onClick={() => setVisible(false)}>
+                  <Link to="/interval-identification" onClick={() => setVisible(false)}>
                     Interval Identification
                   </Link>
                 </li>
