@@ -21,11 +21,13 @@ const BuildingIntervals = () => {
             <p className="mb-5 leading-relaxed">An interval is the distance between two notes. It tells you how far apart the notes are in pitch. Intervals are named according to two main factors: quality and number. These determine how the interval sounds and how far apart the notes are.</p>
             <p className="mb-7">For example, the interval between C and E is called a "major third." This name tells us both the quality (major) and the number (third), meaning that E is the third note above C in a major scale.</p>
             <h2 className="text-2xl font-semibold pb-1">Types of Intervals</h2>
-            <p className="pb-4 leading-relaxed">There are different types of intervals, each with its own characteristics. Let's break them down:</p>
+            <p className="pb-4 leading-relaxed">There are different types of intervals, each with its own characteristics. Let's get to know how to distinguish them first:</p>
+            <h3 className="text-[1.35rem] font-semibold pb-1">How to identify Major, Minor or Perfect Intervals</h3>
+            <p className="pb-4 leading-relaxed">When identifying the interval quality one method is to pretend the lower note, e. g. d is the tonic of its scale (the first note of the scale). Now create the corresponding major scale (D-major with f# and c#) and check if the upper note is part of that scale. If it is, it has to be either a major or a perfect interval. If it is one semitone smaller than the major interval it is a minor interval. For example, d to a is a fifth. Because there are no major or minor fifths it has to be a perfect fifth. C is not part of the D-Major scale and it is one semitone smaller than the major interval so it is a minor seventh.</p>
             <h3 className="text-xl font-semibold pb-1">Perfect Intervals</h3>
             <p className="pb-4 leading-relaxed">Perfect intervals are considered the most consonant and stable in music. These include:</p>
             <ol className="mb-8">
-                <li className="before:content-['1.'] before:inline-flex before:pr-3 before:font-medium before:text-primary mb-4 flex baseline"><span><span className="font-semibold">Perfect Unison (P1):</span> When two notes are the same, such as C to C.</span></li>
+                <li className="before:content-['1.'] before:inline-flex before:pr-3 before:font-medium before:text-primary mb-4 flex baseline"><span><span className="font-semibold">Perfect Unison (P1):</span> When two notes are the same but one ocatave apart, such as C3 to C4.</span></li>
                 <li className="before:content-['2.'] before:inline-flex before:pr-3 before:font-medium before:text-primary mb-4 flex baseline"><span><span className="font-semibold">Perfect Fourth (P4):</span> From C to F.</span></li>
                 <li className="before:content-['3.'] before:inline-flex before:pr-3 before:font-medium before:text-primary mb-4 flex baseline"><span><span className="font-semibold">Perfect Fifth (P5):</span> From C to G.</span></li>
                 <li className="before:content-['4.'] before:inline-flex before:pr-3 before:font-medium before:text-primary mb-4 flex baseline"><span><span className="font-semibold">Perfect Octave (P8):</span> From C to the next higher C.</span></li>
@@ -67,7 +69,7 @@ const BuildingIntervals = () => {
                 <li className="before:content-['2.'] before:inline-flex before:pr-3 before:font-medium before:text-primary mb-4 flex baseline"><span><span className="font-semibold">Play Intervals on and Instrument:</span> Practice playing intervals on your instrument, whether it's a piano, guitar, or another instrument. Start with the perfect intervals, then work through the major, minor, augmented, and diminished intervals.</span></li>
             </ol>
             <h2 className="text-xl font-semibold pb-1">Conclusion</h2>
-            <p className="leading-relaxed">Understanding intervals is an essentail part of music theory and allows you to learn more difficult concepts like scales or chords. To make sure you understood the concept of intervals use this <Link to="/interval-quiz" className="underline"> interval quiz</Link>. Additionally, you can have a look at this <Link to="/building-chords" className="underline">article about chords</Link>.</p>
+            <p className="leading-relaxed">Understanding intervals is an essentail part of music theory and allows you to learn more difficult concepts like scales or chords. To make sure you understood the concept of intervals use this <Link to="/interval-quiz" className="underline"> interval quiz</Link>. Additionally, you can have a look at this <Link to="/chord-identification" className="underline">article about chords</Link>.</p>
         </div>
         <Footer />
     </>

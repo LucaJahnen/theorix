@@ -80,11 +80,11 @@ const Dictionary: React.FC = () => {
             <p>Found a term you do not know? Look it up here</p>
             <form action="#" className='w-full flex flex-row gap-3 py-6' onSubmit={handleSubmit}>
                 <Input type="text" placeholder='Search for a musical term' name='search' required value={searchTerm} onChange={e => handleChange(e)} className='text-base h-9 max-w-[20rem]' />
-                <Button className='text-base h-9'>Search</Button>
+                <Button className='text-base h-9 bg-primary dark:bg-primary-altered'>Search</Button>
             </form>
             {renderResults(submitted, filteredData)}
             <section className='mt-4'>
-                <h2 className='text-xl font-semibold'>Tempo</h2>
+                <h2 className='text-xl font-semibold'>Italian Tempo Terms</h2>
                 <p className='pb-4 max-w-[65ch]'>This table contains info on musical tempi. In modern music these terms may be out of date because of a metronome mark (such as &#x2669; = 120).</p>
                 <Table>
                     <TableHeader>

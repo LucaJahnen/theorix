@@ -37,8 +37,6 @@ const data = {
         { term: "cantabile", meaning: "in a singing style" },
         { term: "ritardando", meaning: "gradually slowing down" },
         { term: "accelerando", meaning: "gradually speeding up" },
-        { term: "fortissimo", meaning: "very loud" },
-        { term: "pianissimo", meaning: "very soft" },
         { term: "sempre", meaning: "always, continuously" },
         { term: "sforzando", meaning: "with sudden emphasis" },
         { term: "tenuto", meaning: "held or sustained" },
