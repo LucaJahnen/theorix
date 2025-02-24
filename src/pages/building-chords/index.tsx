@@ -87,6 +87,7 @@ const BuildingChords: React.FC = () => {
             <Helmet>
                 <title>How to identify chords</title>
                 <meta name="description" content="Learn how to form and recognize chords on piano and guitar. We share useful tips to master chord theory and play with confidence!" />
+                <link rel="canonical" href="https://theorix.netlify.app/chord-identification" />
             </Helmet>
             <Navbar />
             <div className="px-4 pt-6 lg:w-[60%] lg:block lg:m-auto">
