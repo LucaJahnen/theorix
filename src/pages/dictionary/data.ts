@@ -21,6 +21,14 @@ const data = {
         { symbol: "ff", description: "fortissimo", meaning: "very loud" },
         { symbol: "fff", description: "fortississimo", meaning: "extremely loud" }
     ],
+    "Articulation": [
+        { term: "legato", description: "linked together, smoothly" },
+        { term: "staccato", description: "short, detached notes" },
+        { term: "staccatissimo", description: "very short, extremely detached notes" },
+        { term: "tenuto", description: "held for full value, slightly emphasized" },
+        { term: "marcato", description: "marked, accented" },
+        { term: "portato", description: "between legato and staccato, slightly detached" },
+    ],
     "General": [
         { term: "poco", meaning: "a little" },
         { term: "assai", meaning: "very" },
@@ -28,8 +36,6 @@ const data = {
         { term: "più", meaning: "more" },
         { term: "molto", meaning: "much, very" },
         { term: "subito", meaning: "suddenly" },
-        { term: "legato", meaning: "smooth and connected" },
-        { term: "staccato", meaning: "short and detached" },
         { term: "dolce", meaning: "sweetly" },
         { term: "con brio", meaning: "with spirit, lively" },
         { term: "con moto", meaning: "with movement" },
@@ -39,7 +45,6 @@ const data = {
         { term: "accelerando", meaning: "gradually speeding up" },
         { term: "sempre", meaning: "always, continuously" },
         { term: "sforzando", meaning: "with sudden emphasis" },
-        { term: "tenuto", meaning: "held or sustained" },
         { term: "crescendo", meaning: "gradually getting louder" },
         { term: "diminuendo", meaning: "gradually getting softer" },
         { term: "da capo", meaning: "from the beginning" },

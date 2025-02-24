@@ -39,7 +39,13 @@ const renderResults = (submitted: boolean, filteredData: FilteredItem[]) => {
                                         <TableCell>{item.meaning}</TableCell>
                                     </TableRow>
                                 )}
-                                {item.term && (
+                                {(item.description && item.term) && (
+                                    <TableRow key={item.description}>
+                                        <TableCell className="font-medium italic font-serif">{item.term}</TableCell>
+                                        <TableCell>{item.description}</TableCell>
+                                    </TableRow>
+                                )}
+                                {(item.term && item.meaning) && (
                                     <TableRow key={item.description}>
                                         <TableCell className="font-medium italic font-serif">{item.term}</TableCell>
                                         <TableCell>{item.meaning}</TableCell>
