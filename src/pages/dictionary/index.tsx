@@ -34,34 +34,18 @@ const Dictionary: React.FC = () => {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
 
-        const filteredTempo: FilteredItem[] = data.Tempo.filter((item) => 
-            item.tempo.toLowerCase().includes(searchTerm.toLowerCase()) || 
-            item.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            item.bpm.toLowerCase().includes(searchTerm.toLowerCase())
-        )
-    
-        const filteredArticulation: FilteredItem[] = data.Articulation.filter((term) => 
-            term.term.toLowerCase().includes(searchTerm.toLowerCase()) || 
-            term.description.toLowerCase().includes(searchTerm.toLowerCase())
-        )
+        const findMatchInData = (list: FilteredItem[], searchTerm: string) => {
+            return list.filter((item) =>
+                Object.values(item).some((value) => 
+                    value.toLowerCase().includes(searchTerm.toLowerCase())
+                )
+            )
+        }
 
-        const filteredDynamics: FilteredItem[] = data.Dynamics.filter((dynamic) => 
-            dynamic.symbol.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            dynamic.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            dynamic.meaning.toLowerCase().includes(searchTerm.toLowerCase())
-        )
-    
-        const filteredGeneral: FilteredItem[] = data.General.filter((term) => 
-            term.term.toLowerCase().includes(searchTerm.toLowerCase()) || 
-            term.meaning.toLowerCase().includes(searchTerm.toLowerCase())
-        )
-    
-        const filteredItems = [
-            ...filteredTempo,
-            ...filteredArticulation,
-            ...filteredDynamics,
-            ...filteredGeneral
-        ]
+        const filteredItems = Object.values(data)
+            .map((item) => findMatchInData(item, searchTerm))
+            .filter(arr => arr.length > 0)
+            .flat()
 
         setSubmitted(true)
         setFilteredData(filteredItems)
