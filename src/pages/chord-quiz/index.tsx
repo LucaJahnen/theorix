@@ -19,6 +19,7 @@ import { IoSettingsOutline } from "react-icons/io5"
 import { displayChord } from "./helpers"
 import SettingsDialog from "@/components/SettingsDialog"
 import { Difficulty } from "@/components/SettingsDialog"
+import schema from "../../assets/chord-quiz.json"
 
 interface Input {
   root: string,
@@ -65,8 +66,9 @@ const ChordQuiz: React.FC = () => {
     <>
         <Helmet>
             <title>Chord Quiz</title>
-            <meta name="description" content="This tool tests your knowledge on chords. Choose a difficulty and get started now." />
+            <meta name="description" content="Test your knowledge on major, minor, diminished and augmented chords using this tool. Begin by choosing a difficulty and get started now!" />
             <meta name="keywords" content="chord identification, chord quiz, chord training" />
+            <script type="application/ld+json">{JSON.stringify(schema)}</script>
         </Helmet>
         <Navbar />
         <div className="px-4 pt-6 lg:w-[60%] lg:block lg:m-auto">

@@ -119,7 +119,7 @@ const Metronome: React.FC = () => {
                         <span>Improve your technique. Start at a slow pace and gradually increase the tempo until you match the song's tempo. While doing this you should remember to avoid mistakes and only increase the tempo when you're comfortable with it.</span>
                       </li>
                     </ul>
-                    <p className="leading-relaxed mt-6">If you aren't sure how fast you should play when the tempo marking says Allegro or Moderato, you can look it up <Link to="/dictionary" className="underline">here</Link>.</p>
+                    <p className="leading-relaxed mt-6">If you aren't sure how fast you should play when the tempo marking says Allegro or Moderato, you can look it up <Link to="/musical-terms" className="underline">here</Link>.</p>
                 </section>
             </div>
             <Footer />
