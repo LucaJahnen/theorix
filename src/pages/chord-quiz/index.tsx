@@ -85,35 +85,11 @@ const ChordQuiz: React.FC = () => {
               setActiveIndex={setActiveIndex}
               description={description}
             />
-            {/* <Dialog isOpen={settingsVisible} onClose={() => { setSettingsVisible(false); setDifficulty(difficulties[activeIndex]) }}>
-              <h2 className="text-2xl font-semibold pb-1">Choose a difficulty</h2>
-              <Button className={`text-wrap text-left bg-transparent text-foreground mt-2 shadow-none flex flex-row justify-start items-start gap-0 h-auto w-full transition-all focus-visible:outline-primary ${activeIndex === 0 ? "outline outline-1 outline-grey-400" : ""}`} onClick={() => setActiveIndex(0)}>
-                <img src={Music2} className="mt-1 mr-4 h-5 w-5 invert-stave" />
-                <section>
-                  <h3 className="text-lg font-semibold">Easy</h3>
-                  <p>Minor and major chords only</p>
-                </section>
-              </Button>
-              <Button className={`text-wrap text-left bg-transparent text-foreground mt-3 shadow-none flex flex-rpw justify-start items-start gap-0 h-auto w-full transition-all focus-visible:outline-primary ${activeIndex === 1 ? "outline outline-1 outline-grey-400" : ""}`} onClick={() => setActiveIndex(1)}>
-                <img src={Music} className="mt-1 mr-4 h-5 w-5 invert-stave" />
-                <section>
-                  <h3 className="text-lg font-semibold">Medium</h3>
-                  <p>Augmented and diminished chords as well.</p>
-                </section>
-              </Button>
-              <Button className={`text-wrap text-left bg-transparent text-foreground mt-3 shadow-none flex flex-row justify-start items-start gap-0 h-auto w-full transition-all focus-visible:outline-primary ${activeIndex === 2 ? "outline outline-1 outline-grey-400" : ""}`} onClick={() => setActiveIndex(2)}>
-                <img src={Music4} className="mt-1 mr-4 h-5 w-5 invert-stave" />
-                <section>
-                  <h3 className="text-lg font-semibold">Hard</h3>
-                  <p>All chords and inversions</p>
-                </section>
-              </Button>
-            </Dialog> */}
             <div className="filter invert-stave" ref={scoreRef} id="stave"/>
           <form action="#" className="flex flex-col gap-4 lg:flex-row lg:flex-row lg:items-end lg:gap-7" onSubmit={e => handleSubmit(e)}>
             <Label htmlFor="root-number" className="flex flex-col gap-1.5 relative z-10 lg:w-[27.5%]">
               <span>Root Note</span>
-              <Input type="text" pattern="^[a-gA-G](#|b)?$" id="root-number" placeholder="e. g. C, Eb, G, A#" value={input.root} onChange={e => setInput({ ...input, root: e.target.value })} />
+              <Input type="text" pattern="^[a-gA-G](#|b)?$" id="root-number" placeholder="e. g. C, Eb, G, A#" value={input.root} onChange={e => setInput({ ...input, root: e.target.value })} required />
             </Label>
             <Label htmlFor="number" className="relative z-10 flex flex-col gap-1.5 lg:w-[27.5%]">
               <span className="flex flex-col gap-1.5">Chord Type</span>
