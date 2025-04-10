@@ -61,13 +61,13 @@ const Dictionary: React.FC = () => {
     <>
         <Helmet>
             <title>Italian musical terms</title>
-            <meta name="description" content="Explore key musical terms like allegro, accelerando, molto, and meno in this comprehensive glossary for musicians." />
+            <meta name="description" content="Explore key musical terms for tempo like allegro, accelerando, and molto rit in this comprehensive glossary for musicians." />
             <script type="application/ld+json">{JSON.stringify(schema)}</script>
         </Helmet>
         <Navbar />
         <div className="px-4 pt-6 lg:w-[60%] lg:block lg:m-auto">
             <h1 className="text-3xl font-semibold pb-4">Italian musical terms</h1>
-            <p className="leading-relaxed max-w-[65ch]">Most of the terms used in music theory are Italian. This list covers music terms that specify a certain tempo or describe a way of playing. If you found a term you do not know look it up easily using the search.</p>
+            <p className="leading-relaxed max-w-[65ch]">Most of the terms used in music theory are Italian. This list covers music terms that specify a certain tempo or describe a way of playing. If you found a term you do not know look it up effortlessly using the search.</p>
             <form action="#" className='w-full flex flex-row gap-3 py-6' onSubmit={handleSubmit}>
                 <Input type="text" placeholder='Search for a musical term' name='search' required value={searchTerm} onChange={e => handleChange(e)} className='text-base h-10 max-w-[20rem]' />
                 <Button className='text-base h-10 bg-primary dark:bg-primary-altered'>Search</Button>
@@ -75,22 +75,22 @@ const Dictionary: React.FC = () => {
             {renderResults(submitted, filteredData)}
             <section className='mt-4'>
                 <h2 className='text-xl font-semibold'>Italian Tempo Terms</h2>
-                <p className='pb-4 max-w-[65ch]'>This table contains info on musical tempi. In modern music these terms may be out of date because of a metronome mark (such as &#x2669; = 120).</p>
+                <p className='pb-4 max-w-[65ch]'>This table contains common tempo markings like allegro or andante. In modern music these terms may be out of date because of a metronome mark such as &#x2669; = 120, meaning that the piece should be played at a tempo of 120 beats per minute (bpm).</p>
                 <Table>
                     <TableHeader>
                         <TableRow>
-                        <TableHead>Term</TableHead>
-                        <TableHead>Description</TableHead>
-                        <TableHead>BPM</TableHead>
+                            <TableHead>Term</TableHead>
+                            <TableHead>Description</TableHead>
+                            <TableHead>BPM</TableHead>
                         </TableRow>
                     </TableHeader>
                     <TableBody>
                         {data["Tempo"].map((obj) => (
-                        <TableRow key={obj.description} {...(obj.tempo === "Allegro" ? { id: "allegro" } : {})}>
-                            <TableCell className="font-medium">{obj.tempo}</TableCell>
-                            <TableCell>{obj.description}</TableCell>
-                            <TableCell>{obj.bpm}</TableCell>
-                        </TableRow>
+                            <TableRow key={obj.description} {...(obj.tempo === "Allegro" ? { id: "allegro" } : {})}>
+                                <TableCell className="font-medium">{obj.tempo}</TableCell>
+                                <TableCell>{obj.description}</TableCell>
+                                <TableCell>{obj.bpm}</TableCell>
+                            </TableRow>
                         ))}
                     </TableBody>
                 </Table>
@@ -139,7 +139,7 @@ const Dictionary: React.FC = () => {
             </section>
             <section className='mt-8'>
                 <h2 className='text-xl font-semibold'>General</h2>
-                <p className='pb-4 max-w-[65ch]'>These general terms include terms that are commonly used in conjunction with other terms like <span className="italic">meno mosso</span> (slower).</p>
+                <p className='pb-4 max-w-[65ch]'>These general terms include terms that are commonly used in conjunction with other terms like <span className="italic">meno mosso</span> (slightly slower) or <span className="italic">molto rit</span> (noticable decrease in tempo).</p>
                 <Table>
                     <TableHeader>
                         <TableRow>

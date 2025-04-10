@@ -2,26 +2,26 @@
     "@context": "https://schema.org",
     "@type": "DefinedTermSet",
     "name": "List of Italian musical terms",
-    "description": "A list of Italian musical terms like allegro or accelerando.",
-    "url": "https://theorix.netlify.app/dictionary",
+    "description": "A list of traditional Italian musical terms like allegro or accelerando.",
+    "url": "https://theorix.netlify.app/musical-terms",
     "hasDefinedTerm": [
       {
         "@type": "DefinedTerm",
         "name": "allegro",
         "description": "Vivid and lively tempo",
-        "url": "https://theorix.netlify.app/dictionary#allegro"
+        "url": "https://theorix.netlify.app/musical-terms#allegro"
       },
       {
         "@type": "DefinedTerm",
         "name": "mezzo-forte",
         "description": "Performed at a moderate loudness",
-        "url": "https://theorix.netlify.app/dictionary#mezzo-forte"
+        "url": "https://theorix.netlify.app/musical-terms#mezzo-forte"
       },
       {
         "@type": "DefinedTerm",
         "name": "sforzando",
         "description": "Played with sudden emphasis",
-        "url": "https://theorix.netlify.app/dictionary#sforzando"
+        "url": "https://theorix.netlify.app/musical-terms#sforzando"
       }
     ]
   }  

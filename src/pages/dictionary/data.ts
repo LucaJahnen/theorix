@@ -3,7 +3,7 @@ const data = {
         { tempo: "Largo", description: "very slow and broad", bpm: "40 - 60" },
         { tempo: "Lento", description: "slow", bpm: "52 - 68" },
         { tempo: "Adagio", description: "slow and stately", bpm: "60 - 80" },
-        { tempo: "Andante", description: "walking pace", bpm: "76 - 100" },
+        { tempo: "Andante", description: "at a walking pace", bpm: "76 - 100" },
         { tempo: "Moderato", description: "moderate pace", bpm: "88 - 112" },
         { tempo: "Allegretto", description: "moderately fast", bpm: "100 - 128" },
         { tempo: "Allegro", description: "fast, quickly and bright", bpm: "112 - 160" },
