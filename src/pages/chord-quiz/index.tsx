@@ -19,7 +19,7 @@ import { IoSettingsOutline } from "react-icons/io5"
 import { displayChord } from "./helpers"
 import SettingsDialog from "@/components/SettingsDialog"
 import { Difficulty } from "@/components/SettingsDialog"
-import schema from "../../assets/chord-quiz.json"
+import schema from "../../assets/schemas/chord-quiz.json"
 
 interface Input {
   root: string,
