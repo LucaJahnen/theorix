@@ -12,6 +12,7 @@ const BuildingIntervals = () => {
             <title>How to identify Intervals</title>
             <meta name="description" content="This article helps you understand intervals by teaching you about the different types of intervals and how they sound." />
             <script type="application/ld+json">{JSON.stringify(schema)}</script>
+            <link rel="canonical" href="https://theorix.netlify.app/interval-identification" />
         </Helmet>
         <Navbar />
         <div className="px-4 pt-6 lg:w-[60%] lg:block lg:m-auto">

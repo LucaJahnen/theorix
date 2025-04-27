@@ -63,6 +63,7 @@ const Dictionary: React.FC = () => {
             <title>Italian musical terms</title>
             <meta name="description" content="Explore key musical terms for tempo like allegro, accelerando, and molto rit in this comprehensive glossary for musicians." />
             <script type="application/ld+json">{JSON.stringify(schema)}</script>
+            <link rel="canonical" href="https://theorix.netlify.app/musical-terms" />
         </Helmet>
         <Navbar />
         <div className="px-4 pt-6 lg:w-[60%] lg:block lg:m-auto">
