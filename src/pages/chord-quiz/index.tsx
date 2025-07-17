@@ -65,15 +65,15 @@ const ChordQuiz: React.FC = () => {
   return (
     <>
         <Helmet>
-            <title>Chord Quiz</title>
-            <meta name="description" content="Test your knowledge on major, minor, diminished and augmented chords using this tool. Begin by choosing a difficulty and get started now!" />
+            <title>Chord Identification Quiz</title>
+            <meta name="description" content="Test your knowledge on major, minor, diminished and augmented chords using this chord identification quiz. Start by choosing a difficulty and expand your knowledge now!" />
             <meta name="keywords" content="chord identification, chord quiz, chord training" />
             <script type="application/ld+json">{JSON.stringify(schema)}</script>
         </Helmet>
         <Navbar />
         <div className="px-4 pt-6 lg:w-[60%] lg:block lg:m-auto">
             <h1 className="text-3xl font-semibold pb-4">Chord Quiz</h1>
-            <p>Which chord is shown below? Enter the root note and the chord type.</p>
+            <p style={{ maxWidth: "65ch" }}>Your task is to identify the chord shown below. If you need help, you can refer to the provided resources down below. To build a solid foundation, consider practicing every day.</p>
             <Button variant="secondary" className="mt-4 mb-2" onClick={() => setSettingsVisible(true)}>
               <IoSettingsOutline />{difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}
             </Button>
@@ -92,7 +92,7 @@ const ChordQuiz: React.FC = () => {
               <Input type="text" pattern="^[a-gA-G](#|b)?$" id="root-number" placeholder="e. g. C, Eb, G, A#" value={input.root} onChange={e => setInput({ ...input, root: e.target.value })} required />
             </Label>
             <Label htmlFor="number" className="relative z-10 flex flex-col gap-1.5 lg:w-[27.5%]">
-              <span className="flex flex-col gap-1.5">Chord Type</span>
+              <span>Chord Type</span>
               <Select required value={input.type} onValueChange={value => setInput({ ...input, type: value })}>
               <SelectTrigger className="relative -z-10" id="number">
                 <SelectValue placeholder="e. g. Major, Diminished" />
@@ -113,7 +113,7 @@ const ChordQuiz: React.FC = () => {
           <h2 className="text-2xl font-semibold pb-1">How to identify chords</h2>
           <p className="mb-4">To identify an interval between two notes, follow these steps:</p>
           <ol className="">
-                <li className="before:content-['1.'] before:inline-flex before:pr-3 before:font-medium before:text-primary mb-4 flex baseline"><span><span className="font-semibold">Determine the root note:</span> In this example the root note is always the lowest note but in some excercises you might need to change the chord inversion to root position.</span></li>
+                <li className="before:content-['1.'] before:inline-flex before:pr-3 before:font-medium before:text-primary mb-4 flex baseline"><span><span className="font-semibold">Determine the root note:</span> In Easy and Medium Mode the root note is always the lowest note but in some excercises you might need to change the chord inversion to root position.</span></li>
                 <li className="before:content-['2.'] before:inline-flex before:pr-3 before:font-medium before:text-primary mb-4 flex baseline">
                   <span><span className="font-semibold">Determine the chord type:</span> If the interval between the note is a major third between root and third and a minor third between third and fifth it is called a major chord. If it's a minor third first and then a major third it is a minor chord. An augmented chord is built using two major thirds and a diminished chord uses two minor thirds.</span>
                 </li>

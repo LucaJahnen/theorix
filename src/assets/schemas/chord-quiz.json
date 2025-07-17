@@ -3,6 +3,7 @@
     "@type": "SoftwareApplication",
     "headline": "Chord Quiz",
     "name": "Chord Quiz",
+    "alternateName": "Chord Identification Quiz",
     "author": {
         "@type": "Person",
         "name": "Luca Jahnen"
@@ -12,12 +13,15 @@
     "description": "Test your knowledge on major, minor, diminished and augmented chords using this tool. Begin by choosing a difficulty and get started now!",
     "url": "https://theorix.netlify.app/chord-quiz",
     "datePublished": "2024-11-16",
-    "dateModified": "2025-03-26",
+    "dateModified": "2025-07-17",
     "isAccessibleForFree": true,
-    "educationalLevel": "beginner",
+    "educationalLevel": ["Beginner", "Intermediate", "Advanced"],
+    "learningResourceType": "Quiz",
     "offers": {
         "@type": "Offer",
         "price": "0.00",
         "priceCurrency": "EUR"
-    }
+    },
+    "softwareVersion": "2.0",
+    "inLanguage": "en"
 }
