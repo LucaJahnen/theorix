@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://www.theorix.netlify.app/</loc>
+        <loc>https://theorix.netlify.app/</loc>
         <lastmod>2024-11-16</lastmod>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://www.theorix.netlify.app/chord-quiz</loc>
+        <loc>https://theorix.netlify.app/chord-quiz</loc>
         <lastmod>2025-07-17</lastmod>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://www.theorix.netlify.app/interval-quiz</loc>
+        <loc>https://theorix.netlify.app/interval-quiz</loc>
         <lastmod>2025-02-20</lastmod>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://www.theorix.netlify.app/metronome</loc>
+        <loc>https://theorix.netlify.app/metronome</loc>
         <lastmod>2024-11-16</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.theorix.netlify.app/musical-terms</loc>
+        <loc>https://theorix.netlify.app/musical-terms</loc>
         <lastmod>2025-04-16</lastmod>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://www.theorix.netlify.app/chord-identification</loc>
+        <loc>https://theorix.netlify.app/chord-identification</loc>
         <lastmod>2024-11-16</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.theorix.netlify.app/interval-identification</loc>
+        <loc>https://theorix.netlify.app/interval-identification</loc>
         <lastmod>2024-11-16</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.theorix.netlify.app/privacy-policy</loc>
+        <loc>https://theorix.netlify.app/privacy-policy</loc>
         <lastmod>2024-11-15</lastmod>
         <priority>0.1</priority>
     </url>
     <url>
-        <loc>https://www.theorix.netlify.app/terms-of-service</loc>
+        <loc>https://theorix.netlify.app/terms-of-service</loc>
         <lastmod>2024-11-15</lastmod>
         <priority>0.1</priority>
     </url>
