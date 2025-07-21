@@ -35,17 +35,6 @@ const Dictionary: React.FC = () => {
         e.preventDefault()
 
         const findMatchInData = (list: FilteredItem[], searchTerm: string) => {
-        //     return list.map((item) => {
-        //    const matchedValue = Object.values(item).some((value) => {
-        //              if(typeof value === "string") {
-        //                  return value.toLowerCase().includes(searchTerm.toLowerCase())
-        //              }
-        //             })
-        //         if (matchedValue) {
-        //             return { item, keys: Object.keys(list[0]) }
-        //      }
-        //     return null;
-        // })
             return list.filter((item) =>
                 Object.values(item).some((value) => {
                     if(typeof value === "string") {
@@ -64,7 +53,6 @@ const Dictionary: React.FC = () => {
 
         setSubmitted(true)
         setFilteredData(filteredItems)
-        console.log(filteredItems)
     }
 
     const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
@@ -118,8 +106,8 @@ const Dictionary: React.FC = () => {
                 <Table>
                     <TableHeader>
                         <TableRow>
-                        <TableHead>Term</TableHead>
-                        <TableHead>Meaning</TableHead>
+                            <TableHead>Term</TableHead>
+                            <TableHead>Meaning</TableHead>
                         </TableRow>
                     </TableHeader>
                     <TableBody>
@@ -138,9 +126,9 @@ const Dictionary: React.FC = () => {
                 <Table>
                     <TableHeader>
                         <TableRow>
-                        <TableHead>Term</TableHead>
-                        <TableHead>Description</TableHead>
-                        <TableHead>Meaning</TableHead>
+                            <TableHead>Term</TableHead>
+                            <TableHead>Description</TableHead>
+                            <TableHead>Meaning</TableHead>
                         </TableRow>
                     </TableHeader>
                     <TableBody>
@@ -148,6 +136,28 @@ const Dictionary: React.FC = () => {
                         <TableRow key={obj.description} {...(obj.description === "mezzo-forte" ? { id: "mezzo-forte" } : {})}>
                             <TableCell className="font-medium italic font-serif">{obj.term}</TableCell>
                             <TableCell>{obj.description}</TableCell>
+                            <TableCell>{obj.meaning}</TableCell>
+                        </TableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+            </section>
+            <section className='mt-8'>
+                <h2 className='text-xl font-semibold'>Dynamic Changes</h2>
+                <p className='pb-4 max-w-[65ch]'>Dynamic changes refer to the gradual alterations in volume and intensity within a musical passage. These changes are often indicated by specific terms and symbols.</p>
+                <Table>
+                    <TableHeader>
+                        <TableRow>
+                            <TableHead>Term</TableHead>
+                            <TableHead>Description</TableHead>
+                            <TableHead>Meaning</TableHead>
+                        </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                        {data["Dynamic Changes"].map((obj) => (
+                        <TableRow key={obj.description}>
+                            <TableCell>{obj.term}</TableCell>
+                            <TableCell className="font-medium italic font-serif">{obj.description}</TableCell>
                             <TableCell>{obj.meaning}</TableCell>
                         </TableRow>
                         ))}
@@ -202,8 +212,8 @@ const Dictionary: React.FC = () => {
                 <Table>
                     <TableHeader>
                         <TableRow>
-                        <TableHead>Term</TableHead>
-                        <TableHead>Meaning</TableHead>
+                            <TableHead>Term</TableHead>
+                            <TableHead>Meaning</TableHead>
                         </TableRow>
                     </TableHeader>
                     <TableBody>

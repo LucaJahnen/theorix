@@ -21,6 +21,13 @@ const data = {
         { term: "ff", description: "fortissimo", meaning: "very loud" },
         { term: "fff", description: "fortississimo", meaning: "extremely loud" }
     ],
+    "Dynamic Changes" : [
+        { term: "crescendo", description: "cresc.", meaning: "gradually getting louder" },
+        { term: "decrescendo", description: "decresc.", meaning: "gradually getting softer" },
+        { term: "diminuendo", description: "dim.", meaning: "gradually getting softer" },
+        { term: "sforzando", description: "sfz.", meaning: "with sudden emphasis" },
+        { term: "fortepiano", description: "fp", meaning: "strong, then immediately soft" }
+    ],
     "Articulation": [
         { term: "legato", description: "linked together, smoothly" },
         { term: "staccato", description: "short, detached notes" },
