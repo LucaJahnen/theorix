@@ -9,58 +9,47 @@ import {
 import { FilteredItem } from "."
 import { IoMdAlert } from "react-icons/io"
 
-const renderResults = (submitted: boolean, filteredData: FilteredItem[]) => {
+const renderResults = (filteredData: FilteredItem[]) => {
+    const uniqueKeys: string[][] = []
+    const sortedData: Record<string, FilteredItem[]> = {}
+
+    // Iterate through filteredData to group items by their keys
+    filteredData.map((data) => {
+        const keys = Object.keys(data)
+        if (!uniqueKeys.includes(keys)) {
+            uniqueKeys.push(keys)
+            if(sortedData[JSON.stringify(keys)] === undefined) {
+                sortedData[JSON.stringify(keys)] = []
+            }
+            sortedData[JSON.stringify(keys)].push(data)
+        }
+    })
     return (
         <>
-        {submitted && (
-            filteredData.length > 0 ? (
-                filteredData.map((item, index) => (
-                    <Table className="mb-5" key={index}>
-                        <TableHeader>
+        {Object.entries(sortedData).length > 0 ? Object.entries(sortedData).map(([key, items]) => (
+            <Table className="mb-5">
+                    <TableHeader>
                             <TableRow>
-                                <TableHead>{item.tempo ? "Term" : "Symbol"}</TableHead>
-                                {(item.tempo || item.symbol) && <TableHead>Description</TableHead>}
-                                <TableHead>{item.bpm ? "BPM" : "Meaning"}</TableHead>
+                                {JSON.parse(key).map((k: string) => (
+                                    <TableHead key={k}>{k.charAt(0).toUpperCase() + k.slice(1)}</TableHead>
+                                ))}
                             </TableRow>
-                        </TableHeader>
-                        <TableBody>
-                            <>
-                                {item.tempo && (
-                                    <TableRow key={item.description}>
-                                        <TableCell className="font-medium italic font-serif">{item.tempo}</TableCell>
-                                        <TableCell>{item.description}</TableCell>
-                                        <TableCell>{item.bpm} BPM</TableCell>
-                                    </TableRow>
-                                )}
-                                {item.symbol && (
-                                    <TableRow key={item.description}>
-                                        <TableCell className="font-medium italic font-serif">{item.symbol}</TableCell>
-                                        <TableCell>{item.description}</TableCell>
-                                        <TableCell>{item.meaning}</TableCell>
-                                    </TableRow>
-                                )}
-                                {(item.description && item.term) && (
-                                    <TableRow key={item.description}>
-                                        <TableCell className="font-medium italic font-serif">{item.term}</TableCell>
-                                        <TableCell>{item.description}</TableCell>
-                                    </TableRow>
-                                )}
-                                {(item.term && item.meaning) && (
-                                    <TableRow key={item.description}>
-                                        <TableCell className="font-medium italic font-serif">{item.term}</TableCell>
-                                        <TableCell>{item.meaning}</TableCell>
-                                    </TableRow>
-                                )}
-                            </>
-                        </TableBody>
-                    </Table>
-                ))
-            ) : (
-                <div className="flex flex-row gap-2 mb-5 items-center">
-                    <IoMdAlert className="w-5 h-5" />
-                    <p className="font-lg">Nothing found. Make sure your spelling is correct.</p>
-                </div>
-            )
+                    </TableHeader>
+                    <TableBody>
+                        {items.map((item) => (
+                            <TableRow>
+                                {Object.values(item).map(value => (
+                                    <TableCell key={value}>{typeof value === "number" ? <span className="text-2xl leading-none">{String.fromCodePoint(value)}</span> : value}</TableCell>
+                                ))}
+                            </TableRow>
+                        ))}
+                    </TableBody>
+            </Table>
+        )) : (
+            <div className="flex flex-row gap-2 mb-5 items-start">
+                <IoMdAlert className="w-5 h-5" />
+                <p className="text-sm">Nothing found. Make sure your spelling is correct.</p>
+            </div>
         )}
         </>
     )

@@ -12,14 +12,14 @@ const data = {
         { tempo: "Prestissimo", description: "extremely fast", bpm: "188 - 220" }
     ],
     "Dynamics": [
-        { symbol: "ppp", description: "pianississimo", meaning: "extremely soft" },
-        { symbol: "pp", description: "pianissimo", meaning: "very soft" },
-        { symbol: "p", description: "piano", meaning: "soft" },
-        { symbol: "mp", description: "mezzo-piano", meaning: "moderately soft" },
-        { symbol: "mf", description: "mezzo-forte", meaning: "moderately loud" },
-        { symbol: "f", description: "forte", meaning: "loud" },
-        { symbol: "ff", description: "fortissimo", meaning: "very loud" },
-        { symbol: "fff", description: "fortississimo", meaning: "extremely loud" }
+        { term: "ppp", description: "pianississimo", meaning: "extremely soft" },
+        { term: "pp", description: "pianissimo", meaning: "very soft" },
+        { term: "p", description: "piano", meaning: "soft" },
+        { term: "mp", description: "mezzo-piano", meaning: "moderately soft" },
+        { term: "mf", description: "mezzo-forte", meaning: "moderately loud" },
+        { term: "f", description: "forte", meaning: "loud" },
+        { term: "ff", description: "fortissimo", meaning: "very loud" },
+        { term: "fff", description: "fortississimo", meaning: "extremely loud" }
     ],
     "Articulation": [
         { term: "legato", description: "linked together, smoothly" },
@@ -64,16 +64,25 @@ const data = {
         { term: "molto", meaning: "much, very" },
         { term: "subito", meaning: "suddenly" },
         { term: "giocoso", meaning: "playfully" },
-        { term: "cantabile", meaning: "in a singing style" },
         { term: "ritardando", meaning: "gradually slowing down" },
         { term: "accelerando", meaning: "gradually speeding up" },
         { term: "sempre", meaning: "always, continuously" },
-        { term: "sforzando", meaning: "with sudden emphasis" },
-        { term: "crescendo", meaning: "gradually getting louder" },
-        { term: "diminuendo", meaning: "gradually getting softer" },
-        { term: "da capo", meaning: "from the beginning" },
-        { term: "dal segno", meaning: "from the sign" },
-        { term: "fine", meaning: "the end" },
+    ],
+    "Repeats": [
+        { term: "repeat sign", symbol: 119047, meaning: "repeat from the left repeat sign, if present, else from the beginning" },
+        { term: "repeated beat", symbol: 119053, meaning: "repeat the previous beat" },
+        { term: "repeated measure", symbol: 119054, meaning: "repeat the previous measure" },
+        { term: "two-measure repeat", symbol: 119055, meaning: "repeat the previous two measures" },
+        { term: "Fine", symbol: "", meaning: "the end" },
+        { term: "Coda", symbol: 119052, meaning: "the tail, a concluding section" },
+        { term: "Segno", symbol: 119051, meaning: "the beginning or end of a repeat" },
+        { term: "Da Capo", symbol: 119050, meaning: "from the beginning" },
+        { term: "Da Capo al Fine", symbol: "D. C. al fine", meaning: "repeat from the beginning to Fine" },
+        { term: "Da Capo al Coda", symbol: "D. C. al coda", meaning: "repeat from the beginning and, when you see the sign 'To Coda', skip to the Coda section." },
+        { term: "Da Capo al Segno", symbol: "D. C. al segno", meaning: "repeat from the beginning to the Segno sign" },
+        { term: "Dal Segno", symbol: 119049, meaning: "from the sign" },
+        { term: "Dal Segno al Fine", symbol: "D S. al fine", meaning: "repeat from the Segno sign to Fine" },
+        { term: "Dal Segno al Coda", symbol: "D. S. al coda", meaning: "repeat from the Segno sign to the Coda sign, then skip to the Coda section" },
     ]
 }
 
