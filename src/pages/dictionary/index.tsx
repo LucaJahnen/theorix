@@ -44,8 +44,7 @@ const Dictionary: React.FC = () => {
             )
         }
 
-        const filteredItems = Object.values(data)
-            .map((item) => findMatchInData(item, searchTerm))
+        const filteredItems = data.map((item) => findMatchInData(item.terms, searchTerm))
             .filter(arr => arr.length > 0)
             .flat()
             .filter(arr => arr !== null)
@@ -73,159 +72,37 @@ const Dictionary: React.FC = () => {
         <main className="px-4 pt-6 lg:w-[60%] lg:block lg:m-auto">
             <h1 className="text-3xl font-semibold pb-4">Italian music terms</h1>
             <p className="leading-relaxed max-w-[65ch]">Italian is the universal language of classical music. This page provides definitions and explanations of common Italian musical terms used to indicate tempo, expression, dynamics, articulation, and more &#8210; helping musicians interpret music accurately and with style. You can quickly find any term using the search function below.</p>
-            <form action="#" className='w-full flex flex-row gap-3 py-6' onSubmit={handleSubmit}>
+            <form action="#" className='w-full flex flex-row gap-3 pt-6 pb-2' onSubmit={handleSubmit}>
                 <Input type="text" placeholder='Search for a musical term' name='search' required value={searchTerm} onChange={e => handleChange(e)} className='text-base h-10 max-w-[20rem]' />
                 <Button className='text-base h-10 bg-primary dark:bg-primary-altered'>Search</Button>
             </form>
             {submitted && renderResults(filteredData)}
-            <section className='mt-4'>
-                <h2 className='text-xl font-semibold'>Italian Tempo Terms</h2>
-                <p className='pb-4 max-w-[65ch]'>This table contains common tempo markings like allegro or andante. In modern music these terms may be out of date because of a metronome mark such as &#x2669; = 120, meaning that the piece of music should be played at a tempo of 120 beats per minute (bpm).</p>
-                <Table>
-                    <TableHeader>
-                        <TableRow>
-                            <TableHead>Term</TableHead>
-                            <TableHead>Description</TableHead>
-                            <TableHead>BPM</TableHead>
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                        {data["Tempo"].map((obj) => (
-                            <TableRow key={obj.description} {...(obj.tempo === "Allegro" ? { id: "allegro" } : {})}>
-                                <TableCell className="font-medium">{obj.tempo}</TableCell>
-                                <TableCell>{obj.description}</TableCell>
-                                <TableCell>{obj.bpm}</TableCell>
+            {data.map(({ title, desc, style, terms }) => (
+                <section className='mt-8' key={title}>
+                    <h2 className='text-xl font-semibold'>{title}</h2>
+                    <p className='pb-4 max-w-[65ch]'>{desc}</p>
+                    <Table>
+                        <TableHeader>
+                            <TableRow>
+                                {Object.keys(terms[0]).map((key) => (
+                                    <TableHead key={key}>{key == "bpm" ? key.toUpperCase():  key.charAt(0).toUpperCase() + key.slice(1)}</TableHead>
+                                ))}
                             </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </section>
-            <section className='mt-8'>
-                <h2 className='text-xl font-semibold'>Articulation</h2>
-                <p className='pb-4 max-w-[65ch]'>Articulation affects their connection, length, and emphasis. Different articulation markings help musicians express various styles and emotions, from smooth legato to sharp staccato. Below is a list of common articulation terms with their meanings.</p>
-                <Table>
-                    <TableHeader>
-                        <TableRow>
-                            <TableHead>Term</TableHead>
-                            <TableHead>Meaning</TableHead>
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                        {data["Articulation"].map((obj) => (
-                        <TableRow key={obj.term} {...(obj.term === "sforzando" ? { id: "sforzando" } : {})}>
-                            <TableCell className="font-medium">{obj.term}</TableCell>
-                            <TableCell>{obj.description}</TableCell>
-                        </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </section>
-            <section className='mt-8'>
-                <h2 className='text-xl font-semibold'>Dynamics</h2>
-                <p className='pb-4 max-w-[65ch]'>Dynamic markings do not refer to absolute volumnes. They are usually written under the stave or between two staves if there are two of them.</p>
-                <Table>
-                    <TableHeader>
-                        <TableRow>
-                            <TableHead>Term</TableHead>
-                            <TableHead>Description</TableHead>
-                            <TableHead>Meaning</TableHead>
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                        {data["Dynamics"].map((obj) => (
-                        <TableRow key={obj.description} {...(obj.description === "mezzo-forte" ? { id: "mezzo-forte" } : {})}>
-                            <TableCell className="font-medium italic font-serif">{obj.term}</TableCell>
-                            <TableCell>{obj.description}</TableCell>
-                            <TableCell>{obj.meaning}</TableCell>
-                        </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </section>
-            <section className='mt-8'>
-                <h2 className='text-xl font-semibold'>Dynamic Changes</h2>
-                <p className='pb-4 max-w-[65ch]'>Dynamic changes refer to the gradual alterations in volume and intensity within a musical passage. These changes are often indicated by specific terms and symbols.</p>
-                <Table>
-                    <TableHeader>
-                        <TableRow>
-                            <TableHead>Term</TableHead>
-                            <TableHead>Description</TableHead>
-                            <TableHead>Meaning</TableHead>
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                        {data["Dynamic Changes"].map((obj) => (
-                        <TableRow key={obj.description}>
-                            <TableCell>{obj.term}</TableCell>
-                            <TableCell className="font-medium italic font-serif">{obj.description}</TableCell>
-                            <TableCell>{obj.meaning}</TableCell>
-                        </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </section>
-            <section className='mt-8'>
-                <h2 className='text-xl font-semibold'>Mood</h2>
-                <p className='pb-4 max-w-[65ch]'>This section lists common Italian terms that indicate the emotional character or expressive quality of a piece. These terms help performers convey the intended mood, feeling, or attitude of the music.</p>
-                <Table>
-                    <TableHeader>
-                        <TableRow>
-                        <TableHead>Term</TableHead>
-                        <TableHead>Meaning</TableHead>
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                        {data["Mood"].map((obj) => (
-                        <TableRow key={obj.term} {...(obj.term === "sforzando" ? { id: "sforzando" } : {})}>
-                            <TableCell className="font-medium">{obj.term}</TableCell>
-                            <TableCell>{obj.description}</TableCell>
-                        </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </section>
-            <section className='mt-8'>
-                <h2 className='text-xl font-semibold'>Repeats</h2>
-                <p className='pb-4 max-w-[65ch]'>This table contains common music terms for repeats like da capo or dal segno. These terms indicate specific points in the music to return to and are essential for understanding the structure of a piece.</p>
-                <Table>
-                    <TableHeader>
-                        <TableRow>
-                            <TableHead>Term</TableHead>
-                            <TableHead>Symbol</TableHead>
-                            <TableHead>Meaning</TableHead>
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                        {data["Repeats"].map((obj) => (
-                            <TableRow key={obj.term}>
-                                <TableCell className="font-medium">{obj.term}</TableCell>
-                                <TableCell>{typeof obj.symbol == "number" ? <span className="text-2xl leading-none">{String.fromCodePoint(obj.symbol)}</span> : obj.symbol}</TableCell>
-                                <TableCell>{obj.meaning}</TableCell>
-                            </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </section>
-            <section className='mt-8'>
-                <h2 className='text-xl font-semibold'>General</h2>
-                <p className='pb-4 max-w-[65ch]'>These general terms include terms that are commonly used in conjunction with other terms like <span className="italic">meno mosso</span> (slightly slower) or <span className="italic">molto rit</span> (noticable decrease in tempo).</p>
-                <Table>
-                    <TableHeader>
-                        <TableRow>
-                            <TableHead>Term</TableHead>
-                            <TableHead>Meaning</TableHead>
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                        {data["General"].map((obj) => (
-                        <TableRow key={obj.term} {...(obj.term === "sforzando" ? { id: "sforzando" } : {})}>
-                            <TableCell className="font-medium">{obj.term}</TableCell>
-                            <TableCell>{obj.meaning}</TableCell>
-                        </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </section>
+                        </TableHeader>
+                        <TableBody>
+                            {terms.map((obj) => (
+                                <TableRow key={Object.values(obj).join('-')}>
+                                    {Object.entries(obj).map(([key, value], index) => (
+                                        <TableCell key={key} className={style[index] || ""}>
+                                            {typeof value === "number" ? <span className="text-2xl leading-none">{String.fromCodePoint(value)}</span> : value}
+                                        </TableCell>
+                                    ))}
+                                </TableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </section>
+            ))}
         </main>
         <Footer />
     </>
