@@ -1,0 +1,11 @@
+[class$="-major"] {
+    outline: none;
+
+    .outline-ring {
+        opacity: 0;
+    }
+
+    &:focus-visible .outline-ring {
+        opacity: 1;
+    }
+}

@@ -21,8 +21,13 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://theorix.netlify.app/circle-of-fifths</loc>
+        <lastmod>2025-07-24</lastmod>
+        <priority>1.0</priority>
+    </url>
+    <url>
         <loc>https://theorix.netlify.app/musical-terms</loc>
-        <lastmod>2025-04-16</lastmod>
+        <lastmod>2025-07-21</lastmod>
         <priority>1.0</priority>
     </url>
     <url>

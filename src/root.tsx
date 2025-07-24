@@ -9,6 +9,7 @@ const Error = lazy(() => import('./pages/error'))
 const IntervalQuiz = lazy(() => import('./pages/interval-quiz'))
 const Metronome = lazy(() => import('./pages/metronome'))
 const Dictionary = lazy(() => import('./pages/dictionary'))
+const CircleOfFifths = lazy(() => import('./pages/circle-of-fifths'))
 const BuildingIntervals = lazy(() => import('./pages/building-intervals'))
 const ChordQuiz = lazy(() => import('./pages/chord-quiz'))
 const BuildingChords = lazy(() => import('./pages/building-chords'))
@@ -26,6 +27,7 @@ const Root: React.FC = () => {
           <Route path="/interval-quiz" element={<IntervalQuiz />} />
           <Route path="/metronome" element={<Metronome />} />
           <Route path="/musical-terms" element={<Dictionary />} />
+          <Route path="/circle-of-fifths" element={<CircleOfFifths />} />
           <Route path="/interval-identification" element={<BuildingIntervals />} />
           <Route path="/chord-quiz" element={<ChordQuiz />} />
           <Route path="/chord-identification" element={<BuildingChords />} />

@@ -96,6 +96,9 @@ const Navbar: React.FC = () => {
             <DropdownMenuItem onKeyDown={handleKeyDown}>
               <Link to="/musical-terms">Musical Terms</Link>
             </DropdownMenuItem>
+            <DropdownMenuItem onKeyDown={handleKeyDown}>
+              <Link to="/circle-of-fifths">Circle of Fifths</Link>
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
         </div>
@@ -149,6 +152,11 @@ const Navbar: React.FC = () => {
                 <li className="text-lg">
                   <Link to="/musical-terms" onClick={() => setVisible(false)}>
                     Musical Terms
+                  </Link>
+                </li>
+                <li className="text-lg">
+                  <Link to="/circle-of-fifths" onClick={() => setVisible(false)}>
+                    Circle of Fifths
                   </Link>
                 </li>
               </ul>

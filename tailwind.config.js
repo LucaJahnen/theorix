@@ -20,8 +20,13 @@ export default {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		backgroundColor: {
-  			footer: 'hsl(var(--footer))'
+  			footer: 'hsl(var(--footer))',
+			circleOfFifths: 'hsla(var(--circle-of-fifths))',
+			circleOfFifthsAltered: 'hsla(var(--circle-of-fifths-altered))'
   		},
+		fill: {
+			circleOfFifths: 'hsla(var(--circle-of-fifths))'
+		},
   		invert: {
   			stave: 'var(--stave)'
   		},

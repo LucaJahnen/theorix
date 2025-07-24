@@ -1,0 +1,28 @@
+{
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "headline": "Circle of Fifths",
+    "name": "Circle of Fifths",
+    "alternateName": "Interactive Circle of Fifths",
+    "applicationCategory": "MusicApplication",
+    "operatingSystem": "All",
+    "url": "https://theorix.netlify.app/circle-of-fifths",
+    "datePublished": "2025-07-23",
+    "dateModified": "2025-07-23",
+    "dateCreated": "2025-07-23",
+    "description": "An interactive tool to explore the Circle of Fifths. By using this tool, you can easily identify key signatures, understand relationships between keys, and visualize the circle's structure.",
+    "softwareVersion": "1.0.0",
+    "author": {
+        "@type": "Person",
+        "name": "LucaJahnen"
+    },
+    "isAccessibleForFree": true,
+    "educationalLevel": ["Beginner", "Intermediate", "Advanced"],
+    "learningResourceType": "Interactive Tool",
+    "offers": {
+        "@type": "Offer",
+        "price": "0.00",
+        "priceCurrency": "EUR"
+    },
+    "inLanguage": "en"
+}
