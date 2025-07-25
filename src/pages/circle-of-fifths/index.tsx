@@ -78,7 +78,7 @@ const CircleOfFifths = () => {
                         <path id="text-path" d="M1000 -315 A 1315 1315 0 0 1 1000 2315 A 1315 1315 0 0 1 1000 -315" pathLength="100" />
                     </defs>
                     <g className="inner-circle">
-                        <g role="button" tabIndex={0} aria-label="C-Major/A-Minor" cursor="pointer" className="c-major" transform={`rotate(${angle} 1000 1000)`} onClick={() => handleClick(0, 0)}   onKeyDown={(e) => handleKeyDown(e, 0, 0)}>
+                        <g role="button" tabIndex={0} aria-label="C-Major/A-Minor" cursor="pointer" className="c-major" transform={`rotate(${angle} 1000 1000)`} onClick={() => handleClick(0, 0)} onKeyDown={(e) => handleKeyDown(e, 0, 0)}>
                             <path d="M1241.92 29.7 A1000 1000 0 0 0 758.08 29.7 L836.7 345.05 A 675 675 0 0 1 1163.3 345.05 L1241.92 29.7" className="fill-primary" />
                             <text x="1000" y="200" font-size="112" text-anchor="middle" fill="white">C</text>
                             <path d="M1157.25 369.3 A 650 650 0 0 0 842.75 369.31 L891.14 563.37 A 450 450 0 0 1 1108.86 563.37 L1157.25 369.3" className="fill-circleOfFifths" />
@@ -268,12 +268,6 @@ const CircleOfFifths = () => {
                         <span><strong>Composing music:</strong> Composers use the Circle of Fifths as a reference to build chord sequences, explore new harmonies, and experiment with key changes, enhancing creativity and musical variety.</span>
                     </li>
                 </ul>
-            </section>
-            <section>
-                <h2 className="pt-8 text-2xl font-semibold pb-1">How to use</h2>
-                <p>
-                    Click on a key in the circle to rotate it to the top center. This will display the chord functions, scale, and accidentals for that key. You can also use the keyboard: focus a key and press Enter or Space to select it. The interface is fully accessible for keyboard navigation.
-                </p>
             </section>
             <section className="leading-relaxed">
                 <h2 className="pt-8 text-2xl font-semibold pb-1">Creating Chords</h2>
