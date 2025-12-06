@@ -70,7 +70,7 @@ const BuildingIntervals = () => {
                 <li className="before:content-['2.'] before:inline-flex before:pr-3 before:font-medium before:text-primary mb-4 flex baseline"><span><span className="font-semibold">Play Intervals on and Instrument:</span> Practice playing intervals on your instrument, whether it's a piano, guitar, or another instrument. Start with the perfect intervals, then work through the major, minor, augmented, and diminished intervals.</span></li>
             </ol>
             <h2 className="text-xl font-semibold pb-1">Conclusion</h2>
-            <p className="leading-relaxed">Understanding intervals is an essentail part of music theory and allows you to learn more difficult concepts like scales or chords. To make sure you understood the concept of intervals use this <Link to="/interval-quiz" className="underline"> interval quiz</Link>. Additionally, you can have a look at this <Link to="/chord-identification" className="underline">article about chords</Link>.</p>
+            <p className="leading-relaxed">Understanding intervals is an essentail part of music theory and allows you to learn more difficult concepts like scales or chords. To make sure you understood the concept of intervals use this <Link to="/interval-quiz" className="underline"> interval quiz</Link>. Additionally, you can have a look at this <Link to="/chord-identification" className="underline">tutorial about chord identification</Link>.</p>
         </div>
         <Footer />
     </>

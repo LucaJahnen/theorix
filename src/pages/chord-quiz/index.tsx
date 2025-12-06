@@ -109,7 +109,7 @@ const ChordQuiz: React.FC = () => {
           </form>
           <Modal correct={correct} visible={visible} setVisible={setVisible} type="chord" solution={chord[3]} />
           <h2 className="text-2xl font-semibold pb-1 pt-10">How to use</h2>
-          <p className="mb-4">This tool shows every chord in its four different types: major, minor, augmented and diminished. In Easy and Mode Mode every chord is shown in its root position so determining the root note should not be too diffucult because it is the lowest note. But if you decide to pick Hard Mode, chords will only be shown in the first or second inversion, so you determining the root note and chrod type is a bit trickier. Try to mentally convert the note position to fit the root position before determining the chord type by figuring out the intervals between the three notes. If you are not sure how to determine these intervals you can check out <Link to="/interval-identification" className="underline">this article</Link>.</p>
+          <p className="mb-4">This tool shows every chord in its four different types: major, minor, augmented and diminished. In Easy and Mode Mode every chord is shown in its root position so determining the root note should not be too diffucult because it is the lowest note. But if you decide to pick Hard Mode, chords will only be shown in the first or second inversion, so you determining the root note and chrod type is a bit trickier. Try to mentally convert the note position to fit the root position before determining the chord type by figuring out the intervals between the three notes. If you are not sure how to determine these intervals you can check out this <Link to="/interval-identification" className="underline">guide on identifying musical intervals.</Link>.</p>
           <h2 className="text-2xl font-semibold pb-1">How to identify chords</h2>
           <p className="mb-4">To identify an interval between two notes, follow these steps:</p>
           <ol className="">
@@ -118,7 +118,7 @@ const ChordQuiz: React.FC = () => {
                   <span><span className="font-semibold">Determine the chord type:</span> If the interval between the note is a major third between root and third and a minor third between third and fifth it is called a major chord. If it's a minor third first and then a major third it is a minor chord. An augmented chord is built using two major thirds and a diminished chord uses two minor thirds.</span>
                 </li>
             </ol>
-            <p>If you need more info on chords you can check out this <Link to="/chord-identification" className="underline">dedicated article</Link>.</p>
+            <p>If you need more info on chords you can check out this <Link to="/chord-identification" className="underline">dedicated article about chord identification</Link>.</p>
         </div>
         <Footer />
     </>

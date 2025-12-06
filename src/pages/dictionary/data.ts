@@ -1,7 +1,7 @@
 const data = [
     {
         title: "Italian Tempo Terms",
-        desc: "This table contains common tempo markings like allegro or andante. In modern music these terms may be out of date because of a metronome mark such as &#x2669; = 120, meaning that the piece of music should be played at a tempo of 120 beats per minute (bpm).",
+        desc: "This table contains common tempo markings like allegro or andante. In modern music these terms may be out of date because of a metronome mark such as ♩ = 120, meaning that the piece of music should be played at a tempo of 120 beats per minute (bpm).",
         style: ["font-medium", "", ""],
         terms: [
             { tempo: "Largo", description: "very slow and broad", bpm: "40 - 60" },

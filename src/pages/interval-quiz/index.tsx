@@ -156,7 +156,7 @@ const IntervalQuiz = () => {
                     </span>
                   </li>
             </ol>
-            <p>By counting the steps and identifying the quality, you'll quickly recognize each interval! For more details, check out our <Link to="/interval-identification" className="underline">dedicated article</Link> on intervals in music theory.</p>
+            <p>By counting the steps and identifying the quality, you'll quickly recognize each interval! For more details, check out our <Link to="/interval-identification" className="underline">dedicated article about interval identification</Link> on intervals in music theory.</p>
         </div>
         <Footer />
     </>

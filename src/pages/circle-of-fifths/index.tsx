@@ -4,6 +4,7 @@ import Footer from "../../components/Footer"
 import "./styles.css"
 import { useRef, useState } from "react"
 import schema from "../../assets/schemas/circle-of-fifths.json"
+import { Link } from "react-router-dom"
 
 const CircleOfFifths = () => {
     const [angle, setAngle] = useState<number>(0)
@@ -271,15 +272,9 @@ const CircleOfFifths = () => {
             </section>
             <section className="leading-relaxed">
                 <h2 className="pt-8 text-2xl font-semibold pb-1">Creating Chords</h2>
-                <p>
-                    The circle of fifths is a helpful visual tool for constructing chords. It not only shows the relationship between keys but also helps identify the notes needed to build major and minor triads. To form a major chord, start with a root note and move four steps clockwise to find the major third, then go back to the root and move one step clockwise for the perfect fifth. For example, let’s build a D major chord: Start on D, then move four steps clockwise on the circle of fifths — you land on F♯, which is the major third. From D, take one step clockwise to reach A, the perfect fifth. So, the D major chord consists of D–F♯–A.
-                </p>
-                <p className="pt-3">
-                    For a minor chord, the method is slightly different. Start on the root and move three steps counterclockwise to find the minor third, then return to the root again and move one step clockwise for the fifth. For D minor, begin with D, go three steps to the left to find F, the minor third, and again go one step right to A as the fifth. The result is a D minor chord: D–F–A.
-                </p>
-                <p className="pt-3">
-                    This approach allows you to build triads directly using the structure of the circle, making it an intuitive tool for composition and analysis.
-                </p>
+                <p>The circle of fifths is a helpful visual tool for constructing chords. It not only shows the relationship between keys but also helps identify the notes needed to build major and minor triads. To form a major chord, start with a root note and move four steps clockwise to find the major third, then go back to the root and move one step clockwise for the perfect fifth. For example, let’s build a D major chord: Start on D, then move four steps clockwise on the circle of fifths — you land on F♯, which is the major third. From D, take one step clockwise to reach A, the perfect fifth. So, the D major chord consists of D–F♯–A.</p>
+                <p className="pt-3">For a minor chord, the method is slightly different. Start on the root and move three steps counterclockwise to find the minor third, then return to the root again and move one step clockwise for the fifth. For D minor, begin with D, go three steps to the left to find F, the minor third, and again go one step right to A as the fifth. The result is a D minor chord: D–F–A.</p>
+                <p className="pt-3">This approach allows you to build triads directly using the structure of the circle, making it an intuitive tool for composition and analysis, but if you feel you need more practice with chords nevertheless, you can try this <Link to="/chord-quiz" className="underline">chord identification quiz.</Link></p>
             </section>
         </div>
         <Footer />
