@@ -1,5 +1,3 @@
-import Navbar from "@/components/Navbar"
-import Footer from "@/components/Footer"
 import { Helmet } from "react-helmet"
 
 const PrivacyPolicy: React.FC = () => {
@@ -9,8 +7,6 @@ const PrivacyPolicy: React.FC = () => {
                 <title>Privacy Policy</title>
                 <meta name="description" content="This privacy policy helps you understand which information we collect and why we collect it." />
             </Helmet>
-            <Navbar />
-            <div className="px-4 pt-6 lg:w-[60%] lg:block lg:m-auto">
                 <h1 className="text-3xl font-semibold pb-4">Privacy Policy</h1>
                 <h2 className="font-semibold text-xl mb-3">I. Information on the Processing of Your Data in Accordance with Article 13 of the General Data Protection Regulation (GDPR)</h2>
                 <h3 className="font-semibold text-lg mb-2">1. Controller and Data Protection Officer</h3>
@@ -56,8 +52,6 @@ const PrivacyPolicy: React.FC = () => {
                 <p>If the conditions of Article 20(1) GDPR are met, you have the right to receive data that we process based on your consent or in fulfillment of a contract in an automated manner, either to yourself or to a third party. The collection of data for providing the website and storing log files is essential for the operation of the website. Therefore, it is not based on consent under Article 6(1)(a) GDPR or a contract under Article 6(1)(b) GDPR, but is justified under Article 6(1)(f) GDPR. Thus, the conditions of Article 20(1) GDPR are not met.</p>
                 <h2 className="font-semibold text-xl mb-3 mt-5">II. Right to Object in Accordance with Article 21(1) GDPR</h2>
                 <p>You have the right to object at any time, on grounds relating to your particular situation, to the processing of your personal data, which is based on Article 6(1)(f) GDPR. The Controller will then no longer process the personal data unless they can demonstrate compelling legitimate grounds for the processing which override the interests, rights, and freedoms of the data subject, or the processing is for the establishment, exercise, or defense of legal claims. The collection of data for the provision of the website and the storage of log files is essential for the operation of the website.</p>
-            </div>
-            <Footer />
         </>
     )
 }

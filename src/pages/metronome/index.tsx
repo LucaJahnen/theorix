@@ -1,5 +1,3 @@
-import Navbar from "../../components/Navbar"
-import Footer from "../../components/Footer"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import {
@@ -58,10 +56,6 @@ const Metronome: React.FC = () => {
                 <title>Metronome</title>
                 <meta name="description" content="Practice keeping a tempo using this metronome." />
             </Helmet>
-            <Navbar />
-            <div className="px-4 pt-6 lg:w-[60%] lg:block lg:m-auto">
-                <h1 className="text-3xl font-semibold pb-4">Metronome</h1>
-                <p>A metronome helps you to keep a tempo.</p>
                 <div className="flex items-center flex-col gap-3 mt-10">
                     <p className="text-lg">{activeIndex >= 0 ? activeIndex + 1 : "---"}</p>
                     <div className="flex flex-row gap-6">
@@ -121,8 +115,6 @@ const Metronome: React.FC = () => {
                     </ul>
                     <p className="leading-relaxed mt-6">If you aren't sure how fast you should play when the tempo marking says Allegro or Moderato, you can look it up <Link to="/musical-terms" className="underline">in this dictionary of musical terms</Link>.</p>
                 </section>
-            </div>
-            <Footer />
         </>
     )
 }

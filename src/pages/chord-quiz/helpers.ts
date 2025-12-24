@@ -1,4 +1,4 @@
-import Vex from "vexflow"
+const Vex = await import("vexflow")
 const { Renderer, Stave, StaveNote, Voice, Formatter, Accidental } = Vex.Flow
 export const difficulties = ["easy", "medium", "hard"]
 

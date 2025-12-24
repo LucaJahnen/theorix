@@ -1,6 +1,6 @@
 import React from 'react'
-import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
+// import Navbar from '@/components/Navbar'
+// import Footer from '@/components/Footer'
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import {
@@ -68,10 +68,10 @@ const Dictionary: React.FC = () => {
             <script type="application/ld+json">{JSON.stringify(schema)}</script>
             <link rel="canonical" href="https://theorix.netlify.app/musical-terms" />
         </Helmet>
-        <Navbar />
-        <main className="px-4 pt-6 lg:w-[60%] lg:block lg:m-auto">
-            <h1 className="text-3xl font-semibold pb-4">Italian music terms</h1>
-            <p className="leading-relaxed max-w-[65ch]">Italian is the universal language of classical music. This page provides definitions and explanations of common Italian musical terms used to indicate tempo, expression, dynamics, articulation, and more &#8210; helping musicians interpret music accurately and with style. You can quickly find any term using the search function below.</p>
+        {/* <Navbar /> */}
+        {/* <main className="px-4 pt-6 lg:w-[60%] lg:block lg:m-auto"> */}
+            {/* <h1 className="text-3xl font-semibold pb-4">Italian music terms</h1> */}
+            {/* <p className="leading-relaxed max-w-[65ch]">Italian is the universal language of classical music. This page provides definitions and explanations of common Italian musical terms used to indicate tempo, expression, dynamics, articulation, and more &#8210; helping musicians interpret music accurately and with style. You can quickly find any term using the search function below.</p> */}
             <form action="#" className='w-full flex flex-row gap-3 pt-6 pb-2' onSubmit={handleSubmit}>
                 <Input type="text" placeholder='Search for a musical term' name='search' required value={searchTerm} onChange={e => handleChange(e)} className='text-base h-10 max-w-[20rem]' />
                 <Button className='text-base h-10 bg-primary dark:bg-primary-altered'>Search</Button>
@@ -103,8 +103,8 @@ const Dictionary: React.FC = () => {
                     </Table>
                 </section>
             ))}
-        </main>
-        <Footer />
+        {/* </main> */}
+        {/* <Footer /> */}
     </>
   )
 }

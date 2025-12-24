@@ -7,10 +7,17 @@ export default defineConfig({
   plugins: [preact()],
   build: {
     sourcemap: true,
-      minify: 'esbuild',
-      rollupOptions: {
-        treeshake: true,
-      },
+    minify: 'esbuild',
+    target: "esnext",
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules/vexflow')) {
+            return 'vexflow';
+          }
+        }
+      }
+    }
   },
   assetsInclude: ['**/*.riv'],
   resolve: {

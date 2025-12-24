@@ -1,4 +1,3 @@
-import Navbar from "../../components/Navbar"
 import {
   Select,
   SelectContent,
@@ -11,7 +10,6 @@ import { Button } from "@/components/ui/button"
 import { Link } from "react-router-dom"
 import Modal from "../../components/Modal"
 import { useState, useEffect, useRef } from "react"
-import Footer from "../../components/Footer"
 import { Input } from "@/components/ui/input"
 import useCreateChord from "@/hooks/useCreateChord"
 import { Helmet } from "react-helmet"
@@ -70,10 +68,6 @@ const ChordQuiz: React.FC = () => {
             <meta name="keywords" content="chord identification, chord quiz, chord training" />
             <script type="application/ld+json">{JSON.stringify(schema)}</script>
         </Helmet>
-        <Navbar />
-        <div className="px-4 pt-6 lg:w-[60%] lg:block lg:m-auto">
-            <h1 className="text-3xl font-semibold pb-4">Chord Quiz</h1>
-            <p style={{ maxWidth: "65ch" }}>Your task is to identify the chord shown below. If you need help, you can refer to the provided resources down below. To build a solid foundation, consider practicing every day.</p>
             <Button variant="secondary" className="mt-4 mb-2" onClick={() => setSettingsVisible(true)}>
               <IoSettingsOutline />{difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}
             </Button>
@@ -85,7 +79,7 @@ const ChordQuiz: React.FC = () => {
               setActiveIndex={setActiveIndex}
               description={description}
             />
-            <div className="filter invert-stave" ref={scoreRef} id="stave"/>
+            <div className="filter invert-stave min-h-[130px]" ref={scoreRef} id="stave" />
           <form action="#" className="flex flex-col gap-4 lg:flex-row lg:flex-row lg:items-end lg:gap-7" onSubmit={e => handleSubmit(e)}>
             <Label htmlFor="root-number" className="flex flex-col gap-1.5 relative z-10 lg:w-[27.5%]">
               <span>Root Note</span>
@@ -112,15 +106,13 @@ const ChordQuiz: React.FC = () => {
           <p className="mb-4">This tool shows every chord in its four different types: major, minor, augmented and diminished. In Easy and Mode Mode every chord is shown in its root position so determining the root note should not be too diffucult because it is the lowest note. But if you decide to pick Hard Mode, chords will only be shown in the first or second inversion, so you determining the root note and chrod type is a bit trickier. Try to mentally convert the note position to fit the root position before determining the chord type by figuring out the intervals between the three notes. If you are not sure how to determine these intervals you can check out this <Link to="/interval-identification" className="underline">guide on identifying musical intervals.</Link>.</p>
           <h2 className="text-2xl font-semibold pb-1">How to identify chords</h2>
           <p className="mb-4">To identify an interval between two notes, follow these steps:</p>
-          <ol className="">
+          <ol>
                 <li className="before:content-['1.'] before:inline-flex before:pr-3 before:font-medium before:text-primary mb-4 flex baseline"><span><span className="font-semibold">Determine the root note:</span> In Easy and Medium Mode the root note is always the lowest note but in some excercises you might need to change the chord inversion to root position.</span></li>
                 <li className="before:content-['2.'] before:inline-flex before:pr-3 before:font-medium before:text-primary mb-4 flex baseline">
                   <span><span className="font-semibold">Determine the chord type:</span> If the interval between the note is a major third between root and third and a minor third between third and fifth it is called a major chord. If it's a minor third first and then a major third it is a minor chord. An augmented chord is built using two major thirds and a diminished chord uses two minor thirds.</span>
                 </li>
             </ol>
             <p>If you need more info on chords you can check out this <Link to="/chord-identification" className="underline">dedicated article about chord identification</Link>.</p>
-        </div>
-        <Footer />
     </>
   )
 }

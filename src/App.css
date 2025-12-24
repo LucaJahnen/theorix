@@ -15,8 +15,7 @@ html.dark body {
     --foreground: 0, 0%, 88%;
     --primary-foreground: 0, 0%, 88%;
     --footer: 0, 0%, 4%;
-    --footer-green: 154.29, 95.45%, 8.63%;
-    --stave: ;
+    --stave: 1;
     --primary: 225, 73%, 57%;
     --primary-altered: 225, 73%, 47%;
     --primary-lighter: 225, 73%, 61%;

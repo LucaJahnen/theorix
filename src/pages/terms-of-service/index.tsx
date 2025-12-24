@@ -1,5 +1,3 @@
-import Navbar from "@/components/Navbar"
-import Footer from "@/components/Footer"
 import { Helmet } from "react-helmet"
 
 const TermsOfService: React.FC = () => {
@@ -9,8 +7,6 @@ const TermsOfService: React.FC = () => {
                 <title>Terms and Conditions</title>
                 <meta name="description" content="This page states the terms and conditions for using this website." />
             </Helmet>
-            <Navbar />
-            <div className="px-4 pt-6 lg:w-[60%] lg:block lg:m-auto">
             <h1 className="text-3xl font-semibold pb-4">Terms and Conditions</h1>
             <p className="leading-relaxed">Last updated: November 15, 2024</p>
             <p className="leading-relaxed">Please read these terms and conditions carefully before using Our Service.</p>
@@ -91,8 +87,6 @@ const TermsOfService: React.FC = () => {
             <h2 className="font-semibold text-xl mb-2 mt-4">Contact Us</h2>
             <p className="leading-relaxed">If you have any questions about these Terms and Conditions, You can contact us:</p>
             <p className="leading-relaxed">By email: <a href="mailto:help.theorix@gmail.com" className="underline">help.theorix@gmail.com</a></p>
-            </div>
-            <Footer />
         </>
     )
 }
