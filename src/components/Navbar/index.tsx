@@ -105,7 +105,7 @@ const Navbar: React.FC = () => {
       </div>
       </div>
       </nav>
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait"  onExitComplete={() => window.scrollTo(0, 0)}>
         {visible ? (
           <motion.div
             className={`gap-6 lg:flex w-full h-full fixed z-[1000] top-0 left-0 px-4 pt-[10%] bg-background lg:translate-x-0 lg:relative lg:bg-white lg:p-0 lg:w-fit lg:h-fit`}

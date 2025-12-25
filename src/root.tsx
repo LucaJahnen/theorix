@@ -1,6 +1,5 @@
 import { lazy, Suspense } from 'react'
 import { useLocation } from 'react-router-dom'
-import { AnimatePresence } from 'framer-motion'
 import { Routes, Route } from "react-router-dom"
 import { ThemeProvider } from "@/components/theme-provider"
 import Navbar from './components/Navbar'
@@ -115,24 +114,22 @@ const Root: React.FC = () => {
 
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo(0, 0)}>
-        <Navbar />
-        <main className="px-4 pt-6 lg:w-[60%] lg:block lg:m-auto">
-          <Routes location={location} key={location.pathname}>
-            {RouteConfig.map(({path, element, aboveTheFold}) => (
-              <Route key={path} path={path} element={
-              <>
-                {aboveTheFold}
-                <Suspense fallback={<><Fallback /><div className="min-h-[400px]" /></>}>
-                  {element}
-                </Suspense>
-              </>
-              } />
-            ))}
-          </Routes>
-        </main>
-        <Footer />
-      </AnimatePresence>
+      <Navbar />
+      <main className="px-4 pt-6 lg:w-[60%] lg:block lg:m-auto">
+        <Routes location={location} key={location.pathname}>
+          {RouteConfig.map(({path, element, aboveTheFold}) => (
+            <Route key={path} path={path} element={
+            <>
+              {aboveTheFold}
+              <Suspense fallback={<><Fallback /><div className="min-h-[400px]" /></>}>
+                {element}
+              </Suspense>
+            </>
+            } />
+          ))}
+        </Routes>
+      </main>
+      <Footer />
     </ThemeProvider>
   )
 }
