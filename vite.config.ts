@@ -8,7 +8,7 @@ export default defineConfig({
   build: {
     sourcemap: true,
     minify: 'esbuild',
-    target: "es2018",
+    target: "esnext",
     rollupOptions: {
       output: {
         manualChunks(id) {
