@@ -33,7 +33,7 @@ const Root: React.FC = () => {
     aboveTheFold:
       <>
         <h1 className="text-3xl font-semibold pb-4">Chord Quiz</h1>
-        <p style={{ maxWidth: "65ch" }}>Your task is to identify the chord shown below. If you need help, you can refer to the provided resources down below. To fit every level, you may select one of the available difficulty settings: easy, medium, or hard.</p>
+        <p className='leading-relaxed max-w-[65ch]'>Your task is to identify the chord shown below. If you need help, you can refer to the provided resources down below. To fit every level, you may select one of the available difficulty settings: easy, medium, or hard.</p>
       </>
   },
   {
@@ -42,7 +42,7 @@ const Root: React.FC = () => {
     aboveTheFold: 
     <>
       <h1 className="text-3xl font-semibold pb-4">Interval Quiz</h1>
-      <p>Your task is to identify the interval shown below. If you need help, you can refer to the provided resources down below. To fit every level, you may select one of the available difficulty settings: easy, medium, or hard.</p>
+      <p className='leading-relaxed max-w-[65ch]'>Your task is to identify the interval shown below. If you need help, you can refer to the provided resources down below. To fit every level, you may select one of the available difficulty settings: easy, medium, or hard.</p>
     </>
   },
   {
